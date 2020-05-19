@@ -64,6 +64,7 @@
 #define configMAX_PRIORITIES                                                      ( 3 )
 #define configMINIMAL_STACK_SIZE                                                  ( 60 )
 #define configTOTAL_HEAP_SIZE                                                     ( 4096 )
+#define configPOSIX_STACK_SIZE                                                    ( ( unsigned short ) 512 )
 #define configMAX_TASK_NAME_LEN                                                   ( 4 )
 #define configUSE_16_BIT_TICKS                                                    0
 #define configIDLE_SHOULD_YIELD                                                   1
@@ -76,6 +77,8 @@
 #define configUSE_TIME_SLICING                                                    0
 #define configUSE_NEWLIB_REENTRANT                                                0
 #define configENABLE_BACKWARD_COMPATIBILITY                                       1
+
+#define configUSE_APPLICATION_TASK_TAG                                            1  /* Need by POSIX/pthread */
 
 /* Hook function related definitions. */
 #define configUSE_IDLE_HOOK                                                       0
@@ -110,7 +113,29 @@
 #endif
 
 /* FreeRTOS MPU specific definitions. */
-#define configINCLUDE_APPLICATION_DEFINED_PRIVILEGED_FUNCTIONS                    1
+#define configINCLUDE_APPLICATION_DEFINED_PRIVILEGED_FUNCTIONS  
+
+/*
+ *  Enable thread local storage
+ *
+ *  Assign TLS array index ownership here to avoid collisions.
+ *  TLS storage is needed to implement thread-safe errno with
+ *  TI and IAR compilers. With GNU compiler, we enable newlib.
+ */
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+
+#define configNUM_THREAD_LOCAL_STORAGE_POINTERS 1
+
+#if defined(__TI_COMPILER_VERSION__)
+#define PTLS_TLS_INDEX 0  /* ti.posix.freertos.PTLS */
+#elif defined(__IAR_SYSTEMS_ICC__)
+#define MTX_TLS_INDEX 0  /* ti.posix.freertos.Mtx */
+#endif
+
+#elif defined(__GNUC__)
+/* note: system locks required by newlib are not implemented */
+#define configUSE_NEWLIB_REENTRANT 1
+#endif
 
 /* Optional functions - most linkers will remove unused functions anyway. */
 #define INCLUDE_vTaskPrioritySet                                                  1
