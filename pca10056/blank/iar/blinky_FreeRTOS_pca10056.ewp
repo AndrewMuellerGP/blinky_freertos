@@ -1394,116 +1394,116 @@
             <group>
                 <name>porting</name>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\porting\cc_pal.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\cc_pal.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\porting\cc_pal.h</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\cc_pal.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\porting\SIMPLELINKWIFI.h</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\SIMPLELINKWIFI.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\porting\user.h</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\user.h</name>
                 </file>
             </group>
             <group>
                 <name>source</name>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\device.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\driver.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\driver.h</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\flowcont.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\flowcont.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\flowcont.h</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\flowcont.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\fs.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\fs.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\netapp.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netapp.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\netcfg.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netcfg.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\netutil.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netutil.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\nonos.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\nonos.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\nonos.h</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\nonos.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\objInclusion.h</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\objInclusion.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\protocol.h</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\protocol.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\sl_socket.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\sl_socket.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\spawn.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\spawn.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\spawn.h</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\spawn.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\wlan.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlan.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\wlanconfig.c</name>
+                    <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlanconfig.c</name>
                 </file>
             </group>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\device.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\device.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\errors.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\errors.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\eventreg.c</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\eventreg.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\eventreg.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\eventreg.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\fs.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\fs.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\netapp.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\netapp.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\netcfg.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\netcfg.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\netutil.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\netutil.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\simplelink.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\simplelink.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\sl_socket.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\sl_socket.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\slnetifwifi.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\slnetifwifi.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\trace.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\trace.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\wlan.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\wlan.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\wlanconfig.h</name>
+                <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\wlanconfig.h</name>
             </file>
         </group>
         <group>
