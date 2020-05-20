@@ -82,6 +82,7 @@
 #define TASK_DELAY        200           /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
+#define MAIN_STACK_SIZE         (4096)
 #define TASK_STACK_SIZE         (2048)
 #define SPAWN_TASK_PRIORITY     (9)
 
@@ -91,33 +92,37 @@ TimerHandle_t led_toggle_timer_handle;  /**< Reference to LED1 toggling FreeRTOS
 TaskHandle_t gSpawn_thread = NULL;
 appControlBlock app_CB;
 
+extern void UART_PRINT(char* label, ...);
+
+void* mainThread(void* arg);
+
 /**@brief LED0 task entry function.
  *
  * @param[in] pvParameter   Pointer that will be used as the parameter for the task.
  */
-static void led_toggle_task_function (void * pvParameter)
+/*static void led_toggle_task_function (void * pvParameter)
 {
     UNUSED_PARAMETER(pvParameter);
     while (true)
     {
         bsp_board_led_invert(BSP_BOARD_LED_0);
 
-        /* Delay a task for a given number of ticks */
+        // Delay a task for a given number of ticks
         vTaskDelay(TASK_DELAY);
 
-        /* Tasks must be implemented to never return... */
+        // Tasks must be implemented to never return...
     }
-}
+}*/
 
 /**@brief The function to call when the LED1 FreeRTOS timer expires.
  *
  * @param[in] pvParameter   Pointer that will be used as the parameter for the timer.
  */
-static void led_toggle_timer_callback (void * pvParameter)
+/*static void led_toggle_timer_callback (void * pvParameter)
 {
     UNUSED_PARAMETER(pvParameter);
     bsp_board_led_invert(BSP_BOARD_LED_1);
-}
+}*/
 
 int main(void)
 {
@@ -136,13 +141,13 @@ int main(void)
    /* Configure LED-pins as outputs */
    bsp_board_init(BSP_INIT_LEDS);
 
-   /* Create task for LED0 blinking with priority set to 2 */
-   UNUSED_VARIABLE(xTaskCreate(led_toggle_task_function, "LED0", configMINIMAL_STACK_SIZE + 200, NULL, 2, &led_toggle_task_handle));
+   // Create task for LED0 blinking with priority set to 2
+   /*UNUSED_VARIABLE(xTaskCreate(led_toggle_task_function, "LED0", configMINIMAL_STACK_SIZE + 200, NULL, 2, &led_toggle_task_handle));
 
-   /* Start timer for LED1 blinking */
+   // Start timer for LED1 blinking
    led_toggle_timer_handle = xTimerCreate( "LED1", TIMER_PERIOD, pdTRUE, NULL, led_toggle_timer_callback);
    UNUSED_VARIABLE(xTimerStart(led_toggle_timer_handle, 0));
-   
+   */
    
    
    
@@ -161,77 +166,37 @@ int main(void)
        by the Host driver event handlers. */
     //RetVal = pthread_create(&gSpawn_thread, &pAttrs_spawn, sl_Task, NULL);
     
+   pthread_attr_t pAttrs;
+   int detachState = PTHREAD_CREATE_DETACHED;
+   struct sched_param priParam;
    
-   if(pdPASS != xTaskCreate((TaskFunction_t)sl_Task, "SL_SPAWN", TASK_STACK_SIZE, NULL, SPAWN_TASK_PRIORITY, &gSpawn_thread))
+   pthread_attr_init(&pAttrs);
+   priParam.sched_priority = 1;
+   
+   if (pthread_attr_setdetachstate(&pAttrs, detachState) != 0)
    {
-      /* Handle Error */
-      //UART_PRINT("Network Terminal - Unable to create spawn thread \n");
-      
+      return(NULL);
+   }
+   
+   pthread_attr_setschedparam(&pAttrs, &priParam);
+   
+   if (pthread_attr_setstacksize(&pAttrs, MAIN_STACK_SIZE) != 0)
+   {
+      return(NULL);
+   }
+   
+   if(pthread_create(&gSpawn_thread, &pAttrs, mainThread, NULL) != 0)
+   {
+      // failed to create the simple link thread.
       return(NULL);
    }
 
-    /* Before turning on the NWP on,
-       reset any previously configured parameters */
-    /*
-         IMPORTANT NOTE - This is an example reset function,
-         user must update this function to match the application settings.
-     */
     
-    if(sl_WifiConfig() < 0)
-    {
-        /* Handle Error */
-        /*UART_PRINT(
-            "Network Terminal - Couldn't configure Network Processor - %d\n",
-            RetVal);*/
-        return(NULL);
-    }
-
-    // Turn NWP on
-    if(sl_Start(NULL, NULL, NULL) < 0)
-    {
-        // Handle Error
-        //UART_PRINT("sl_start failed - %d\n",RetVal);
-        return(NULL);
-    }
-
-    // sl_Start returns on success the role that device started on
-    // TODO: RetVal needs to be the value of sl_Start()
-    //app_CB.Role = RetVal;
-   
-   // disable the soft-roaming
-   SlWlanRegisterLinkQualityEvents_t RegisterLinkQuality;
-   RegisterLinkQuality.Enable = 0;
-   
-   // trigger Id 1 is used for soft roaming trigger id 0 is for the host app usage.
-   RegisterLinkQuality.TriggerId = 1;
-   RegisterLinkQuality.Metric = SL_WLAN_METRIC_EVENT_RSSI_BEACON;
-   RegisterLinkQuality.Direction = SL_WLAN_RSSI_EVENT_DIR_LOW;
-   RegisterLinkQuality.Threshold = 0;
-   RegisterLinkQuality.Hysteresis = 0;
-   
-   // SL_WLAN_RX_QUALITY_EVENT_EDGE;
-   RegisterLinkQuality.Type = SL_WLAN_RX_QUALITY_EVENT_LEVEL;
-   RegisterLinkQuality.Pacing = 0;
-
-   (void)sl_WlanSet(SL_WLAN_CFG_GENERAL_PARAM_ID,
-                    SL_WLAN_GENERAL_PARAM_REGISTER_LINK_QUALITY_EVENT,
-                    sizeof(SlWlanRegisterLinkQualityEvents_t),
-                    (uint8_t*)&RegisterLinkQuality);
-   
-   // Unregister mDNS services
-   if(sl_NetAppMDNSUnRegisterService(0, 0, 0) < 0)
-   {
-      // Handle Error
-      //UART_PRINT("sl_NetAppMDNSUnRegisterService failed - %d\n",RetVal);
-      return(NULL);
-   }
-   
-   
       
-   /* Activate deep sleep mode */
+   // Activate deep sleep mode
    SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
 
-   /* Start FreeRTOS scheduler. */
+   // Start FreeRTOS scheduler.
    vTaskStartScheduler();
 
    while (true)
@@ -239,6 +204,180 @@ int main(void)
         /* FreeRTOS should not be here... FreeRTOS goes back to the start of stack
          * in vTaskStartScheduler function. */
    }
+}
+
+int32_t initAppVariables(void)
+{
+    app_CB.Status = 0;
+    app_CB.Role = ROLE_RESERVED;
+    app_CB.Exit = FALSE;
+
+    memset(&app_CB.CmdBuffer, 0x0, CMD_BUFFER_LEN);
+    memset(&app_CB.gDataBuffer, 0x0, sizeof(app_CB.gDataBuffer));
+    memset(&app_CB.CON_CB,0x0, sizeof(app_CB.CON_CB));
+
+    int ret = sem_init(&app_CB.CON_CB.connectEventSyncObj, 0, 0);
+    if(ret != 0)
+    {
+       SHOW_WARNING(ret, OS_ERROR);
+       return(-1);
+    }
+
+    ret = sem_init(&app_CB.CON_CB.eventCompletedSyncObj,  0, 0);
+    if(ret != 0)
+    {
+       SHOW_WARNING(ret, OS_ERROR);
+       return(-1);
+    }
+
+    ret = sem_init(&app_CB.CON_CB.ip4acquireEventSyncObj, 0, 0);
+    if(ret != 0)
+    {
+       SHOW_WARNING(ret, OS_ERROR);
+       return(-1);
+    }
+
+    ret = sem_init(&app_CB.CON_CB.ip6acquireEventSyncObj, 0, 0);
+    if(ret != 0)
+    {
+        SHOW_WARNING(ret, OS_ERROR);
+        return(-1);
+    }
+
+    memset(&app_CB.P2P_CB, 0x0, sizeof(app_CB.P2P_CB));
+
+    ret = sem_init(&app_CB.P2P_CB.DeviceFound, 0, 0);
+    if(ret != 0)
+    {
+        SHOW_WARNING(ret, OS_ERROR);
+        return(-1);
+    }
+
+    ret = sem_init(&app_CB.P2P_CB.RcvConReq, 0, 0);
+    if(ret != 0)
+    {
+        SHOW_WARNING(ret, OS_ERROR);
+        return(-1);
+    }
+
+    ret = sem_init(&app_CB.P2P_CB.RcvNegReq, 0, 0);
+    if(ret != 0)
+    {
+        SHOW_WARNING(ret, OS_ERROR);
+        return(-1);
+    }
+
+    ret = sem_init(&app_CB.WowlanSleepSem, 0, 0);
+    if(ret != 0)
+    {
+        SHOW_WARNING(ret, OS_ERROR);
+        return(-1);
+    }
+
+    return(ret);
+}
+
+void* mainThread(void* arg)
+{
+   int32_t RetVal;
+   pthread_attr_t pAttrs_spawn;
+   struct sched_param priParam;
+   struct timespec ts = {0};
+
+   /* Initializes the SPI interface to the Network
+      Processor and peripheral SPI (if defined in the board file) */
+   //SPI_init();
+   //GPIO_init();
+   //WiFi_init();
+
+   /* Init Application variables */
+   RetVal = initAppVariables();
+
+   // initialize the realtime clock
+   clock_settime(CLOCK_REALTIME, &ts);
+
+   // Create the sl_Task internal spawn thread
+   pthread_attr_init(&pAttrs_spawn);
+   priParam.sched_priority = SPAWN_TASK_PRIORITY;
+   RetVal = pthread_attr_setschedparam(&pAttrs_spawn, &priParam);
+   RetVal |= pthread_attr_setstacksize(&pAttrs_spawn, TASK_STACK_SIZE);
+
+   /* The SimpleLink host driver architecture mandate spawn
+      thread to be created prior to calling Sl_start (turning the NWP on). */
+   /* The purpose of this thread is to handle
+      asynchronous events sent from the NWP.
+    * Every event is classified and later handled
+      by the Host driver event handlers. */
+   RetVal = pthread_create(&gSpawn_thread, &pAttrs_spawn, sl_Task, NULL);
+   if(RetVal < 0)
+   {
+      UART_PRINT("Network Terminal - Unable to create spawn thread \n");
+      return(NULL);
+   }
+   
+   // TODO: why is this needed?
+   taskYIELD();
+   
+   // Before turning on the NWP on,
+   // reset any previously configured parameters
+   //
+   //   IMPORTANT NOTE - This is an example reset function,
+   //   user must update this function to match the application settings.
+   int isSuccess = sl_WifiConfig();
+   if(isSuccess < 0)
+   {
+     // Handle Error
+     UART_PRINT(
+         "Network Terminal - Couldn't configure Network Processor - %d\n",
+         isSuccess);
+     return(NULL);
+   }
+
+   // Turn NWP on
+   isSuccess = sl_Start(NULL, NULL, NULL);
+   if(isSuccess < 0)
+   {
+     // Handle Error
+     UART_PRINT("sl_start failed - %d\n", isSuccess);
+     return(NULL);
+   }
+
+   // sl_Start returns on success the role that device started on
+   // TODO: RetVal needs to be the value of sl_Start()
+   //app_CB.Role = RetVal;
+
+   // disable the soft-roaming
+   SlWlanRegisterLinkQualityEvents_t RegisterLinkQuality;
+   RegisterLinkQuality.Enable = 0;
+
+   // trigger Id 1 is used for soft roaming trigger id 0 is for the host app usage.
+   RegisterLinkQuality.TriggerId = 1;
+   RegisterLinkQuality.Metric = SL_WLAN_METRIC_EVENT_RSSI_BEACON;
+   RegisterLinkQuality.Direction = SL_WLAN_RSSI_EVENT_DIR_LOW;
+   RegisterLinkQuality.Threshold = 0;
+   RegisterLinkQuality.Hysteresis = 0;
+
+   // SL_WLAN_RX_QUALITY_EVENT_EDGE;
+   RegisterLinkQuality.Type = SL_WLAN_RX_QUALITY_EVENT_LEVEL;
+   RegisterLinkQuality.Pacing = 0;
+
+   (void)sl_WlanSet(SL_WLAN_CFG_GENERAL_PARAM_ID,
+                 SL_WLAN_GENERAL_PARAM_REGISTER_LINK_QUALITY_EVENT,
+                 sizeof(SlWlanRegisterLinkQualityEvents_t),
+                 (uint8_t*)&RegisterLinkQuality);
+
+   // Unregister mDNS services
+   isSuccess = sl_NetAppMDNSUnRegisterService(0, 0, 0);
+   if(isSuccess < 0)
+   {
+   // Handle Error
+   UART_PRINT("sl_NetAppMDNSUnRegisterService failed - %d\n", isSuccess);
+   return(NULL);
+   }
+
+   // TODO: scan for access points
+   
+   while(1);
 }
 
 /**

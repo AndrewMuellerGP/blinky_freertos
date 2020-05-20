@@ -215,6 +215,7 @@ typedef enum
         } \
     }
 
+#define OS_ERROR ("")
 #define SHOW_WARNING(ret, errortype)        UART_PRINT( \
         "\n\r[line:%d, error code:%d] %s\n\r", __LINE__, ret, errortype);
 
