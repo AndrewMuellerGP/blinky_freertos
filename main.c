@@ -53,11 +53,6 @@
 
 #include <ti/drivers/net/wifi/simplelink.h>
 
-/*#include <ti/drivers/dpl/SemaphoreP.h>
-#include <ti/drivers/dpl/MutexP.h>
-#include <ti/drivers/dpl/ClockP.h>
-#include <time.h>*/
-
 #include <pthread.h>
 #include <mqueue.h>
 #include <semaphore.h>
@@ -100,32 +95,11 @@ void* mainThread(void* arg);
  *
  * @param[in] pvParameter   Pointer that will be used as the parameter for the task.
  */
-/*static void led_toggle_task_function (void * pvParameter)
-{
-    UNUSED_PARAMETER(pvParameter);
-    while (true)
-    {
-        bsp_board_led_invert(BSP_BOARD_LED_0);
-
-        // Delay a task for a given number of ticks
-        vTaskDelay(TASK_DELAY);
-
-        // Tasks must be implemented to never return...
-    }
-}*/
-
-/**@brief The function to call when the LED1 FreeRTOS timer expires.
- *
- * @param[in] pvParameter   Pointer that will be used as the parameter for the timer.
- */
-/*static void led_toggle_timer_callback (void * pvParameter)
-{
-    UNUSED_PARAMETER(pvParameter);
-    bsp_board_led_invert(BSP_BOARD_LED_1);
-}*/
 
 int main(void)
 {
+   // Uncomment one or more of the following to demonstrate the use of the 
+   // different JSON libraries.
    //cJSON_Test();
    
    //JSMN_Test();
@@ -138,7 +112,8 @@ int main(void)
    err_code = nrf_drv_clock_init();
    APP_ERROR_CHECK(err_code);
 
-   /* Configure LED-pins as outputs */
+   // Configure LED-pins as outputs
+   // Uncomment the following 4 lines to demonstrate creating a task that blinks the on board led.
    bsp_board_init(BSP_INIT_LEDS);
 
    // Create task for LED0 blinking with priority set to 2
@@ -149,23 +124,7 @@ int main(void)
    UNUSED_VARIABLE(xTimerStart(led_toggle_timer_handle, 0));
    */
    
-   
-   
-   // create sl_Task spawn thread
-   /* Create the sl_Task internal spawn thread */
-    /*pthread_attr_init(&pAttrs_spawn);
-    priParam.sched_priority = SPAWN_TASK_PRIORITY;
-    RetVal = pthread_attr_setschedparam(&pAttrs_spawn, &priParam);
-    RetVal |= pthread_attr_setstacksize(&pAttrs_spawn, TASK_STACK_SIZE);*/
-
-    /* The SimpleLink host driver architecture mandate spawn
-       thread to be created prior to calling Sl_start (turning the NWP on). */
-    /* The purpose of this thread is to handle
-       asynchronous events sent from the NWP.
-     * Every event is classified and later handled
-       by the Host driver event handlers. */
-    //RetVal = pthread_create(&gSpawn_thread, &pAttrs_spawn, sl_Task, NULL);
-    
+   // spin up the simple link main thread and start the RTOS scheduler
    pthread_attr_t pAttrs;
    int detachState = PTHREAD_CREATE_DETACHED;
    struct sched_param priParam;
@@ -315,8 +274,9 @@ void* mainThread(void* arg)
       return(NULL);
    }
    
-   // TODO: why is this needed?
-   taskYIELD();
+   // Yield control of this tasks until the synchronization Task Control block 
+   // is setup by the Spawn task.
+   //taskYIELD();
    
    // Before turning on the NWP on,
    // reset any previously configured parameters

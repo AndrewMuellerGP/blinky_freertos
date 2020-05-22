@@ -1,654 +1,540 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
-    <fileChecksum>526310560</fileChecksum>
+    <fileChecksum>653589485</fileChecksum>
     <configuration>
         <name>nrf52840_xxaa</name>
         <outputs>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\ringbuf\nrf_ringbuf.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_str_formatter.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_frontend.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\cJSON\cJSON.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.c</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_gpiote.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\strerror\nrf_strerror.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\cJSON\cJSON.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_error_handler_iar.c</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\iar_startup_nrf52840.s</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_spim.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\atomic\nrf_atomic.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_error_weak.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\balloc\nrf_balloc.c</file>
-            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_spi.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\boards\boards.c</file>
-            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_clock.c</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_clock.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_util_platform.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_nvic.c</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_spi.c</file>
-            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_spi.c</file>
             <file>$PROJ_DIR$\..\..\..\components\libraries\bsp\bsp.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\button\app_button.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_error.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\nrf_assert.c</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\system_nrf52840.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\timer\app_timer_freertos.c</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_atomic.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf_format.c</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\memobj\nrf_memobj.c</file>
-            <file>$PROJ_DIR$\..\..\..\main.c</file>
-            <file>$PROJ_DIR$\..\config\sdk_config.h</file>
             <file>$PROJ_DIR$\..\..\..\simplelink_Callbacks.c</file>
-            <file>$PROJ_DIR$\..\..\..\simplelink_structures.h</file>
+            <file>$PROJ_DIR$\..\..\..\main.c</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\iar_startup_nrf52840.s</file>
             <file>$PROJ_DIR$\..\..\..\json_test.c</file>
+            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_clock.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\boards\boards.c</file>
+            <file>$PROJ_DIR$\..\config\sdk_config.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\system_nrf52840.c</file>
             <file>$PROJ_DIR$\..\..\..\json_test.h</file>
-            <file>$PROJ_DIR$\_build\nrf_atomic.xcl</file>
-            <file>$PROJ_DIR$\_build\queue.o</file>
-            <file>$PROJ_DIR$\_build\bsp.o</file>
-            <file>$PROJ_DIR$\_build\nrf_strerror.o</file>
-            <file>$PROJ_DIR$\_build\wlanconfig.xcl</file>
-            <file>$PROJ_DIR$\_build\flowcont.xcl</file>
-            <file>$PROJ_DIR$\_build\queue.xcl</file>
-            <file>$PROJ_DIR$\_build\croutine.xcl</file>
-            <file>$PROJ_DIR$\_build\port.o</file>
-            <file>$PROJ_DIR$\_build\nrfx_clock.o</file>
-            <file>$PROJ_DIR$\_build\nrf_fprintf.o</file>
-            <file>$PROJ_DIR$\_build\nrf_memobj.xcl</file>
-            <file>$PROJ_DIR$\_build\nrfx_gpiote.xcl</file>
-            <file>$PROJ_DIR$\_build\boards.o</file>
+            <file>$PROJ_DIR$\..\..\..\simplelink_structures.h</file>
+            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_spi.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\cJSON\cJSON.c</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_gpiote.c</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_clock.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.c</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_spim.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_error_handler_iar.c</file>
+            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_spi.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\ringbuf\nrf_ringbuf.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\strerror\nrf_strerror.c</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_atomic.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_error_weak.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\button\app_button.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\cJSON\cJSON.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\memobj\nrf_memobj.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_str_formatter.c</file>
+            <file>$PROJ_DIR$\..\..\..\dpl\ClockP_freertos.c</file>
+            <file>$PROJ_DIR$\..\..\..\dpl\HwiPMSP430_freertos.c</file>
+            <file>$PROJ_DIR$\..\..\..\dpl\MutexP_freertos.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_error.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\timer\app_timer_freertos.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_util_platform.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\atomic\nrf_atomic.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\nrf_assert.c</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_spi.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_nvic.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\balloc\nrf_balloc.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf_format.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_frontend.c</file>
+            <file>$PROJ_DIR$\..\..\..\dpl\DebugP_freertos.c</file>
             <file>$PROJ_DIR$\_build\nrf_fprintf_format.o</file>
-            <file>$PROJ_DIR$\_build\app_error.o</file>
-            <file>$PROJ_DIR$\_build\nrfx_gpiote.o</file>
-            <file>$PROJ_DIR$\_build\port.xcl</file>
-            <file>$PROJ_DIR$\_build\system_nrf52840.o</file>
-            <file>$PROJ_DIR$\_build\netutil.xcl</file>
-            <file>$PROJ_DIR$\_build\netutil.o</file>
-            <file>$PROJ_DIR$\_build\sl_socket.xcl</file>
-            <file>$PROJ_DIR$\_build\spawn.xcl</file>
             <file>$PROJ_DIR$\_build\main.o</file>
-            <file>$PROJ_DIR$\_build\wlan.xcl</file>
-            <file>$PROJ_DIR$\_build\stream_buffer.o</file>
-            <file>$PROJ_DIR$\_build\list.o</file>
+            <file>$PROJ_DIR$\_build\spawn.xcl</file>
             <file>$PROJ_DIR$\_build\device.o</file>
+            <file>$PROJ_DIR$\_build\app_error.o</file>
             <file>$PROJ_DIR$\_build\nrf_assert.o</file>
-            <file>$PROJ_DIR$\_build\port_cmsis_systick.xcl</file>
-            <file>$PROJ_DIR$\_build\flowcont.o</file>
-            <file>$PROJ_DIR$\_build\app_button.o</file>
             <file>$PROJ_DIR$\_build\iar_startup_nrf52840.o</file>
-            <file>$PROJ_DIR$\_build\nrf_drv_clock.o</file>
-            <file>$PROJ_DIR$\_build\app_error_weak.o</file>
             <file>$PROJ_DIR$\_build\tasks.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_gpiote.o</file>
             <file>$PROJ_DIR$\_build\system_nrf52840.xcl</file>
             <file>$PROJ_DIR$\_build\wlan.o</file>
             <file>$PROJ_DIR$\_build\netcfg.o</file>
-            <file>$PROJ_DIR$\_build\heap_1.o</file>
+            <file>$PROJ_DIR$\_build\nrf_drv_clock.o</file>
+            <file>$PROJ_DIR$\_build\flowcont.o</file>
+            <file>$PROJ_DIR$\_build\boards.o</file>
+            <file>$PROJ_DIR$\_build\stream_buffer.o</file>
             <file>$PROJ_DIR$\_build\spawn.o</file>
             <file>$PROJ_DIR$\_build\nrf_atomic.o</file>
             <file>$PROJ_DIR$\_build\netcfg.xcl</file>
+            <file>$PROJ_DIR$\_build\wlan.xcl</file>
             <file>$PROJ_DIR$\_build\croutine.o</file>
+            <file>$PROJ_DIR$\_build\app_button.o</file>
+            <file>$PROJ_DIR$\_build\app_error_weak.o</file>
+            <file>$PROJ_DIR$\_build\netutil.xcl</file>
+            <file>$PROJ_DIR$\_build\port.xcl</file>
+            <file>$PROJ_DIR$\_build\netutil.o</file>
+            <file>$PROJ_DIR$\_build\port_cmsis_systick.xcl</file>
+            <file>$PROJ_DIR$\_build\list.o</file>
+            <file>$PROJ_DIR$\_build\sl_socket.xcl</file>
+            <file>$PROJ_DIR$\_build\system_nrf52840.o</file>
             <file>$PROJ_DIR$\_build\nonos.xcl</file>
             <file>$PROJ_DIR$\_build\port_cmsis.xcl</file>
-            <file>$PROJ_DIR$\_build\nrfx_spim.o</file>
-            <file>$PROJ_DIR$\_build\simplelink_Callbacks.xcl</file>
-            <file>$PROJ_DIR$\_build\netapp.xcl</file>
             <file>$PROJ_DIR$\_build\netapp.o</file>
-            <file>$PROJ_DIR$\_build\cc_pal.o</file>
-            <file>$PROJ_DIR$\_build\port_cmsis.o</file>
-            <file>$PROJ_DIR$\_build\nrfx_spim.xcl</file>
-            <file>$PROJ_DIR$\_build\simplelink_Callbacks.o</file>
             <file>$PROJ_DIR$\_build\nrf_ringbuf.o</file>
-            <file>$PROJ_DIR$\_build\eventreg.xcl</file>
-            <file>$PROJ_DIR$\_build\sl_socket.o</file>
-            <file>$PROJ_DIR$\_build\fs.xcl</file>
             <file>$PROJ_DIR$\_build\cc_pal.xcl</file>
-            <file>$PROJ_DIR$\_build\blinky_FreeRTOS_pca10056.pbd</file>
-            <file>$PROJ_DIR$\_build\app_error_weak.xcl</file>
-            <file>$PROJ_DIR$\_build\tasks.xcl</file>
-            <file>$PROJ_DIR$\_build\timer.o</file>
-            <file>$PROJ_DIR$\_build\nrf_drv_spi.xcl</file>
+            <file>$PROJ_DIR$\_build\sl_socket.o</file>
             <file>$PROJ_DIR$\_build\Mtx.xcl</file>
-            <file>$PROJ_DIR$\_build\sched.o</file>
+            <file>$PROJ_DIR$\_build\nrf_drv_spi.xcl</file>
+            <file>$PROJ_DIR$\_build\nrfx_spim.o</file>
             <file>$PROJ_DIR$\_build\pthread.o</file>
-            <file>$PROJ_DIR$\_build\Mtx.o</file>
+            <file>$PROJ_DIR$\_build\port_cmsis.o</file>
+            <file>$PROJ_DIR$\_build\simplelink_Callbacks.o</file>
+            <file>$PROJ_DIR$\_build\app_button.xcl</file>
+            <file>$PROJ_DIR$\_build\netapp.xcl</file>
+            <file>$PROJ_DIR$\_build\timer.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_spim.xcl</file>
+            <file>$PROJ_DIR$\_build\fs.xcl</file>
+            <file>$PROJ_DIR$\_build\simplelink_Callbacks.xcl</file>
+            <file>$PROJ_DIR$\_build\eventreg.xcl</file>
+            <file>$PROJ_DIR$\_build\blinky_FreeRTOS_pca10056.pbd</file>
+            <file>$PROJ_DIR$\_build\sched.o</file>
+            <file>$PROJ_DIR$\_build\tasks.xcl</file>
             <file>$PROJ_DIR$\_build\mqueue.xcl</file>
             <file>$PROJ_DIR$\_build\fs.o</file>
-            <file>$PROJ_DIR$\_build\app_button.xcl</file>
+            <file>$PROJ_DIR$\_build\Mtx.o</file>
+            <file>$PROJ_DIR$\_build\cc_pal.o</file>
             <file>$PROJ_DIR$\_build\memory.o</file>
             <file>$PROJ_DIR$\_build\pthread_rwlock.o</file>
             <file>$PROJ_DIR$\_build\sleep.o</file>
             <file>$PROJ_DIR$\_build\mqueue.o</file>
-            <file>$PROJ_DIR$\_build\main.xcl</file>
-            <file>$PROJ_DIR$\_build\nrf_drv_spi.o</file>
-            <file>$PROJ_DIR$\_build\reent.o</file>
-            <file>$PROJ_DIR$\_build\pthread_cond.o</file>
-            <file>$PROJ_DIR$\_build\clock.o</file>
+            <file>$PROJ_DIR$\_build\app_error_weak.xcl</file>
+            <file>$PROJ_DIR$\_build\json.xcl</file>
             <file>$PROJ_DIR$\_build\nrfx_atomic.xcl</file>
-            <file>$PROJ_DIR$\_build\clock.xcl</file>
-            <file>$PROJ_DIR$\_build\driver.xcl</file>
-            <file>$PROJ_DIR$\_build\pthread_cond.xcl</file>
+            <file>$PROJ_DIR$\_build\parse_common.xcl</file>
+            <file>$PROJ_DIR$\_build\reent.xcl</file>
             <file>$PROJ_DIR$\_build\pthread_mutex.xcl</file>
-            <file>$PROJ_DIR$\_build\pthread_barrier.o</file>
-            <file>$PROJ_DIR$\_build\bsp.xcl</file>
+            <file>$PROJ_DIR$\_build\clock.xcl</file>
+            <file>$PROJ_DIR$\_build\HwiPMSP430_freertos.o</file>
             <file>$PROJ_DIR$\_build\memory.xcl</file>
+            <file>$PROJ_DIR$\_build\parse_common.o</file>
+            <file>$PROJ_DIR$\_build\driver.xcl</file>
+            <file>$PROJ_DIR$\_build\pthread_rwlock.xcl</file>
+            <file>$PROJ_DIR$\_build\clock.o</file>
+            <file>$PROJ_DIR$\_build\sched.xcl</file>
+            <file>$PROJ_DIR$\_build\reent.o</file>
+            <file>$PROJ_DIR$\_build\json_engine.xcl</file>
+            <file>$PROJ_DIR$\_build\pthread_cond.o</file>
+            <file>$PROJ_DIR$\_build\bsp.xcl</file>
+            <file>$PROJ_DIR$\_build\PowerMSP430_freertos.o</file>
+            <file>$PROJ_DIR$\_build\pthread_cond.xcl</file>
+            <file>$PROJ_DIR$\_build\nrfx_spi.xcl</file>
+            <file>$PROJ_DIR$\_build\main.xcl</file>
+            <file>$PROJ_DIR$\_build\pthread_barrier.o</file>
+            <file>$PROJ_DIR$\_build\nrf_drv_spi.o</file>
             <file>$PROJ_DIR$\_build\nrfx_atomic.o</file>
             <file>$PROJ_DIR$\_build\nrf_balloc.xcl</file>
             <file>$PROJ_DIR$\_build\pthread_mutex.o</file>
-            <file>$PROJ_DIR$\_build\pthread_rwlock.xcl</file>
             <file>$PROJ_DIR$\_build\timer.xcl</file>
-            <file>$PROJ_DIR$\_build\json_test.xcl</file>
             <file>$PROJ_DIR$\_build\cJSON.o</file>
             <file>$PROJ_DIR$\_build\pthread.xcl</file>
             <file>$PROJ_DIR$\_build\utils.xcl</file>
-            <file>$PROJ_DIR$\_build\sched.xcl</file>
-            <file>$PROJ_DIR$\_build\json.xcl</file>
-            <file>$PROJ_DIR$\_build\parse_common.xcl</file>
-            <file>$PROJ_DIR$\_build\json_engine.xcl</file>
-            <file>$PROJ_DIR$\_build\reent.xcl</file>
-            <file>$PROJ_DIR$\_build\nrfx_spi.xcl</file>
-            <file>$PROJ_DIR$\_build\HwiPMSP430_freertos.o</file>
-            <file>$PROJ_DIR$\_build\parse_common.o</file>
-            <file>$PROJ_DIR$\_build\PowerMSP430_freertos.o</file>
-            <file>$PROJ_DIR$\_build\json.o</file>
-            <file>$PROJ_DIR$\_build\ClockP_freertos.xcl</file>
-            <file>$PROJ_DIR$\_build\MutexP_freertos.o</file>
-            <file>$PROJ_DIR$\_build\json_engine.o</file>
-            <file>$PROJ_DIR$\_build\DebugP_freertos.o</file>
-            <file>$PROJ_DIR$\_build\nrfx_spi.o</file>
-            <file>$PROJ_DIR$\_build\sleep.xcl</file>
-            <file>$PROJ_DIR$\_build\utils.o</file>
-            <file>$PROJ_DIR$\_build\cJSON.xcl</file>
-            <file>$PROJ_DIR$\_build\pthread_barrier.xcl</file>
-            <file>$PROJ_DIR$\_build\ClockP_freertos.o</file>
-            <file>$PROJ_DIR$\_build\HwiPMSP430_freertos.xcl</file>
-            <file>$PROJ_DIR$\_build\DebugP_freertos.xcl</file>
-            <file>$PROJ_DIR$\_build\json_test.o</file>
+            <file>$PROJ_DIR$\_build\json_test.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\objInclusion.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\errors.h</file>
+            <file>$PROJ_DIR$\_build\SystemP_freertos.o</file>
             <file>$PROJ_DIR$\_build\semaphore.o</file>
+            <file>$PROJ_DIR$\_build\MutexP_freertos.xcl</file>
+            <file>$PROJ_DIR$\_build\ClockP_freertos.xcl</file>
+            <file>$PROJ_DIR$\_build\sleep.xcl</file>
+            <file>$PROJ_DIR$\_build\DebugP_freertos.o</file>
+            <file>$PROJ_DIR$\_build\ClockP_freertos.o</file>
+            <file>$PROJ_DIR$\_build\json_engine.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\device.h</file>
+            <file>$PROJ_DIR$\_build\SystemP_freertos.xcl</file>
+            <file>$PROJ_DIR$\_build\json.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_spi.o</file>
+            <file>$PROJ_DIR$\_build\MutexP_freertos.o</file>
+            <file>$PROJ_DIR$\_build\utils.o</file>
+            <file>$PROJ_DIR$\_build\SemaphoreP_freertos.xcl</file>
+            <file>$PROJ_DIR$\_build\HwiPMSP430_freertos.xcl</file>
             <file>$PROJ_DIR$\_build\semaphore.xcl</file>
             <file>$PROJ_DIR$\_build\PowerMSP430_freertos.xcl</file>
-            <file>$PROJ_DIR$\_build\MutexP_freertos.xcl</file>
-            <file>$PROJ_DIR$\_build\SystemP_freertos.o</file>
-            <file>$PROJ_DIR$\_build\SemaphoreP_freertos.o</file>
-            <file>$PROJ_DIR$\_build\SemaphoreP_freertos.xcl</file>
-            <file>$PROJ_DIR$\_build\SystemP_freertos.xcl</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\flowcont.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\wlan.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\netapp.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\porting\cc_pal.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\sl_socket.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\spawn.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\signal.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\flowcont.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\spawn.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\porting\cc_pal.h</file>
+            <file>$PROJ_DIR$\_build\cJSON.xcl</file>
+            <file>$PROJ_DIR$\_build\pthread_barrier.xcl</file>
+            <file>$PROJ_DIR$\_build\DebugP_freertos.xcl</file>
+            <file>$PROJ_DIR$\_build\SemaphoreP_freertos.o</file>
+            <file>$PROJ_DIR$\_build\json_test.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\netapp.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\driver.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\fs.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\nonos.c</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\porting\user.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\unistd.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\porting\SIMPLELINKWIFI.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\nonos.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\netcfg.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\objInclusion.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\wlanconfig.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\driver.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\errors.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\eventreg.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\device.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\eventreg.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\time.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\semaphore.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\fs.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\netapp.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\spawn.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\device.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\netutil.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\protocol.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\sys\types.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\mqueue.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\pthread.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\memory.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\semaphore.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sleep.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\sched.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_mutex.c</file>
-            <file>$PROJ_DIR$\..\..\..\dpl\SemaphoreP_freertos.c</file>
-            <file>$PROJ_DIR$\..\..\..\dpl\DebugP_freertos.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_cond.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_rwlock.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\reent.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\errno.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\PTLS.h</file>
-            <file>$PROJ_DIR$\..\..\..\dpl\SystemP_freertos.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sched.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\clock.c</file>
-            <file>$PROJ_DIR$\..\..\..\dpl\ClockP_freertos.c</file>
-            <file>$PROJ_DIR$\..\..\..\dpl\HwiPMSP430_freertos.c</file>
-            <file>$PROJ_DIR$\..\..\..\dpl\MutexP_freertos.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\mqueue.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\freertos\Mtx.c</file>
-            <file>$PROJ_DIR$\..\..\..\dpl\PowerMSP430_freertos.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\Mtx.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\timer.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\sys\_internal.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\sys\time.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_barrier.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\croutine.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\queue.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\tasks.c</file>
-            <file>$PROJ_DIR$\_build\nrf_assert.xcl</file>
-            <file>$PROJ_DIR$\_build\eventreg.o</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\simplelink.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\list.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\portable\IAR\nrf52\port.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\trace.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\wlan.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\wlanconfig.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\portable\MemMang\heap_1.c</file>
-            <file>$PROJ_DIR$\_build\app_error_handler_iar.xcl</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\timers.c</file>
-            <file>$PROJ_DIR$\_build\nrf_strerror.xcl</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\portable\CMSIS\nrf52\port_cmsis.c</file>
-            <file>$PROJ_DIR$\_build\app_timer_freertos.xcl</file>
-            <file>$PROJ_DIR$\_build\heap_1.xcl</file>
             <file>$PROJ_DIR$\_build\device.xcl</file>
-            <file>$PROJ_DIR$\_build\nrf_drv_clock.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\wlan.h</file>
+            <file>$PROJ_DIR$\_build\app_timer_freertos.xcl</file>
+            <file>$PROJ_DIR$\_build\nrf_strerror.xcl</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\netcfg.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\stream_buffer.c</file>
+            <file>$PROJ_DIR$\_build\nrf_drv_clock.xcl</file>
             <file>$PROJ_DIR$\_build\nrf_fprintf_format.xcl</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\netutil.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\slnetifwifi.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json_engine.c</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\parse_common.c</file>
+            <file>$PROJ_DIR$\_build\app_error_handler_iar.xcl</file>
+            <file>$PROJ_DIR$\_build\heap_1.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\protocol.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\fs.h</file>
+            <file>$PROJ_DIR$\_build\nrf_assert.xcl</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\sl_socket.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\utils.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\event_groups.c</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\portable\CMSIS\nrf52\port_cmsis_systick.c</file>
-            <file>$PROJ_DIR$\_build\driver.o</file>
             <file>$PROJ_DIR$\_build\blinky_FreeRTOS_pca10056.hex</file>
             <file>$PROJ_DIR$\_build\port_cmsis_systick.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\wlanconfig.h</file>
             <file>$PROJ_DIR$\_build\app_util_platform.o</file>
-            <file>$PROJ_DIR$\_build\nonos.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\netutil.h</file>
             <file>$PROJ_DIR$\_build\app_error_handler_iar.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\simplelink.h</file>
+            <file>$PROJ_DIR$\_build\driver.o</file>
+            <file>$PROJ_DIR$\_build\eventreg.o</file>
             <file>$PROJ_DIR$\_build\list.xcl</file>
+            <file>$PROJ_DIR$\_build\nonos.o</file>
             <file>$PROJ_DIR$\_build\nrfx_clock.xcl</file>
             <file>$PROJ_DIR$\_build\nrf_fprintf.xcl</file>
             <file>$PROJ_DIR$\_build\stream_buffer.xcl</file>
             <file>$PROJ_DIR$\_build\nrf_log_frontend.o</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\portable\MemMang\heap_1.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\trace.h</file>
+            <file>$PROJ_DIR$\..\..\..\dpl\PowerMSP430_freertos.c</file>
+            <file>$PROJ_DIR$\..\..\..\dpl\SemaphoreP_freertos.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_rwlock.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\errno.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\pthread.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\mqueue.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\sched.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\PTLS.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\semaphore.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\Mtx.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\clock.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_barrier.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\reent.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\semaphore.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\sys\time.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_mutex.c</file>
+            <file>$PROJ_DIR$\..\..\..\dpl\SystemP_freertos.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\signal.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sched.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\sys\types.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\time.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\unistd.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\cc_pal.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\memory.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar\sys\_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sleep.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\freertos\Mtx.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\mqueue.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\timer.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_cond.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\device.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\fs.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\netcfg.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\sl_socket.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\netapp.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\nonos.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\cc_pal.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\spawn.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\errors.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\netutil.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\simplelink.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\slnetifwifi.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\SIMPLELINKWIFI.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netapp.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\objInclusion.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\flowcont.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\protocol.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\sl_socket.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netcfg.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\spawn.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlanconfig.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\user.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlan.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\eventreg.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netutil.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\flowcont.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\nonos.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\eventreg.h</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\fs.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\queue.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\portable\CMSIS\nrf52\port_cmsis.c</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\trace.h</file>
+            <file>$PROJ_DIR$\_build\wlanconfig.xcl</file>
+            <file>$PROJ_DIR$\_build\nrfx_clock.o</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\timers.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\event_groups.c</file>
+            <file>$PROJ_DIR$\_build\queue.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\list.c</file>
+            <file>$PROJ_DIR$\_build\nrf_memobj.xcl</file>
+            <file>$PROJ_DIR$\_build\nrf_fprintf.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json_engine.c</file>
+            <file>$PROJ_DIR$\_build\queue.o</file>
+            <file>$PROJ_DIR$\_build\nrfx_gpiote.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\utils.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\parse_common.c</file>
+            <file>$PROJ_DIR$\_build\bsp.o</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\portable\CMSIS\nrf52\port_cmsis_systick.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\tasks.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\portable\IAR\nrf52\port.c</file>
+            <file>$PROJ_DIR$\_build\nrf_atomic.xcl</file>
+            <file>$PROJ_DIR$\_build\nrf_strerror.o</file>
+            <file>$PROJ_DIR$\_build\flowcont.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\portable\MemMang\heap_4.c</file>
+            <file>$PROJ_DIR$\_build\croutine.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\wlanconfig.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\croutine.c</file>
+            <file>$PROJ_DIR$\_build\port.o</file>
+            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\wlan.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\stream_buffer.c</file>
+            <file>$PROJ_DIR$\_build\wlanconfig.o</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_error.h</file>
             <file>$PROJ_DIR$\_build\nrf_soc.o</file>
-            <file>$PROJ_DIR$\_build\nrf_nvic.o</file>
-            <file>$PROJ_DIR$\_build\timers.o</file>
             <file>$PROJ_DIR$\_build\timers.xcl</file>
-            <file>$PROJ_DIR$\_build\nrf_log_str_formatter.o</file>
+            <file>$PROJ_DIR$\_build\nrf_nvic.o</file>
             <file>$PROJ_DIR$\_build\nrf_memobj.o</file>
-            <file>$PROJ_DIR$\_build\nrf_nvic.xcl</file>
             <file>$PROJ_DIR$\_build\app_error.xcl</file>
             <file>$PROJ_DIR$\_build\nrf_soc.xcl</file>
-            <file>$PROJ_DIR$\_build\app_util_platform.xcl</file>
-            <file>$PROJ_DIR$\_build\wlanconfig.o</file>
-            <file>$PROJ_DIR$\_build\nrf_log_str_formatter.xcl</file>
-            <file>$PROJ_DIR$\_build\nrf_ringbuf.xcl</file>
-            <file>$PROJ_DIR$\_build\nrf_log_frontend.xcl</file>
             <file>$PROJ_DIR$\_build\blinky_FreeRTOS_pca10056.out</file>
-            <file>$PROJ_DIR$\_build\nrf_balloc.o</file>
+            <file>$PROJ_DIR$\_build\nrf_nvic.xcl</file>
+            <file>$PROJ_DIR$\_build\app_util_platform.xcl</file>
             <file>$PROJ_DIR$\_build\event_groups.xcl</file>
-            <file>$PROJ_DIR$\_build\event_groups.o</file>
-            <file>$PROJ_DIR$\_build\boards.xcl</file>
-            <file>$PROJ_DIR$\_build\app_timer_freertos.o</file>
             <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_error_weak.h</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\portable.h</file>
+            <file>$PROJ_DIR$\_build\nrf_balloc.o</file>
+            <file>$PROJ_DIR$\_build\nrf_log_str_formatter.o</file>
+            <file>$PROJ_DIR$\_build\nrf_ringbuf.xcl</file>
+            <file>$PROJ_DIR$\_build\boards.xcl</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\deprecated_definitions.h</file>
+            <file>$PROJ_DIR$\_build\event_groups.o</file>
+            <file>$PROJ_DIR$\_build\app_timer_freertos.o</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\portable\IAR\nrf52\portmacro.h</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\portable\CMSIS\nrf52\portmacro_cmsis.h</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\mpu_wrappers.h</file>
             <file>$PROJ_DIR$\..\..\..\components\libraries\util\nordic_common.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_errors.h</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\task.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_errors.h</file>
+            <file>$PROJ_DIR$\_build\timers.o</file>
+            <file>$PROJ_DIR$\_build\nrf_log_frontend.xcl</file>
             <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$PROJ_DIR$\_build\nrf_log_str_formatter.xcl</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\projdefs.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_error.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\list.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_util.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\stream_buffer.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\stack_macros.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\prs\nrfx_prs.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\compiler_abstraction.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\toolchain\cmsis\include\core_cm4.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\toolchain\cmsis\include\core_cmFunc.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf52840_bitfields.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_util_platform.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h</file>
             <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_util_platform.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\app_util.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\toolchain\cmsis\include\core_cm4.h</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
             <file>$PROJ_DIR$\..\..\..\components\toolchain\cmsis\include\core_cmInstr.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\system_nrf52840.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\toolchain\cmsis\include\core_cmFunc.h</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\nrf_assert.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
             <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf52840.h</file>
             <file>$PROJ_DIR$\..\..\..\config\FreeRTOSConfig.h</file>
             <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf.h</file>
             <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\system_nrf52840.h</file>
             <file>$PROJ_DIR$\..\..\..\components\toolchain\cmsis\include\core_cmSimd.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\system_nrf.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\FreeRTOS.h</file>
-            <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
-            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-            <file>$PROJ_DIR$\blinky_FreeRTOS_iar_nRF5x.icf</file>
-            <file>$PROJ_DIR$\_build\blinky_FreeRTOS_pca10056.map</file>
-            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\porting\user.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\porting\SIMPLELINKWIFI.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\porting\cc_pal.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\porting\cc_pal.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_os.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_macros.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\button\app_button.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_common.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\hal\nrf_gpio.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\bsp\bsp.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_float_setup.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\json_engine.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_ctrl_internal.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\bsp\bsp_config.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\log\nrf_log_ctrl.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\math.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\limits.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\utils.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\parse_common.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\json.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\log\nrf_log_backend_interface.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\strerror\nrf_strerror.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\float.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ctype.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\list.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf52840_bitfields.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\stack_macros.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\prs\nrfx_prs.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\compiler_abstraction.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\nrf_assert.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h</file>
             <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_irqs.h</file>
             <file>$PROJ_DIR$\..\..\..\components\libraries\log\nrf_log_instance.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\boards\boards.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf52840_peripherals.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\hal\nrf_gpiote.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\experimental_section_vars\nrf_section.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_irqs_nrf52840.h</file>
-            <file>$PROJ_DIR$\..\..\..\integration\nrfx\nrfx_config.h</file>
-            <file>$PROJ_DIR$\..\..\..\integration\nrfx\nrfx_glue.h</file>
-            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_gpiote.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_internal.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\timers.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\dpl\SemaphoreP.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_coredep.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\dpl\ClockP.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_ctrl_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\bsp\bsp.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\json_engine.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\button\app_button.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\log\nrf_log_ctrl.h</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\FreeRTOS.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_os.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_macros.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\bsp\bsp_config.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\system_nrf.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\limits.h</file>
+            <file>$PROJ_DIR$\_build\blinky_FreeRTOS_pca10056.map</file>
+            <file>$PROJ_DIR$\blinky_FreeRTOS_iar_nRF5x.icf</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\json.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\strerror\nrf_strerror.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\utils.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\parse_common.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_float_setup.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\log\nrf_log_backend_interface.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\float.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\hal\nrf_gpio.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ctype.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\time.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\include\nrfx_gpiote.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\boards\pca10056.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\dpl\MutexP.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_atomic.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\log\nrf_log_types.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\nrfx.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_resources.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\nrfx_errors.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
             <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\nrfx_common.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf_peripherals.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\experimental_section_vars\nrf_section.h</file>
+            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_gpiote.h</file>
+            <file>$PROJ_DIR$\..\..\..\integration\nrfx\nrfx_config.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\timers.h</file>
+            <file>$PROJ_DIR$\..\..\..\integration\nrfx\nrfx_glue.h</file>
             <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\apply_old_config.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\log\nrf_log.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\dpl\SemaphoreP.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_atomic.h</file>
             <file>$PROJ_DIR$\..\..\..\components\libraries\timer\app_timer.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_irqs_nrf52840.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\nrfx.h</file>
             <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\include\nrfx_clock.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\sdk_resources.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\log\nrf_log.h</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\croutine.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_coredep.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf52840_peripherals.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\boards\boards.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\nrfx_errors.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\nrf_peripherals.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\dpl\ClockP.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\include\nrfx_gpiote.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\hal\nrf_gpiote.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\log\nrf_log_types.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\boards\pca10056.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\sched.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf_format.h</file>
             <file>$TOOLKIT_DIR$\inc\c\signal.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\pthread.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
             <file>$PROJ_DIR$\..\..\..\components\libraries\balloc\nrf_balloc.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\sys\types.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\errno.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\mqueue.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\signal.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\include\nrfx_power_clock.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\dpl\HwiP.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\sched.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\include\nrfx_spi.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\devices\msp432p4xx\driverlib\rom.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\sys\_internal.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\devices\msp432p4xx\inc\msp.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\JSMN\jsmn.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\devices\msp432p4xx\driverlib\interrupt.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\time.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\semaphore.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\time32.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\errno.h</file>
             <file>$PROJ_DIR$\..\..\..\modules\nrfx\hal\nrf_clock.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\include\nrfx_spim.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\sys\types.h</file>
             <file>$PROJ_DIR$\..\..\..\modules\nrfx\hal\nrf_spim.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\include\nrfx_spi.h</file>
             <file>$PROJ_DIR$\..\..\..\modules\nrfx\hal\nrf_spi.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\event_groups.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\devices\msp432p4xx\driverlib\rom_map.h</file>
-            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_clock.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_atomic_internal.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf_format.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\mqueue.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\devices\msp432p4xx\driverlib\interrupt.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\sys\_internal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\errno.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\JSMN\jsmn.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\semaphore.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\time32.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\include\nrfx_spim.h</file>
             <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\queue.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\unistd.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\dpl\SystemP.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\atomic\nrf_atomic_internal.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\freertos\Mtx.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\ringbuf\nrf_ringbuf.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\util\nrf_bitmask.h</file>
-            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\semphr.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\memobj\nrf_memobj.h</file>
-            <file>$PROJ_DIR$\..\..\..\components\libraries\atomic\nrf_atomic.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\Power.h</file>
-            <file>$PROJ_DIR$\..\..\..\modules\nrfx\hal\nrf_rtc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\dpl\HwiP.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\time.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\soc\nrfx_atomic_internal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\devices\msp432p4xx\driverlib\rom_map.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\event_groups.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\include\nrfx_power_clock.h</file>
+            <file>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_clock.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\signal.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\utils\List.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\freertos\source\include\semphr.h</file>
             <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\devices\msp432p4xx\driverlib\cpu.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\atomic\nrf_atomic_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\ringbuf\nrf_ringbuf.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\dpl\SystemP.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\atomic\nrf_atomic.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\freertos\Mtx.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\util\nrf_bitmask.h</file>
+            <file>$PROJ_DIR$\..\..\..\modules\nrfx\hal\nrf_rtc.h</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\memobj\nrf_memobj.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\drivers\Power.h</file>
             <file>$PROJ_DIR$\..\..\..\integration\nrfx\nrfx_log.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\cc_pal.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\user.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\SIMPLELINKWIFI.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\cc_pal.h</file>
+            <file>$PROJ_DIR$\_build\heap_4.o</file>
             <file>$TOOLKIT_DIR$\lib\th7M_tlf.a</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\protocol.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\fs.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\flowcont.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netutil.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\device.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\flowcont.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\nonos.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\sl_socket.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\eventreg.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netcfg.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\spawn.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\spawn.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\errors.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlan.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\eventreg.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netapp.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\nonos.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\objInclusion.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\netcfg.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\wlan.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\netapp.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\simplelink.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\netutil.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\sl_socket.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\trace.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlanconfig.c</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\slnetifwifi.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\fs.h</file>
-            <file>$PROJ_DIR$\..\..\..\SimpleLink\wifi\wlanconfig.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+            <file>$PROJ_DIR$\_build\heap_4.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\iar\unistd.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 285 339</file>
+                    <file> 298 373</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\ringbuf\nrf_ringbuf.c</name>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\bsp\bsp.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 92</file>
+                    <file> 276</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 283</file>
+                    <file> 119</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 438 312 311 321 323 326 322 442 350 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327 317 302 300 291</file>
+                    <file> 358 342 324 348 328 331 336 335 406 382 399 390 7 387 337 351 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 314 325 291 319 316 352 302 404 396 401 407 413 361 369 397 333</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_str_formatter.c</name>
+            <name>$PROJ_DIR$\..\..\..\simplelink_Callbacks.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 275</file>
+                    <file> 83</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 282</file>
+                    <file> 89</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327</file>
+                    <file> 391 324 348 328 331 336 351 386 342 185 164 368 364 156 395 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 418 415 428 433 10</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_frontend.c</name>
+            <name>$PROJ_DIR$\..\..\..\main.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 270</file>
+                    <file> 43</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 284</file>
+                    <file> 123</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\external\cJSON\cJSON.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 132</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 152</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 347 311 321 323 326 322 328 345 300 389 371 365 359 7 366 358 353</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 271</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 279</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 389 311 321 323 326 322 328 371 422 312 318 329 314 324 331 332 315 333 325 334 316 319 320 313 303</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_gpiote.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 54</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 50</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 390 375 33 393 312 311 321 323 326 322 310 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 297 317 302 300 298 303 291 381 387 391 392 384 372 351 439 347 345 447 396 350 346 348 373 378 368 388</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\strerror\nrf_strerror.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 41</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 243</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327 364</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\util\app_error_handler_iar.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 265</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 241</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327 302 300 291</file>
+                    <file> 335 342 324 348 328 331 336 185 164 368 351 364 156 395 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 418 415 428 433 10 365 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 315 343 392 358 406 382 399 390 7 387 408 405 393 394 353 398 404 396 401 407 413 361 445 400 423 444 9</file>
                 </tool>
             </inputs>
         </file>
@@ -657,102 +543,26 @@
             <outputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 70</file>
+                    <file> 48</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_spim.c</name>
+            <name>$PROJ_DIR$\..\..\..\json_test.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 84</file>
+                    <file> 161</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 90</file>
+                    <file> 133</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 390 375 33 393 312 311 321 323 326 322 310 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 297 317 302 300 298 303 291 381 387 391 392 423 424 309 351 447 396 350 347 345 346 348 373 378 368 388</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\atomic\nrf_atomic.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 79</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 38</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 442 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327 435</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\util\app_error_weak.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 72</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 98</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 302 312 311 321 323 326 322 300 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 298 303 297 291 396 350 347 345 33 346 305 310 348 327 373 378 368 388 357 355 363 317 364</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\balloc\nrf_balloc.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 286</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 127</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327 373 403 317 302 300 291 368 388 396 378</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\boards\boards.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 51</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 289</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 369 351 390 375 33 393 312 311 321 323 326 322 310 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 297 317 302 300 298 303 291 381 387 391 392 385</file>
+                    <file> 342 324 348 328 331 336 319 351 391 386 368 364 25 432 337 375 359 335 9</file>
                 </tool>
             </inputs>
         </file>
@@ -761,188 +571,36 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 71</file>
+                    <file> 54</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 248</file>
+                    <file> 171</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 297 428 398 390 375 33 393 312 311 321 323 326 322 310 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 317 302 300 298 303 291 381 387 391 392 421 408 396 350 347 345 346 348 373 378 368 388</file>
+                    <file> 314 445 400 399 390 7 387 342 324 348 328 331 336 337 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 325 291 319 316 352 302 404 396 401 407 423 444 402 360 368 364 366 367 388 414 354 412</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_clock.c</name>
+            <name>$PROJ_DIR$\..\..\..\components\boards\boards.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 47</file>
+                    <file> 56</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 267</file>
+                    <file> 307</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 390 375 33 393 312 311 321 323 326 322 310 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 297 317 302 300 298 303 291 381 387 391 392 398 421 408 447 396 350 347 345 346 348 373 378 368 388</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\util\app_util_platform.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 263</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 280</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 317 312 311 321 323 326 322 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 328 306 298 303 297 291</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_nvic.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 272</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 277</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 389 311 321 323 326 322 328 371 422 312 318 329 314 324 331 332 315 333 325 334 316 319 320 313 303</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_spi.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 149</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 140</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 390 375 33 393 312 311 321 323 326 322 310 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 297 317 302 300 298 303 291 381 387 391 392</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_spi.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 114</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 101</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 14 390 375 33 393 312 311 321 323 326 322 310 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 297 317 302 300 298 303 291 381 387 391 392 423 424 411 425</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\bsp\bsp.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 40</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 124</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 352 312 311 321 323 326 322 306 369 351 390 375 33 393 310 328 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 297 317 302 300 298 303 291 381 387 391 392 385 349 356 397 330</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\button\app_button.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 69</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 108</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327 349 302 300 291 351 390 375 393 394 370 376 395 367 374 317 381 387 391 392 397 330 377 384 372 396 373 378 368 388</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\util\app_error.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 53</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 278</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 318 329 314 312 311 321 323 326 322 324 331 332 315 333 325 334 316 319 320 313 300 328 302 306 298 303 297 291</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\util\nrf_assert.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 66</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 231</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 327 312 311 321 323 326 322 318 329 314 324 331 332 315 333 325 334 316 319 320 313 302 300 328 306 298 303 297 291</file>
+                    <file> 406 382 399 390 7 387 342 324 348 328 331 336 337 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 314 325 291 319 316 352 302 404 396 401 407 413</file>
                 </tool>
             </inputs>
         </file>
@@ -951,55 +609,188 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 56</file>
+                    <file> 71</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 74</file>
+                    <file> 51</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313</file>
+                    <file> 342 324 348 328 331 336 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf.c</name>
+            <name>$PROJ_DIR$\..\..\..\external\cJSON\cJSON.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 48</file>
+                    <file> 130</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 268</file>
+                    <file> 157</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327 402 430 437</file>
+                    <file> 368 324 348 328 331 336 351 364 319 391 386 381 372 25 383 370 379</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\components\libraries\timer\app_timer_freertos.c</name>
+            <name>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_gpiote.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 290</file>
+                    <file> 50</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 245</file>
+                    <file> 273</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327 335 330 317 302 300 291 301 292 293 294 295 296 299 304 379 397 389 371</file>
+                    <file> 399 390 7 387 342 324 348 328 331 336 337 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 314 325 291 319 316 352 302 404 396 401 407 410 411 382 456 368 364 460 402 360 366 367 388 414 354 412</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_clock.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 263</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 190</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 399 390 7 387 342 324 348 328 331 336 337 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 314 325 291 319 316 352 302 404 396 401 407 400 423 444 460 402 360 368 364 366 367 388 414 354 412</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 292</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 297</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 391 324 348 328 331 336 351 386 439 342 338 332 327 329 334 339 330 341 340 371 344 347 323 349 352</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_spim.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 80</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 87</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 399 390 7 387 342 324 348 328 331 336 337 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 314 325 291 319 316 352 302 404 396 401 407</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\util\app_error_handler_iar.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 184</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 173</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350 291 319 302</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\integration\nrfx\legacy\nrf_drv_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 125</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 79</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 11 399 390 7 387 342 324 348 328 331 336 337 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 314 325 291 319 316 352 302 404 396 401 407 435 425 426 427</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\ringbuf\nrf_ringbuf.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 75</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 306</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 452 342 324 348 328 331 336 454 360 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350 325 291 319 302</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\strerror\nrf_strerror.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 281</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 169</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350 376</file>
                 </tool>
             </inputs>
         </file>
@@ -1012,32 +803,70 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 118</file>
+                    <file> 104</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 387 390 375 33 393 312 311 321 323 326 322 310 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 297 317 302 300 298 303 291 381 391 392 429</file>
+                    <file> 396 399 390 7 387 342 324 348 328 331 336 337 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 314 325 291 319 316 352 302 404 401 407 440</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf_format.c</name>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\util\app_error_weak.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 52</file>
+                    <file> 64</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 251</file>
+                    <file> 102</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 350 312 311 321 323 326 322 306 347 328 345 33 297 313 346 298 303 305 310 318 329 314 324 331 332 315 333 325 334 316 319 320 348 327 402 437 430</file>
+                    <file> 291 342 324 348 328 331 336 319 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 316 352 314 302 402 360 368 364 7 366 326 337 367 350 388 414 354 412 362 357 380 325 376</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 270</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 191</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350 441 416 448</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\button\app_button.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 63</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 84</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350 361 291 319 302 382 399 390 387 408 405 393 394 353 398 325 404 396 401 407 397 333 389 410 411 402 388 414 354 412</file>
                 </tool>
             </inputs>
         </file>
@@ -1046,289 +875,60 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 276</file>
+                    <file> 295</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 49</file>
+                    <file> 269</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 441 312 311 321 323 326 322 389 328 371 298 303 403 33 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 297 291 305 310 368 373 388 442 350 347 345 346 348</file>
+                    <file> 458 342 324 348 328 331 336 391 351 386 316 352 419 7 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 314 302 326 337 354 388 412 454 360 368 364 366 367</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\main.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 113</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 306 312 311 321 323 326 322 233 178 347 328 345 174 380 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 401 410 406 418 35 335 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 299 304 379 352 369 351 390 375 33 393 394 370 376 395 367 374 381 387 391 392 385 349 428 398 421 408 37</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\simplelink_Callbacks.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 85</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 389 311 321 323 326 322 328 371 312 233 178 347 345 174 380 306 310 386 382 383 417 419 407 404 413 400 183 237 192 256 168 238 188 249 252 186 189 239 171 401 410 406 418 35</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\json_test.c</name>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_str_formatter.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 157</file>
+                    <file> 305</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 131</file>
+                    <file> 320</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 300 328 389 371 347 345 7 415 310 362 354 306 37</file>
+                    <file> 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\flowcont.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 43</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175 173</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\wlan.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 62</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\porting\cc_pal.c</name>
+            <name>$PROJ_DIR$\..\..\..\dpl\ClockP_freertos.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 88</file>
+                    <file> 142</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 96</file>
+                    <file> 139</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 369 351 390 375 33 393 312 311 321 323 326 322 310 328 306 318 329 314 324 331 332 315 333 325 334 316 319 320 313 394 370 376 395 367 374 327 305 297 317 302 300 298 303 291 381 387 391 392 385 335 330 301 292 293 294 295 296 180 174 380 386 382 383 417 419 407 404 413 400 377 384 372 233 178 347 345 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 14 423 424 411 425</file>
+                    <file> 342 324 348 328 331 336 335 391 351 386 365 337 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 392 315 343 409 437</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\sl_socket.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 59</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\fs.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 95</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\nonos.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 82</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\netcfg.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 80</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\wlanconfig.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 42</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\driver.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 120</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175 173</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\eventreg.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 232</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 93</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\netapp.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 86</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\spawn.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 60</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\device.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 247</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 432 404 310 311 321 323 326 322 328 312 413 417 419 233 178 347 345 174 380 306 386 382 383 407 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175 173</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_sdk_wifi_plugin_2_40_00_22\source\ti\drivers\net\wifi\source\netutil.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 57</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175 173</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\memory.c</name>
+            <name>$PROJ_DIR$\..\..\..\dpl\HwiPMSP430_freertos.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
@@ -1336,22 +936,231 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 125</file>
+                    <file> 151</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 310 311 321 323 326 322 328 389 371 347 345 420 405 335 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296</file>
+                    <file> 335 437 342 324 348 328 331 336 337 351 365 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 315 343 420 442 429 421</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\semaphore.c</name>
+            <name>$PROJ_DIR$\..\..\..\dpl\MutexP_freertos.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 158</file>
+                    <file> 148</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 138</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 385 342 324 348 328 331 336 335 337 351 365 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 449 436</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\util\app_error.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 296</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 338 332 327 342 324 348 328 331 336 329 334 339 330 341 340 371 344 347 323 349 319 351 291 335 316 352 314 302</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\timer\app_timer_freertos.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 310</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 168</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350 365 333 325 291 319 302 321 303 308 311 312 313 315 343 392 397 391 386</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\util\app_util_platform.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 182</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 300</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 325 342 324 348 328 331 336 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 351 335 316 352 314 302</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\atomic\nrf_atomic.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 280</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 454 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350 451</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\util\nrf_assert.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 47</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 177</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 350 342 324 348 328 331 336 338 332 327 329 334 339 330 341 340 371 344 347 323 349 291 319 351 335 316 352 314 302</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\modules\nrfx\drivers\src\nrfx_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 147</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 122</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 399 390 7 387 342 324 348 328 331 336 337 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 314 325 291 319 316 352 302 404 396 401 407 426 427 346 382 460 402 360 368 364 366 367 388 414 354 412</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_nvic.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 294</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 299</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 391 324 348 328 331 336 351 386 439 342 338 332 327 329 334 339 330 341 340 371 344 347 323 349 352</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\balloc\nrf_balloc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 304</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 127</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350 388 419 325 291 319 302 354 412 402 414</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\fprintf\nrf_fprintf_format.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 42</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 172</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350 441 448 416</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\log\src\nrf_log_frontend.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 193</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 318</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 360 342 324 348 328 331 336 335 368 351 364 7 314 349 366 316 352 326 337 338 332 327 329 334 339 330 341 340 371 344 347 323 367 350</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\dpl\DebugP_freertos.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 141</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
@@ -1361,16 +1170,50 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 306 389 328 371 335 310 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 440 431 299 304 409 420 405 418 413 383 417 419 407 404 400</file>
+                    <file> 342 324 348 328 331 336 335 391 351 386</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sleep.c</name>
+            <name>$PROJ_DIR$\..\..\..\external\freertos\source\portable\MemMang\heap_1.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 174</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 391 324 348 328 331 336 351 386 365 337 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\dpl\PowerMSP430_freertos.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 111</file>
+                    <file> 120</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 153</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 365 337 324 348 328 331 336 351 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 459 447 450</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\dpl\SemaphoreP_freertos.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 160</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
@@ -1380,26 +1223,102 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 420 405 311 321 323 326 322 383 310 328 312 417 419 407 404 413 400 432 335 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304</file>
+                    <file> 395 342 324 348 328 331 336 335 337 351 437 365 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 449 436</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread.c</name>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_rwlock.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 104</file>
+                    <file> 99</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 133</file>
+                    <file> 113</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 306 389 328 371 335 310 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 299 304 440 431 401 404 413 417 419 383 407 400 410 420 405</file>
+                    <file> 342 324 348 328 331 336 365 337 351 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 449 436 315 343 418 424 430 438 434 384 446 417 415 422 431</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\clock.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 114</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 108</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 342 324 348 328 331 336 384 337 351 438 434 446 424 430 417 422 431 365 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 437</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_barrier.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 124</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 158</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 342 324 348 328 331 336 335 391 351 386 365 337 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 315 343 449 436 418 424 430 438 434 384 446 417 415 422 431</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\reent.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 116</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 106</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 365 337 324 348 328 331 336 351 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 203</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\semaphore.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 137</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 152</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 342 324 348 328 331 336 335 391 351 386 365 337 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 449 436 315 343 437 422 431 433 430 384 438 434 446 424 417</file>
                 </tool>
             </inputs>
         </file>
@@ -1412,108 +1331,13 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 122</file>
+                    <file> 107</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 306 389 328 371 335 310 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 440 431 299 304 401 404 413 417 419 383 407 400 410 420 405</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\dpl\SemaphoreP_freertos.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 163</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 164</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 380 312 311 321 323 326 322 306 310 328 409 335 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 440 431</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\dpl\DebugP_freertos.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 148</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 156</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 306 389 328 371</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_cond.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 116</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 121</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 335 310 328 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 440 431 299 304 401 404 413 417 419 383 407 400 410 420 405</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_rwlock.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 110</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 129</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 335 310 328 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 440 431 299 304 401 404 413 417 419 383 407 400 410 420 405</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\reent.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 115</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 139</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 335 310 311 321 323 326 322 328 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 213</file>
+                    <file> 342 324 348 328 331 336 335 391 351 386 365 337 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 449 436 315 343 418 424 430 438 434 384 446 417 415 422 431</file>
                 </tool>
             </inputs>
         </file>
@@ -1522,64 +1346,7 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 162</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 165</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 310 311 321 323 326 322 328 312 306 389 371 347 345 402 433</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sched.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 103</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 135</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 335 310 328 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 410</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\clock.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 117</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 119</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 383 310 328 417 419 407 404 413 400 420 405 335 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 409</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\dpl\ClockP_freertos.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 154</file>
+                    <file> 136</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
@@ -1589,64 +1356,102 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 306 389 328 371 335 310 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 379 299 304 382 409</file>
+                    <file> 337 324 348 328 331 336 351 342 335 391 386 368 364 441 453</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\dpl\HwiPMSP430_freertos.c</name>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sched.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 141</file>
+                    <file> 92</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 155</file>
+                    <file> 115</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 306 409 312 311 321 323 326 322 310 328 335 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 299 304 412 427 416 414</file>
+                    <file> 342 324 348 328 331 336 365 337 351 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 415</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\dpl\MutexP_freertos.c</name>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\cc_pal.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 146</file>
+                    <file> 97</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 161</file>
+                    <file> 76</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 386 312 311 321 323 326 322 306 310 328 335 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 440 431</file>
+                    <file> 406 382 399 390 7 387 342 324 348 328 331 336 337 351 335 338 332 327 329 334 339 330 341 340 371 344 347 323 349 408 405 393 394 353 398 350 326 314 325 291 319 316 352 302 404 396 401 407 413 365 333 321 303 308 311 312 313 239 233 395 385 409 384 438 434 446 424 430 417 389 410 411 237 164 368 364 156 242 185 261 228 230 231 288 227 229 236 235 257 285 234 11 435 425 426 427</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\mqueue.c</name>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\memory.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 112</file>
+                    <file> 98</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 106</file>
+                    <file> 110</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 306 312 311 321 323 326 322 389 328 371 347 345 402 335 310 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 431 440 299 304 409 406 383 417 419 407 404 413 400 420 405</file>
+                    <file> 337 324 348 328 331 336 351 391 386 368 364 422 431 365 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sleep.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 100</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 140</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 422 431 324 348 328 331 336 384 337 351 342 438 434 446 424 430 417 465 365 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 81</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 131</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 342 324 348 328 331 336 335 391 351 386 365 337 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 315 343 449 436 418 424 430 438 434 384 446 417 415 422 431</file>
                 </tool>
             </inputs>
         </file>
@@ -1655,36 +1460,36 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 105</file>
+                    <file> 96</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 102</file>
+                    <file> 78</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 321 323 326 322 434 310 311 328 335 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 440 431 436</file>
+                    <file> 348 328 331 336 463 337 324 351 365 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 449 436 455</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\dpl\PowerMSP430_freertos.c</name>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\mqueue.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 143</file>
+                    <file> 101</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 160</file>
+                    <file> 94</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 335 310 311 321 323 326 322 328 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 443 445 446</file>
+                    <file> 335 342 324 348 328 331 336 391 351 386 368 364 441 365 337 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 436 449 315 343 437 428 384 438 434 446 424 430 417 422 431</file>
                 </tool>
             </inputs>
         </file>
@@ -1693,64 +1498,140 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 100</file>
+                    <file> 86</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 130</file>
+                    <file> 129</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 306 335 310 328 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 379 299 304 409 420 405 401 404 413 417 419 383 407 400 410</file>
+                    <file> 342 324 348 328 331 336 335 365 337 351 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 316 352 314 302 321 303 308 311 312 326 313 392 315 343 437 422 431 418 424 430 438 434 384 446 417 415</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_barrier.c</name>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_cond.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 123</file>
+                    <file> 118</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 153</file>
+                    <file> 121</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 306 389 328 371 335 310 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 298 303 297 291 301 292 293 294 295 305 296 299 304 440 431 401 404 413 417 419 383 407 400 410 420 405</file>
+                    <file> 342 324 348 328 331 336 365 337 351 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 449 436 315 343 418 424 430 438 434 384 446 417 415 422 431</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\freertos\source\croutine.c</name>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 81</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
                     <file> 45</file>
                 </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 166</file>
+                </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 335 310 311 321 323 326 322 328 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 399</file>
+                    <file> 465 424 337 324 348 328 331 336 351 342 430 438 434 185 164 368 364 156 395 335 385 409 384 446 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163 154</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\freertos\source\queue.c</name>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netapp.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 39</file>
+                    <file> 74</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 85</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\flowcont.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 55</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 282</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163 154</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\sl_socket.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 77</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 70</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netcfg.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 53</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 60</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\spawn.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 58</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
@@ -1760,121 +1641,159 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 389 311 321 323 326 322 328 371 347 345 335 310 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 431</file>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\freertos\source\tasks.c</name>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlanconfig.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 73</file>
+                    <file> 290</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 99</file>
+                    <file> 262</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 389 311 321 323 326 322 328 371 347 345 335 310 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 379 308</file>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json.c</name>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlan.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 144</file>
+                    <file> 52</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 136</file>
+                    <file> 61</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 362 389 311 321 323 326 322 328 371 347 345 354 312 306</file>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\freertos\source\list.c</name>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\eventreg.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 64</file>
+                    <file> 187</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 266</file>
+                    <file> 90</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 389 311 321 323 326 322 328 371 335 310 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 304</file>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\freertos\portable\IAR\nrf52\port.c</name>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 46</file>
+                    <file> 186</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 55</file>
+                    <file> 112</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 335 310 311 321 323 326 322 328 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304</file>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163 154</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\freertos\source\portable\MemMang\heap_1.c</name>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netutil.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 77</file>
+                    <file> 67</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 246</file>
+                    <file> 65</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 389 311 321 323 326 322 328 371 335 310 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304</file>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163 154</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\freertos\source\timers.c</name>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\nonos.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 273</file>
+                    <file> 189</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 274</file>
+                    <file> 72</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 389 311 321 323 326 322 328 371 335 310 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 431 379</file>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\fs.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 95</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 88</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 185 164 368 324 348 328 331 336 351 364 156 395 342 335 337 385 409 384 438 434 446 424 430 417 134 195 176 178 162 167 144 170 183 135 165 181 155 175 163</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\freertos\source\queue.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 272</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 267</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 391 324 348 328 331 336 351 386 368 364 365 337 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 436</file>
                 </tool>
             </inputs>
         </file>
@@ -1883,93 +1802,55 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 89</file>
+                    <file> 82</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 83</file>
+                    <file> 73</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 335 310 311 321 323 326 322 328 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304</file>
+                    <file> 365 337 324 348 328 331 336 351 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\external\freertos\source\stream_buffer.c</name>
+            <name>$PROJ_DIR$\..\..\..\external\freertos\source\timers.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 63</file>
+                    <file> 317</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 269</file>
+                    <file> 293</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 312 311 321 323 326 322 347 328 345 335 310 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 307</file>
+                    <file> 391 324 348 328 331 336 351 386 365 337 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 436 392</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json_engine.c</name>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 147</file>
+                    <file> 146</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 138</file>
+                    <file> 103</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 360 361 354 312 311 321 323 326 322 306</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\parse_common.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 142</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 137</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 354 312 311 321 323 326 322 306 360 361</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\utils.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 151</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 134</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 361 354 312 311 321 323 326 322 306 360</file>
+                    <file> 375 391 324 348 328 331 336 351 386 368 364 359 342 335</file>
                 </tool>
             </inputs>
         </file>
@@ -1978,17 +1859,93 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 288</file>
+                    <file> 309</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 287</file>
+                    <file> 301</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 389 311 321 323 326 322 328 371 335 310 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 379 426</file>
+                    <file> 391 324 348 328 331 336 351 386 365 337 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 392 443</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\freertos\source\list.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 69</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 188</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 391 324 348 328 331 336 351 386 365 337 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 343</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json_engine.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 143</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 117</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 377 378 359 342 324 348 328 331 336 335</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\utils.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 149</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 132</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 378 359 342 324 348 328 331 336 335 377</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\parse_common.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 111</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 105</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 359 342 324 348 328 331 336 335 377 378</file>
                 </tool>
             </inputs>
         </file>
@@ -1997,203 +1954,27 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 262</file>
+                    <file> 180</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 67</file>
+                    <file> 68</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 335 310 311 321 323 326 322 328 312 330 317 313 318 329 314 324 331 332 315 333 325 334 316 319 320 327 302 300 306 298 303 297 291 301 292 293 294 295 305 296 299 304 444 390 375 33 393 394 370 376 395 367 374 381 387 391 392 428 398 421 408</file>
+                    <file> 365 337 324 348 328 331 336 351 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 457 399 390 7 387 408 405 393 394 353 398 404 396 401 407 445 400 423 444</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\_build\blinky_FreeRTOS_pca10056.out</name>
-            <outputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 339</file>
-                </tool>
-                <tool>
-                    <name>OBJCOPY</name>
-                    <file> 261</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 338 69 53 265 72 290 263 51 40 88 132 117 154 81 148 65 260 288 232 68 107 77 141 70 144 147 157 64 61 109 112 105 146 87 76 58 264 66 79 286 71 114 48 52 270 275 276 272 92 271 41 126 47 54 149 84 142 46 89 262 143 104 123 116 128 110 39 115 103 158 163 91 94 111 78 63 56 162 73 100 273 151 75 281 337 452 340 336</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\porting\cc_pal.c</name>
+            <name>$PROJ_DIR$\..\..\..\external\freertos\source\tasks.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 88</file>
+                    <file> 49</file>
                 </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 96</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\porting\cc_pal.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 88</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 96</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\fs.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 95</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netutil.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 57</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175 173</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 247</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 432 404 310 311 321 323 326 322 328 312 413 417 419 233 178 347 345 174 380 306 386 382 383 407 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175 173</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\flowcont.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 43</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175 173</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\nonos.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 82</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\sl_socket.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 59</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netcfg.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 80</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\spawn.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 60</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlan.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 62</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\eventreg.c</name>
-            <outputs>
                 <tool>
                     <name>BICOMP</name>
                     <file> 93</file>
@@ -2202,58 +1983,104 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171</file>
+                    <file> 391 324 348 328 331 336 351 386 368 364 365 337 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 392 345</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.c</name>
+            <name>$PROJ_DIR$\..\..\..\external\freertos\portable\IAR\nrf52\port.c</name>
             <outputs>
                 <tool>
+                    <name>ICCARM</name>
+                    <file> 287</file>
+                </tool>
+                <tool>
                     <name>BICOMP</name>
-                    <file> 120</file>
+                    <file> 66</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175 173</file>
+                    <file> 365 337 324 348 328 331 336 351 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\netapp.c</name>
+            <name>$PROJ_DIR$\..\..\..\external\freertos\source\portable\MemMang\heap_4.c</name>
             <outputs>
                 <tool>
+                    <name>ICCARM</name>
+                    <file> 461</file>
+                </tool>
+                <tool>
                     <name>BICOMP</name>
-                    <file> 86</file>
+                    <file> 464</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171 197 175</file>
+                    <file> 391 324 348 328 331 336 351 386 365 337 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlanconfig.c</name>
+            <name>$PROJ_DIR$\..\..\..\external\freertos\source\croutine.c</name>
             <outputs>
                 <tool>
+                    <name>ICCARM</name>
+                    <file> 62</file>
+                </tool>
+                <tool>
                     <name>BICOMP</name>
-                    <file> 42</file>
+                    <file> 284</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 233 178 347 311 321 323 326 322 328 345 174 380 312 306 310 386 382 383 417 419 407 404 413 400 389 371 183 237 192 256 168 238 188 249 252 186 189 239 171</file>
+                    <file> 365 337 324 348 328 331 336 351 342 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 403</file>
                 </tool>
             </inputs>
         </file>
-        <forcedrebuild>
-            <name>[MULTI_TOOL]</name>
-            <tool>ILINK</tool>
-        </forcedrebuild>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\freertos\source\stream_buffer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 57</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 192</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 342 324 348 328 331 336 368 351 364 365 337 333 325 349 338 332 327 329 334 339 330 341 340 371 344 347 323 350 291 319 335 316 352 314 302 321 303 308 311 312 326 313 315 343 322</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\_build\blinky_FreeRTOS_pca10056.out</name>
+            <outputs>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 179</file>
+                </tool>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 373</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 374 63 46 184 64 310 182 56 276 97 130 114 142 62 141 45 186 309 187 55 95 461 109 48 146 143 161 69 43 98 101 96 148 74 53 67 189 47 59 304 54 125 270 42 193 305 295 294 75 292 281 126 263 50 147 80 111 287 82 180 120 81 124 118 128 99 272 116 92 137 160 83 77 100 58 57 71 136 49 86 317 149 52 290 355 462 363 356</file>
+                </tool>
+            </inputs>
+        </file>
     </configuration>
 </project>

@@ -41,7 +41,6 @@
 #include "FreeRTOS.h"
 #include "SIMPLELINKWIFI.h"
 #include "../simplelink.h"
-//#include "nrf_spi.h"
 #include "nrf_drv_spi.h"
 #include "nrf_gpio.h"
 #include "nrf_drv_gpiote.h"
@@ -49,21 +48,22 @@
 
 #include "cc_pal.h"
 
-
-
-// defined in the project settings now.
-#define SPI_DEFAULT_CONFIG_IRQ_PRIORITY 6
-
-
+/*
 #define WIFI_SPI_SCK_PIN               33 // P1.01
 #define WIFI_SPI_MOSI_PIN              34 // P1.02
 #define WIFI_SPI_MISO_PIN              36 // P1.04
 #define WIFI_SPI_SS_PIN                39 // P1.07
+#define WIFI_DETECT_PIN                37 // P1.05
+*/
 #define WIFI_SPI_IRQ_PRIORITY          NRFX_SPI_DEFAULT_CONFIG_IRQ_PRIORITY
-#define WIFI_SPI_FREQ                  NRF_DRV_SPI_FREQ_4M
+#define WIFI_SPI_FREQ                  NRF_DRV_SPI_FREQ_250K
 #define WIFI_SPI_MODE                  NRF_DRV_SPI_MODE_0
 #define WIFI_SPI_BIT_ORDER             NRF_DRV_SPI_BIT_ORDER_MSB_FIRST
-#define WIFI_DETECT_PIN                37 // P1.05
+
+#define WIFI_SPI_SCK_PIN                26  // P0.26
+#define WIFI_SPI_MOSI_PIN               29  // P0.29
+#define WIFI_SPI_MISO_PIN               30  // P0.30
+#define WIFI_SPI_SS_PIN                 31  // P0.31
 
 /* SX1261 NRESET (OUTPUT) */
 #define WIFI_RADIO_NRESET_GPIO_PIN     43 // P1.11
@@ -72,7 +72,7 @@
 #define WIFI_RADIO_NSS_GPIO_PIN        39 // P1.07
 
 /* SX1261 DIO1 (IRQ INPUT) */
-#define WIFI_RADIO_DIO1_GPIO_PIN       10 // P0.10
+#define WIFI_RADIO_DIO1_GPIO_PIN       37 // P1.05
 
 /* SX1261 ANTSW (ANT SW OUTPUT) */
 #define WIFI_RADIO_ANTSW_GPIO_PIN      29 // P0.29
@@ -84,7 +84,7 @@
 
 
 #define SPI_INSTANCE                    0
-static const nrf_drv_spi_t spi = NRF_DRV_SPI_INSTANCE_0;
+static const nrf_drv_spi_t spi = NRF_DRV_SPI_INSTANCE(SPI_INSTANCE);
 
 /****************************************************************************
    GLOBAL VARIABLES
@@ -140,11 +140,10 @@ void WiFi_init()
        nrf_drv_gpiote_init();
     }
     
-    nrf_drv_gpiote_in_config_t in_configII = GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
-    nrf_drv_gpiote_in_init(curDeviceConfiguration->hostIRQPin, &in_configII, HostIrqGPIO_callback);
-    
-    //nrf_gpio_cfg_output(curDeviceConfiguration->nHIBPin);
-    //nrf_gpio_cfg_output(curDeviceConfiguration->csPin);
+    nrf_drv_gpiote_in_config_t in_config = GPIOTE_CONFIG_IN_SENSE_LOTOHI(true);
+    in_config.pull = NRF_GPIO_PIN_PULLUP;
+    nrf_drv_gpiote_in_init(curDeviceConfiguration->hostIRQPin, &in_config, HostIrqGPIO_callback);
+    nrf_drv_gpiote_in_event_enable(curDeviceConfiguration->hostIRQPin, true);
     
     nrf_drv_gpiote_out_config_t out_config = GPIOTE_CONFIG_OUT_SIMPLE(false);
     nrf_drv_gpiote_out_init(curDeviceConfiguration->nHIBPin, &out_config);
@@ -153,8 +152,8 @@ void WiFi_init()
     nrf_drv_gpiote_out_init(WIFI_RADIO_NRESET_GPIO_PIN, &out_config);
     
     // pull the chip out of reset?
-    nrf_gpio_pin_write(WIFI_RADIO_NRESET_GPIO_PIN, 1);
     nrf_gpio_pin_write(WIFI_RADIO_NRESET_GPIO_PIN, 0);
+    nrf_gpio_pin_write(WIFI_RADIO_NRESET_GPIO_PIN, 1);
 }
 
 /****************************************************************************
@@ -187,10 +186,7 @@ Fd_t spi_Open(char *ifName, unsigned long flags)
    spi_config.mosi_pin = WIFI_SPI_MOSI_PIN;
    spi_config.sck_pin  = WIFI_SPI_SCK_PIN;
    
-   APP_ERROR_CHECK(nrf_drv_spi_init(&spi, &spi_config, spi_event_handler, NULL));
-   
-   // TODO: how to deal with errors that 
-   return 1;
+   return nrf_drv_spi_init(&spi, &spi_config, spi_event_handler, NULL);   
 }
 
 int spi_Close(Fd_t fd)
@@ -319,8 +315,9 @@ int NwpRegisterInterruptHandler(P_EVENT_HANDLER InterruptHdl, void* pValue)
         GPIO_clearInt(curDeviceConfiguration->hostIRQPin);
         GPIO_enableInt(curDeviceConfiguration->hostIRQPin);*/
         
-        nrf_drv_gpiote_in_config_t in_configII = GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
-        nrf_drv_gpiote_in_init(curDeviceConfiguration->hostIRQPin, &in_configII, HostIrqGPIO_callback);
+        nrf_drv_gpiote_in_config_t in_config = GPIOTE_CONFIG_IN_SENSE_TOGGLE(true); //GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
+        in_config.pull = NRF_GPIO_PIN_PULLUP;
+        nrf_drv_gpiote_in_init(curDeviceConfiguration->hostIRQPin, &in_config, HostIrqGPIO_callback);
         
         nrf_gpiote_event_clear((nrf_gpiote_events_t)curDeviceConfiguration->hostIRQPin);
         nrf_drv_gpiote_in_event_enable(curDeviceConfiguration->hostIRQPin, true);
@@ -363,6 +360,7 @@ void NwpPowerOn(void)
     
    // wait 5msec
    ClockP_usleep(5000);
+   
 }
 
 void NwpPowerOff(void)

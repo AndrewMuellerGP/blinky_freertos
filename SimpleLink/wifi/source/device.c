@@ -149,7 +149,7 @@ _i16 sl_Start(const void* pIfHdl, _i8*  pDevName, const P_INIT_CALLBACK pInitCal
     {
         g_pCB->FD = (_SlFd_t)pIfHdl;
     }
-
+    
     ObjIdx = _SlDrvProtectAsyncRespSetting((_u8 *)&AsyncRsp, START_STOP_ID, SL_MAX_SOCKETS);
 
     if (ObjIdx < 0)

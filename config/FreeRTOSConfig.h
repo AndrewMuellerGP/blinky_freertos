@@ -53,6 +53,9 @@
  * See http://www.freertos.org/a00110.html.
  *----------------------------------------------------------*/
 
+#define configSUPPORT_DYNAMIC_ALLOCATION                                          1
+#define configSUPPORT_STATIC_ALLOCATION                                           0
+
 #define configTICK_SOURCE FREERTOS_USE_RTC
 
 #define configUSE_PREEMPTION 1

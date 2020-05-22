@@ -90,7 +90,7 @@ typedef signed int _SlFd_t;
     \warning
  */
 
-#define SL_MEMORY_MGMT_DYNAMIC
+#undef SL_MEMORY_MGMT_DYNAMIC
 
 #ifdef SL_MEMORY_MGMT_DYNAMIC
 

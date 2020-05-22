@@ -245,15 +245,15 @@ bool HwiP_inISR(void)
 {
     bool stat;
 
-   // if ((portNVIC_INT_CTRL_REG & portVECTACTIVE_MASK) == 0)
-    {
-        /* Not currently in an ISR */
-        stat = false;
-    }
-    /*else
+    if (SCB->ICSR & SCB_ICSR_VECTACTIVE_Msk)
     {
         stat = true;
-    }*/
+    }
+    else
+    {
+       /* Not currently in an ISR */
+        stat = false;
+    }
 
     return (stat);
 }

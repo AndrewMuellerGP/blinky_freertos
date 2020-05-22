@@ -293,7 +293,7 @@ void ClockP_stop(ClockP_Handle handle)
  */
 void ClockP_sleep(uint32_t sec)
 {
-    /*TickType_t xDelay;
+    TickType_t xDelay;
 
     if (sec > 0xFFFFFFFF / configTICK_RATE_HZ) {
         xDelay = 0xFFFFFFFF;
@@ -302,7 +302,7 @@ void ClockP_sleep(uint32_t sec)
         xDelay = sec * configTICK_RATE_HZ;
     }
 
-    vTaskDelay(xDelay);*/
+    vTaskDelay(xDelay);
 }
 
 /*
@@ -310,12 +310,12 @@ void ClockP_sleep(uint32_t sec)
  */
 void ClockP_usleep(uint32_t usec)
 {
-    /*TickType_t xDelay;
+    TickType_t xDelay;
 
     // Take the ceiling
     xDelay = (usec + TICK_PERIOD_US - 1) / TICK_PERIOD_US;
 
-    vTaskDelay(xDelay);*/
+    vTaskDelay(xDelay);
 }
 
 /*
