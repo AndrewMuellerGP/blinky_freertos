@@ -16,7 +16,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </JLinkDriver>
     <DebugChecksum>
-        <Checksum>3134825074</Checksum>
+        <Checksum>2999060056</Checksum>
     </DebugChecksum>
     <Trace1>
         <Enabled>0</Enabled>
@@ -115,13 +115,17 @@
     </DisassembleMode>
     <Breakpoints2>
         <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c}.340.17" 0 0 1 "" 0 "" 0</Bp0>
-        <Bp1>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.297.4" 0 0 1 "" 0 "" 0</Bp1>
-        <Bp2>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.286.20" 0 0 1 "" 0 "" 0</Bp2>
-        <Bp3>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlanconfig.c}.62.10" 0 0 1 "" 0 "" 0</Bp3>
-        <Bp4>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c}.157.9" 0 0 1 "" 0 "" 0</Bp4>
-        <Bp5>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c}.189.17" 0 0 1 "" 0 "" 0</Bp5>
-        <Bp6>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.c}.2982.9" 0 0 1 "" 0 "" 0</Bp6>
-        <Count>7</Count>
+        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\wlanconfig.c}.62.10" 0 0 1 "" 0 "" 0</Bp1>
+        <Bp2>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c}.157.9" 0 0 1 "" 0 "" 0</Bp2>
+        <Bp3>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c}.189.17" 0 0 1 "" 0 "" 0</Bp3>
+        <Bp4>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\driver.c}.2982.9" 0 0 1 "" 0 "" 0</Bp4>
+        <Bp5>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.380.4" 0 0 1 "" 0 "" 0</Bp5>
+        <Bp6>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c}.133.9" 0 0 1 "" 0 "" 0</Bp6>
+        <Bp7>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\SimpleLink\wifi\source\device.c}.201.5" 0 0 1 "" 0 "" 0</Bp7>
+        <Bp8>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.300.4" 0 0 1 "" 0 "" 0</Bp8>
+        <Bp9>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.289.20" 0 0 1 "" 0 "" 0</Bp9>
+        <Bp10>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.394.17" 0 0 1 "" 0 "" 0</Bp10>
+        <Count>11</Count>
     </Breakpoints2>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>

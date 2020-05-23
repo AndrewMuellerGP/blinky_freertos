@@ -35,7 +35,7 @@
 *    Simplelink Wi-Fi platform abstraction file
 ******************************************************************************/
 
-
+#include <unistd.h>
 
 #include "boards.h"
 #include "FreeRTOS.h"
@@ -152,8 +152,9 @@ void WiFi_init()
     nrf_drv_gpiote_out_init(WIFI_RADIO_NRESET_GPIO_PIN, &out_config);
     
     // pull the chip out of reset?
-    nrf_gpio_pin_write(WIFI_RADIO_NRESET_GPIO_PIN, 0);
     nrf_gpio_pin_write(WIFI_RADIO_NRESET_GPIO_PIN, 1);
+    usleep(1000000 - 1);
+    nrf_gpio_pin_write(WIFI_RADIO_NRESET_GPIO_PIN, 0);
 }
 
 /****************************************************************************

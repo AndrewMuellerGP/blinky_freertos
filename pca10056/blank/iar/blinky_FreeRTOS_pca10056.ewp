@@ -1131,6 +1131,9 @@
     </configuration>
     <group>
         <name>Application</name>
+        <group>
+            <name>SLHelper</name>
+        </group>
         <file>
             <name>$PROJ_DIR$\..\..\..\json_test.c</name>
         </file>

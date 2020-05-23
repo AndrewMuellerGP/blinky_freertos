@@ -50,6 +50,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <unistd.h>
 
 #include <ti/drivers/net/wifi/simplelink.h>
 
@@ -80,6 +81,11 @@
 #define MAIN_STACK_SIZE         (4096)
 #define TASK_STACK_SIZE         (2048)
 #define SPAWN_TASK_PRIORITY     (9)
+
+#define TARGET_SSID             "ATTmRnycwa"
+
+#define WLAN_EVENT_TOUT             (6000)
+#define TIMEOUT_SEM                 (-1)
 
 TaskHandle_t  led_toggle_task_handle;   /**< Reference to LED0 toggling FreeRTOS task. */
 TimerHandle_t led_toggle_timer_handle;  /**< Reference to LED1 toggling FreeRTOS timer. */
@@ -330,14 +336,158 @@ void* mainThread(void* arg)
    isSuccess = sl_NetAppMDNSUnRegisterService(0, 0, 0);
    if(isSuccess < 0)
    {
-   // Handle Error
-   UART_PRINT("sl_NetAppMDNSUnRegisterService failed - %d\n", isSuccess);
-   return(NULL);
+      // Handle Error
+      UART_PRINT("sl_NetAppMDNSUnRegisterService failed - %d\n", isSuccess);
+      return(NULL);
+   }
+   
+   // TODO: scan on both 2.4Ghz and 5Ghz every x Seconds
+   
+
+   // Make sure no connection policy is not set
+   //   (so no scan is run in the background)
+   SetPolicyCmd_t SetPolicyParams;
+   uint8_t policyOpt = SL_WLAN_CONNECTION_POLICY(0, 0, 0, 0);
+
+   if (sl_WlanPolicySet(SL_WLAN_POLICY_CONNECTION,policyOpt, NULL, 0) < 0)
+   {
+      return NULL;
    }
 
-   // TODO: scan for access points
+   // Set scan parameters for 2.4Gz
+   if (sl_WlanSet(SL_WLAN_CFG_GENERAL_PARAM_ID,
+                  SL_WLAN_GENERAL_PARAM_OPT_SCAN_PARAMS,
+                  sizeof(SetPolicyParams.ScanParamConfig),
+                  (uint8_t *)(&SetPolicyParams.ScanParamConfig)) < 0)
+   {
+      return NULL;
+   }
    
-   while(1);
+   // Set scan parameters for 5Ghz
+   if (sl_WlanSet(SL_WLAN_CFG_GENERAL_PARAM_ID,
+                  SL_WLAN_GENERAL_PARAM_OPT_SCAN_PARAMS_5G,
+                  sizeof(SetPolicyParams.ScanParamConfig5G),
+                  (uint8_t *)(&SetPolicyParams.ScanParamConfig5G)) < 0)
+   {
+      return NULL;
+   }
+
+   // Enable scan
+   policyOpt = SL_WLAN_SCAN_POLICY(1, SetPolicyParams.hiddenSsid);
+
+   // Set scan policy - this API starts the scans
+   if (sl_WlanPolicySet(SL_WLAN_POLICY_SCAN, policyOpt,
+                        (uint8_t*)(&SetPolicyParams.ScanIntervalinSec),
+                        sizeof(SetPolicyParams.ScanIntervalinSec)) < 0)
+   {
+      return NULL;
+   }
+   
+   // Scan for available access points
+   ScanCmd_t scanParams;
+   scanParams.extendedRes = false;
+   scanParams.index = 0;
+   scanParams.numOfentries = 30;
+   
+   memset(&app_CB.gDataBuffer, 0x0, sizeof(app_CB.gDataBuffer));
+   uint8_t triggeredScanTrials = 0;
+   while((triggeredScanTrials++ < 30) && 
+         (sl_WlanGetExtNetworkList(scanParams.index, scanParams.numOfentries, &app_CB.gDataBuffer.extNetEntries[triggeredScanTrials]) <= 0))
+   {
+      // We wait for one second for the NWP to complete
+      // the initiated scan and collect results
+      usleep(1000000 - 1);
+   }
+   
+
+   
+   for (uint8_t i = 0; i < 30; i++)
+   {
+      // find the desired access point in the Access Point list returned from the scan.
+      if ((app_CB.gDataBuffer.extNetEntries[i].SsidLen != 0) &&
+          strncmp((const char*)TARGET_SSID, (const char*)app_CB.gDataBuffer.extNetEntries[i].Ssid, sizeof(TARGET_SSID)))
+      {
+         // connect to the desired access point.
+         SlWlanSecParams_t connectionSecurity;
+         connectionSecurity.Type = SL_WLAN_SEC_TYPE_WPA_WPA2;
+         connectionSecurity.Key = "";
+         connectionSecurity.KeyLen = sizeof("");
+         if (0 == sl_WlanConnect((signed char const*)app_CB.gDataBuffer.extNetEntries[i].Ssid, 
+                                 app_CB.gDataBuffer.extNetEntries[i].SsidLen, 
+                                 app_CB.gDataBuffer.extNetEntries[i].Bssid, 
+                                 &connectionSecurity, 
+                                 NULL))
+         {
+            
+            ConnectCmd_t ConnectParams;
+            memset(&ConnectParams, 0, sizeof(ConnectParams));
+            
+            /* Wait for connection events:
+             * In order to verify that connection was successful,
+             * we pend on two incoming events: Connected and Ip acquired.
+             * The semaphores below are pend by this (Main) context.
+             * They will be signaled once an asynchronous event
+             * Indicating that the NWP has connected and acquired IP address is raised.
+             * For further information, see this application read me file.
+             */
+             if(!IS_CONNECTED(app_CB.Status))
+             {
+                 if(sem_wait_timeout(&app_CB.CON_CB.connectEventSyncObj, WLAN_EVENT_TOUT) == TIMEOUT_SEM)
+                 {
+                     UART_PRINT("\n\r[wlanconnect] : Failed to connect to AP: %s\n\r", ConnectParams.ssid);
+                     FreeConnectCmd(&ConnectParams);
+                     return(-1);
+                 }
+             }
+
+             if(!IS_IP_ACQUIRED(app_CB.Status))
+             {
+                 if(sem_wait_timeout(&app_CB.CON_CB.ip4acquireEventSyncObj, WLAN_EVENT_TOUT) == TIMEOUT_SEM)
+                 {
+                     // In next step try to get IPv6, may be router/AP doesn't support IPv4
+                     UART_PRINT("\n\r[wlanconnect] : Failed to acquire IPv4 address.\n\r");
+                 }
+             }
+
+             if(!IS_IPV6G_ACQUIRED(app_CB.Status))
+             {
+                 if(sem_wait_timeout(&app_CB.CON_CB.ip6acquireEventSyncObj, WLAN_EVENT_TOUT) == TIMEOUT_SEM)
+                 {
+                     UART_PRINT("\n\r[wlanconnect] : Failed to acquire IPv6 address.\n\r");
+                 }
+             }
+
+             if(!IS_IPV6G_ACQUIRED(app_CB.Status) &&
+                !IS_IPV6L_ACQUIRED(app_CB.Status) && !IS_IP_ACQUIRED(app_CB.Status))
+             {
+                 UART_PRINT("\n\r[line:%d, error:%d] %s\n\r", __LINE__, -1, "Network Error");
+             }
+
+             FreeConnectCmd(&ConnectParams);
+    
+    
+            // light up LED 0 to show connected
+            bsp_board_led_on(BSP_BOARD_LED_0);
+            
+            while(1)
+            {
+               // TODO: ping Polka Palace every 10ish seconds
+            
+               // flash LED 1 indicating the ping went out.
+               bsp_board_led_on(BSP_BOARD_LED_1);
+               usleep(1000);
+               bsp_board_led_off(BSP_BOARD_LED_1);
+            }
+         }
+      }
+   }   
+   
+   
+   // setup, scanning, or connection failed ..
+   while(1)
+   {
+      usleep(100);
+   }
 }
 
 /**

@@ -118,6 +118,147 @@ typedef enum
     STATUS_BIT_TX_STARED
 }e_StatusBits;
 
+#define MAX_SERVICE_NAME_LENGTH     (63)
+
+#define CHANNEL_MASK_ALL            (0x1FFF)
+
+/* without channel 140 */
+#define CHANNEL_MASK_ALL_5G         (0x1F7FFFF)
+
+#define RSSI_TH_MAX                 (-95)
+
+typedef struct ScanCmd
+{
+   // Number of Scan Entries to retrieve from the NWP
+   uint8_t numOfentries;
+    
+   // The netEntries array position to start write results from
+   uint8_t index;
+    
+   // Retrieve extended results
+   uint8_t extendedRes;
+}ScanCmd_t;
+
+typedef struct SetPolicyCmd
+{
+   // State of the scans - ON or OFF
+   uint8_t turnOff;
+   
+   // Default is set to 10 Seconds
+   uint32_t ScanIntervalinSec;
+   
+   /* Displays hidden SSID's - Yes or No */
+   uint8_t hiddenSsid;
+   
+   /* Scan parameters configurations -
+      RSSI threshold and channel mask for 2.4Ghz */
+   SlWlanScanParamCommand_t ScanParamConfig;
+   
+   // Scan parameters configurations -
+   // RSSI threshold and channel mask for 5Ghz
+   SlWlanScanParam5GCommand_t ScanParamConfig5G;
+} SetPolicyCmd_t;
+
+typedef struct ConnectCmd
+{
+   // Ap's SSID
+   uint8_t                 *ssid;
+   
+   // Static IP address (for static configuration)
+   uint8_t                 *ip;
+    
+   // Default gateway IP address (for static configuration)
+   uint8_t                 *gw;
+    
+   // Dns IP address (for static configuration)
+   uint8_t                 *dns;
+    
+   // Enterprise user name
+   uint8_t                 *entUserName;
+   
+   // Device Date and Time - IMPORTANT: Date and time
+   // should match the certificate expiration date
+   SlDateTime_t dateTime;
+    
+   // Security parameters - Security Type and Password
+   SlWlanSecParams_t secParams;
+    
+   // Enterprise parameters - Security Type and Password
+   SlWlanSecParamsExt_t secParamsEnt;
+}ConnectCmd_t;
+
+typedef struct StartApCmd 
+{
+   // AP's SSID
+   uint8_t *ssid;
+ 
+   // Determine if AP has hidden SSID
+   uint8_t hidden;
+ 
+   // 802.11 WLAN channel [1-12]
+   uint8_t channel;
+ 
+   // The AP's TX power
+   uint8_t tx_pow;
+   
+   // Limits the number of stations that the AP's has
+   uint8_t sta_limit;
+ 
+   // Security parameters - Security Type and Password
+   SlWlanSecParams_t secParams;
+} StartApCmd_t;
+
+typedef struct CreateFilterCmd 
+{
+   // Header or combination filter
+   SlWlanRxFilterRuleType_t ruleType;
+ 
+   // Returned value for 'sl_WlanRxFilterAdd()'
+   SlWlanRxFilterID_t filterID;
+   
+   // Dictates filter behavior
+   SlWlanRxFilterFlags_u flags;
+   
+   // Match criteria
+   SlWlanRxFilterRule_u rule;
+ 
+   // What are the preconditions to trigger the filter
+   SlWlanRxFilterTrigger_t trigger;
+ 
+   // Operation that execute upon a filter match
+   SlWlanRxFilterAction_t action;
+} CreateFilterCmd_t;
+
+typedef struct WoWLANEnableCmd 
+{
+   // Header or combination filter
+   SlWlanRxFilterRuleType_t ruleType;
+   
+   // Returned value for 'sl_WlanRxFilterAdd()'
+   SlWlanRxFilterID_t filterID;
+ 
+   // Dictates filter behavior
+   SlWlanRxFilterFlags_u flags;
+ 
+   // Match criteria
+   SlWlanRxFilterRule_u rule;
+   
+   // What are the preconditions to trigger the filter
+   SlWlanRxFilterTrigger_t trigger;
+ 
+   // Operation that execute upon a filter match
+   SlWlanRxFilterAction_t action;
+} WoWLANEnableCmd_t;
+
+// Host name or address
+/* SimpleLink Ping command stracture */
+typedef struct PingCmd
+{
+   uint8_t               *host;
+ 
+ SlNetAppPingCommand_t pingCmd;
+}PingCmd_t;
+
 /* Status keeping MACROS */
 
 #define SET_STATUS_BIT(status_variable, bit) status_variable |= (1 << (bit))
