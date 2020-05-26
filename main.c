@@ -1,51 +1,26 @@
 /**
- * Copyright (c) 2015 - 2019, Nordic Semiconductor ASA
+ * Demonstrate the test usage of the CC3135
  *
- * All rights reserved.
+ *  TI-POSIX
+ *  http://software-dl.ti.com/simplelink/esd/simplelink_msp432e4_sdk/2.40.00.11/docs/tiposix/Users_Guide.html
  *
- * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
+ *  LLNL POSIX and pThreads
+ *  https://computing.llnl.gov/tutorials/pthreads/
  *
- * 1. Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer.
+ *  http://e2e.ti.com/support/wireless-connectivity/wifi/f/968/t/835623
+
+ *  http://software-dl.ti.com/simplelink/esd/plugins/simplelink_sdk_wifi_plugin/2_40_00_22/exports/docs/users_guide_simplelink_sdk_wifi_plugin.html#uniflash-cc31xxemu-boost
  *
- * 2. Redistributions in binary form, except as embedded into a Nordic
- *    Semiconductor ASA integrated circuit in a product or a software update for
- *    such product, must reproduce the above copyright notice, this list of
- *    conditions and the following disclaimer in the documentation and/or other
- *    materials provided with the distribution.
+ *  https://e2e.ti.com/support/wireless-connectivity/wifi/f/968/t/876603
+
+ *  Hang on SL Start
+ *  https://e2e.ti.com/support/wireless-connectivity/wifi/f/968/t/707537
  *
- * 3. Neither the name of Nordic Semiconductor ASA nor the names of its
- *    contributors may be used to endorse or promote products derived from this
- *    software without specific prior written permission.
- *
- * 4. This software, with or without modification, must only be used with a
- *    Nordic Semiconductor ASA integrated circuit.
- *
- * 5. Any software provided in binary form under this license must not be reverse
- *    engineered, decompiled, modified and/or disassembled.
- *
- * THIS SOFTWARE IS PROVIDED BY NORDIC SEMICONDUCTOR ASA "AS IS" AND ANY EXPRESS
- * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
- * OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- * GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
- * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- */
-/** @file
- * @defgroup blinky_example_main main.c
- * @{
- * @ingroup blinky_example_freertos
- *
- * @brief Blinky FreeRTOS Example Application main file.
- *
- * This file contains the source code for a sample application using FreeRTOS to blink LEDs.
- *
+ *  SL Start returns Aborted error
+ *  https://e2e.ti.com/support/wireless-connectivity/wifi/f/968/t/776858
+ *  
+ *  SL STOP might need additional SPI_read after reading the header
+ *  http://e2e.ti.com/support/wireless-connectivity/wifi/f/968/p/858459/3176981#3176981?jktype=e2e
  */
 
 #include <stdbool.h>
@@ -82,7 +57,8 @@
 #define TASK_STACK_SIZE         (2048)
 #define SPAWN_TASK_PRIORITY     (9)
 
-#define TARGET_SSID             "ATTmRnycwa"
+#define TARGET_SSID             "Galios"
+#define SEC_KEY                 "Gen2WiFiPW"
 
 #define WLAN_EVENT_TOUT             (6000)
 #define TIMEOUT_SEM                 (-1)
@@ -243,12 +219,12 @@ int32_t initAppVariables(void)
 }
 
 void* mainThread(void* arg)
-{
+{   
    int32_t RetVal;
    pthread_attr_t pAttrs_spawn;
    struct sched_param priParam;
    struct timespec ts = {0};
-
+   
    /* Initializes the SPI interface to the Network
       Processor and peripheral SPI (if defined in the board file) */
    //SPI_init();
@@ -282,7 +258,12 @@ void* mainThread(void* arg)
    
    // Yield control of this tasks until the synchronization Task Control block 
    // is setup by the Spawn task.
-   //taskYIELD();
+   taskYIELD();
+   
+   sl_Stop(0);
+   
+   // Simple Link Library Documentation:
+   // http://software-dl.ti.com/ecs/SIMPLELINK_CC3220_SDK/1_50_00_06/exports/docs/wifi_host_driver_api/html/group___wlan.html#gab8ba00f95398b5dccd80550ab3fc17e5
    
    // Before turning on the NWP on,
    // reset any previously configured parameters
@@ -307,10 +288,17 @@ void* mainThread(void* arg)
      UART_PRINT("sl_start failed - %d\n", isSuccess);
      return(NULL);
    }
-
+   
    // sl_Start returns on success the role that device started on
-   // TODO: RetVal needs to be the value of sl_Start()
-   //app_CB.Role = RetVal;
+   //app_CB.Role = isSuccess;
+   
+   SlDeviceVersion_t ver;
+   uint16_t pConfigLen = sizeof(ver);
+   uint8_t pConfigOpt = SL_DEVICE_GENERAL_VERSION;
+   if (sl_DeviceGet(SL_DEVICE_GENERAL, &pConfigOpt, &pConfigLen, (uint8_t*)(&ver)) < 0)
+   {
+      return NULL;
+   }
 
    // disable the soft-roaming
    SlWlanRegisterLinkQualityEvents_t RegisterLinkQuality;
@@ -347,6 +335,12 @@ void* mainThread(void* arg)
    // Make sure no connection policy is not set
    //   (so no scan is run in the background)
    SetPolicyCmd_t SetPolicyParams;
+   SetPolicyParams.hiddenSsid = 0;
+   SetPolicyParams.ScanParamConfig.ChannelsMask = 0xFFFFFFFF;
+   SetPolicyParams.ScanParamConfig.RssiThreshold = -80;
+   SetPolicyParams.ScanParamConfig5G.ChannelsMask = 0xFFFFFFFF;
+   SetPolicyParams.ScanParamConfig5G.RssiThreshold = -80;
+   SetPolicyParams.ScanIntervalinSec = 10;
    uint8_t policyOpt = SL_WLAN_CONNECTION_POLICY(0, 0, 0, 0);
 
    if (sl_WlanPolicySet(SL_WLAN_POLICY_CONNECTION,policyOpt, NULL, 0) < 0)
@@ -364,14 +358,37 @@ void* mainThread(void* arg)
    }
    
    // Set scan parameters for 5Ghz
+   uint8_t mode = 0x01;
+   uint16_t option = SL_WLAN_GENERAL_PARAM_OPT_ENABLE_5G;
    if (sl_WlanSet(SL_WLAN_CFG_GENERAL_PARAM_ID,
-                  SL_WLAN_GENERAL_PARAM_OPT_SCAN_PARAMS_5G,
-                  sizeof(SetPolicyParams.ScanParamConfig5G),
-                  (uint8_t *)(&SetPolicyParams.ScanParamConfig5G)) < 0)
+                  option,
+                  sizeof(mode),
+                  (uint8_t*)&mode) < 0)
    {
       return NULL;
    }
-
+   
+   
+   SlWlanScanParam5GCommand_t ScanParamConfig5G;
+   option = SL_WLAN_GENERAL_PARAM_OPT_SCAN_PARAMS_5G;
+   
+   // 5.0G channels bits order: 36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132,
+   //                          136, 140, 144, 149, 153, 157, 161, 165, 169, 184, 188, 192, 196 
+        
+   ScanParamConfig5G.ChannelsMask = 0x3FFFFFFF; // Select ChannelsMask for channels 36, 40, 44, 48 
+   ScanParamConfig5G.RssiThreshold = -70;
+   if (sl_WlanSet(SL_WLAN_CFG_GENERAL_PARAM_ID, option, sizeof(SlWlanScanParam5GCommand_t), (_u8 *)&ScanParamConfig5G) < 0)
+   {
+      return NULL;
+   }
+   
+   
+   uint8_t enabled5Ghz = 0;
+   option = SL_WLAN_GENERAL_PARAM_OPT_ENABLE_5G;
+   uint16_t optionLen = sizeof(SlWlanScanParamCommand_t);
+   
+   sl_WlanGet(SL_WLAN_CFG_GENERAL_PARAM_ID, &option, &optionLen, (uint8_t*)&enabled5Ghz);
+   
    // Enable scan
    policyOpt = SL_WLAN_SCAN_POLICY(1, SetPolicyParams.hiddenSsid);
 
@@ -383,110 +400,123 @@ void* mainThread(void* arg)
       return NULL;
    }
    
-   // Scan for available access points
-   ScanCmd_t scanParams;
-   scanParams.extendedRes = false;
-   scanParams.index = 0;
-   scanParams.numOfentries = 30;
    
-   memset(&app_CB.gDataBuffer, 0x0, sizeof(app_CB.gDataBuffer));
-   uint8_t triggeredScanTrials = 0;
-   while((triggeredScanTrials++ < 30) && 
-         (sl_WlanGetExtNetworkList(scanParams.index, scanParams.numOfentries, &app_CB.gDataBuffer.extNetEntries[triggeredScanTrials]) <= 0))
-   {
-      // We wait for one second for the NWP to complete
-      // the initiated scan and collect results
-      usleep(1000000 - 1);
-   }
-   
-
-   
-   for (uint8_t i = 0; i < 30; i++)
-   {
-      // find the desired access point in the Access Point list returned from the scan.
-      if ((app_CB.gDataBuffer.extNetEntries[i].SsidLen != 0) &&
-          strncmp((const char*)TARGET_SSID, (const char*)app_CB.gDataBuffer.extNetEntries[i].Ssid, sizeof(TARGET_SSID)))
-      {
-         // connect to the desired access point.
-         SlWlanSecParams_t connectionSecurity;
-         connectionSecurity.Type = SL_WLAN_SEC_TYPE_WPA_WPA2;
-         connectionSecurity.Key = "";
-         connectionSecurity.KeyLen = sizeof("");
-         if (0 == sl_WlanConnect((signed char const*)app_CB.gDataBuffer.extNetEntries[i].Ssid, 
-                                 app_CB.gDataBuffer.extNetEntries[i].SsidLen, 
-                                 app_CB.gDataBuffer.extNetEntries[i].Bssid, 
-                                 &connectionSecurity, 
-                                 NULL))
-         {
-            
-            ConnectCmd_t ConnectParams;
-            memset(&ConnectParams, 0, sizeof(ConnectParams));
-            
-            /* Wait for connection events:
-             * In order to verify that connection was successful,
-             * we pend on two incoming events: Connected and Ip acquired.
-             * The semaphores below are pend by this (Main) context.
-             * They will be signaled once an asynchronous event
-             * Indicating that the NWP has connected and acquired IP address is raised.
-             * For further information, see this application read me file.
-             */
-             if(!IS_CONNECTED(app_CB.Status))
-             {
-                 if(sem_wait_timeout(&app_CB.CON_CB.connectEventSyncObj, WLAN_EVENT_TOUT) == TIMEOUT_SEM)
-                 {
-                     UART_PRINT("\n\r[wlanconnect] : Failed to connect to AP: %s\n\r", ConnectParams.ssid);
-                     FreeConnectCmd(&ConnectParams);
-                     return(-1);
-                 }
-             }
-
-             if(!IS_IP_ACQUIRED(app_CB.Status))
-             {
-                 if(sem_wait_timeout(&app_CB.CON_CB.ip4acquireEventSyncObj, WLAN_EVENT_TOUT) == TIMEOUT_SEM)
-                 {
-                     // In next step try to get IPv6, may be router/AP doesn't support IPv4
-                     UART_PRINT("\n\r[wlanconnect] : Failed to acquire IPv4 address.\n\r");
-                 }
-             }
-
-             if(!IS_IPV6G_ACQUIRED(app_CB.Status))
-             {
-                 if(sem_wait_timeout(&app_CB.CON_CB.ip6acquireEventSyncObj, WLAN_EVENT_TOUT) == TIMEOUT_SEM)
-                 {
-                     UART_PRINT("\n\r[wlanconnect] : Failed to acquire IPv6 address.\n\r");
-                 }
-             }
-
-             if(!IS_IPV6G_ACQUIRED(app_CB.Status) &&
-                !IS_IPV6L_ACQUIRED(app_CB.Status) && !IS_IP_ACQUIRED(app_CB.Status))
-             {
-                 UART_PRINT("\n\r[line:%d, error:%d] %s\n\r", __LINE__, -1, "Network Error");
-             }
-
-             FreeConnectCmd(&ConnectParams);
-    
-    
-            // light up LED 0 to show connected
-            bsp_board_led_on(BSP_BOARD_LED_0);
-            
-            while(1)
-            {
-               // TODO: ping Polka Palace every 10ish seconds
-            
-               // flash LED 1 indicating the ping went out.
-               bsp_board_led_on(BSP_BOARD_LED_1);
-               usleep(1000);
-               bsp_board_led_off(BSP_BOARD_LED_1);
-            }
-         }
-      }
-   }   
-   
-   
-   // setup, scanning, or connection failed ..
+   // scan and attempt to connect until the desired AP is found and connected to.
    while(1)
    {
-      usleep(100);
+      // Scan for available access points
+      ScanCmd_t scanParams;
+      scanParams.extendedRes = false;
+      scanParams.index = 0;
+      scanParams.numOfentries = 30;
+      
+      memset(&app_CB.gDataBuffer, 0x0, sizeof(app_CB.gDataBuffer));
+      uint8_t triggeredScanTrials = 0;
+      bool scanComplete = false;
+      while((triggeredScanTrials++ < 30) && (!scanComplete))
+      {
+         /*if (sl_WlanGetNetworkList(scanParams.index, scanParams.numOfentries, &app_CB.gDataBuffer.netEntries[index]) == 0)
+         {
+            scanComplete = true;
+         }*/
+         
+         if (sl_WlanGetExtNetworkList(scanParams.index, scanParams.numOfentries, &app_CB.gDataBuffer.extNetEntries[scanParams.index]) > 0)
+         {
+            scanComplete = true;
+         }
+             
+         // We wait for one second for the NWP to complete
+         // the initiated scan and collect results
+         usleep(1000000 - 1);
+      }
+      
+
+      
+      for (uint8_t i = 0; i < 30; i++)
+      {
+         // find the desired access point in the Access Point list returned from the scan.
+         if ((app_CB.gDataBuffer.extNetEntries[i].SsidLen != 0) &&
+             (0 == strncmp((const char*)TARGET_SSID, (const char*)app_CB.gDataBuffer.extNetEntries[i].Ssid, sizeof(TARGET_SSID))))
+         {
+            // connect to the desired access point.
+            SlWlanSecParams_t connectionSecurity;
+            connectionSecurity.Type = SL_WLAN_SEC_TYPE_WPA_WPA2;
+            connectionSecurity.Key = SEC_KEY;
+            connectionSecurity.KeyLen = sizeof(SEC_KEY);
+            if (0 == sl_WlanConnect((signed char const*)app_CB.gDataBuffer.extNetEntries[i].Ssid, 
+                                    app_CB.gDataBuffer.extNetEntries[i].SsidLen, 
+                                    app_CB.gDataBuffer.extNetEntries[i].Bssid, 
+                                    &connectionSecurity, 
+                                    NULL))
+            {
+               
+               ConnectCmd_t ConnectParams;
+               memset(&ConnectParams, 0, sizeof(ConnectParams));
+               
+               /* Wait for connection events:
+                * In order to verify that connection was successful,
+                * we pend on two incoming events: Connected and Ip acquired.
+                * The semaphores below are pend by this (Main) context.
+                * They will be signaled once an asynchronous event
+                * Indicating that the NWP has connected and acquired IP address is raised.
+                * For further information, see this application read me file.
+                */
+                if(!IS_CONNECTED(app_CB.Status))
+                {
+                    if(sem_wait_timeout(&app_CB.CON_CB.connectEventSyncObj, WLAN_EVENT_TOUT) == TIMEOUT_SEM)
+                    {
+                        UART_PRINT("\n\r[wlanconnect] : Failed to connect to AP: %s\n\r", ConnectParams.ssid);
+                        //FreeConnectCmd(&ConnectParams);
+                        //return(-1);
+                    }
+                }
+
+                if(!IS_IP_ACQUIRED(app_CB.Status))
+                {
+                    if(sem_wait_timeout(&app_CB.CON_CB.ip4acquireEventSyncObj, WLAN_EVENT_TOUT) == TIMEOUT_SEM)
+                    {
+                        // In next step try to get IPv6, may be router/AP doesn't support IPv4
+                        UART_PRINT("\n\r[wlanconnect] : Failed to acquire IPv4 address.\n\r");
+                    }
+                }
+
+                if(!IS_IPV6G_ACQUIRED(app_CB.Status))
+                {
+                    if(sem_wait_timeout(&app_CB.CON_CB.ip6acquireEventSyncObj, WLAN_EVENT_TOUT) == TIMEOUT_SEM)
+                    {
+                        UART_PRINT("\n\r[wlanconnect] : Failed to acquire IPv6 address.\n\r");
+                    }
+                }
+
+                if(!IS_IPV6G_ACQUIRED(app_CB.Status) &&
+                   !IS_IPV6L_ACQUIRED(app_CB.Status) && !IS_IP_ACQUIRED(app_CB.Status))
+                {
+                    UART_PRINT("\n\r[line:%d, error:%d] %s\n\r", __LINE__, -1, "Network Error");
+                }
+
+                //FreeConnectCmd(&ConnectParams);
+       
+       
+               // light up LED 0 to show connected
+               bsp_board_led_on(BSP_BOARD_LED_0);
+               
+               while(1)
+               {
+                  // TODO: ping Polka Palace every 10ish seconds
+               
+                  // flash LED 1 indicating the ping went out.
+                  bsp_board_led_invert(BSP_BOARD_LED_1);
+                  usleep(100000 - 1);
+                  taskYIELD();
+               }
+            }
+         }
+      }   
+   
+   
+      // setup, scanning, or connection failed ..
+      // pause for a beat, then try again.
+      usleep(100000 - 1);
    }
 }
 

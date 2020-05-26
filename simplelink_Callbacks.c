@@ -597,6 +597,44 @@ void SimpleLinkNetAppRequestMemFreeEventHandler(uint8_t *buffer)
     /* Unused in this application */
 }
 
+/**
+ *  Set a timeout while waiting on a semaphore for POSIX based OS API.
+ *
+ *  @param          sem     -   points to a semaphore object.
+ *  @param          Timeout -   Timeout in mSec value.
+ *
+ *  @return         Upon successful completion,
+ *                  the function shall return 0.
+ *                  In case of failure,
+ *                  this function would return negative value.
+ *
+ */
+int32_t sem_wait_timeout(sem_t *sem, uint32_t Timeout)
+{
+    struct timespec abstime;
+    abstime.tv_nsec = 0;
+    abstime.tv_sec = 0;
+
+    // Since POSIX timeout are relative and not absolute,
+    // take the current timestamp.
+    clock_gettime(CLOCK_REALTIME, &abstime);
+    if(abstime.tv_nsec < 0)
+    {
+        abstime.tv_sec = Timeout;
+        return (sem_timedwait(sem, &abstime));
+    }
+
+    // Add the amount of time to wait
+    abstime.tv_sec += Timeout / 1000;
+    abstime.tv_nsec += (Timeout % 1000) * 1000000;
+
+    abstime.tv_sec += (abstime.tv_nsec / 1000000000);
+    abstime.tv_nsec = abstime.tv_nsec % 1000000000;
+
+    // Call the semaphore wait API
+    return(sem_timedwait(sem, &abstime));
+}
+
 /*
  *  ======== SimpleLinkWifi_config ========
  */

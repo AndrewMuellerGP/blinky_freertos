@@ -12,12 +12,13 @@
 #include <task.h>
 #include <portmacro.h>
 
+/*
 #define __MSP432_H__
 #include <ti/devices/msp432p4xx/driverlib/rom.h>
 #include <ti/devices/msp432p4xx/driverlib/rom_map.h>
 #include <ti/devices/msp432p4xx/driverlib/interrupt.h>
 #undef __MSP432_H__
-
+*/
 #define MAX_INTERRUPTS 256
 
 
@@ -175,18 +176,18 @@ static volatile HwiP_NVIC *HwiP_nvic = (HwiP_NVIC *)0xE000E000;
 void HwiP_clearInterrupt(int interruptNum)
 {
     // TODO: Should driverlib functions be prefixed with MAP_?
-    Interrupt_unpendInterrupt((uint32_t)interruptNum);
+    //Interrupt_unpendInterrupt((uint32_t)interruptNum);
 }
 
 void HwiP_delete(HwiP_Handle handle)
 {
-    Interrupt_disableInterrupt((int)handle);
-    Interrupt_unregisterInterrupt((int)handle);
+    //Interrupt_disableInterrupt((int)handle);
+    //Interrupt_unregisterInterrupt((int)handle);
 }
 
 void HwiP_disableInterrupt(int interruptNum)
 {
-    Interrupt_disableInterrupt(interruptNum);
+    //Interrupt_disableInterrupt(interruptNum);
 }
 
 void HwiP_dispatch(void)
@@ -209,7 +210,7 @@ void HwiP_dispatch(void)
  */
 void HwiP_enableInterrupt(int interruptNum)
 {
-    Interrupt_enableInterrupt(interruptNum);
+    //Interrupt_enableInterrupt(interruptNum);
 }
 
 
@@ -229,12 +230,12 @@ HwiP_Handle HwiP_create(int interruptNum,
     HwiP_dispatchTable[interruptNum].arg = params->arg;
 
     // TODO: Should driverlib functions be prefixed with MAP_?
-    Interrupt_registerInterrupt(interruptNum, (void(*)(void))HwiP_dispatch);
-    Interrupt_setPriority(interruptNum, params->priority);
+    //Interrupt_registerInterrupt(interruptNum, (void(*)(void))HwiP_dispatch);
+    //Interrupt_setPriority(interruptNum, params->priority);
 
     if (params->enableInt)
     {
-        Interrupt_enableInterrupt(interruptNum);
+        //Interrupt_enableInterrupt(interruptNum);
     }
 
     return ((HwiP_Handle)interruptNum);
@@ -268,7 +269,7 @@ void HwiP_Params_init(HwiP_Params *params)
 
 void HwiP_plug(int interruptNum, void *fxn)
 {
-    Interrupt_registerInterrupt(interruptNum, (void(*)(void))fxn);
+    //Interrupt_registerInterrupt(interruptNum, (void(*)(void))fxn);
 }
 
 void HwiP_post(int interruptNum)

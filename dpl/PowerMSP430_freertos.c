@@ -4,7 +4,7 @@
 
 #include <ti/drivers/Power.h>
 
-#include <ti/devices/msp432p4xx/driverlib/cpu.h>
+//#include <ti/devices/msp432p4xx/driverlib/cpu.h>
 
 
 void PowerMSP430_deepSleepPolicy()
