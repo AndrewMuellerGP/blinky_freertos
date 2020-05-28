@@ -1151,6 +1151,12 @@
         <file>
             <name>$PROJ_DIR$\..\..\..\simplelink_structures.h</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\WiFiDriver.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\WiFiDriver.h</name>
+        </file>
     </group>
     <group>
         <name>Board Definition</name>

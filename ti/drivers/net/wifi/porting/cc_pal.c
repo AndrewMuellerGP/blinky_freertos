@@ -1,39 +1,10 @@
-/*
- * Copyright (c) 2017-2018, Texas Instruments Incorporated
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- * *  Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- *
- * *  Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- *
- * *  Neither the name of Texas Instruments Incorporated nor the names of
- *    its contributors may be used to endorse or promote products derived
- *    from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
- * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
- * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
- * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
- * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+// Copyright (c) 2020 Confidential Information Georgia-Pacific Consumer Products
+// Not for further distribution.  All rights reserved.
+
+/**
+ * Simplelink Wi-Fi platform abstraction layer for the Nordic NRF52840 host
+ * micro-controller.
  */
-/******************************************************************************
-*     cc_pal.c
-*
-*    Simplelink Wi-Fi platform abstraction file
-******************************************************************************/
 
 #include <unistd.h>
 
@@ -49,6 +20,8 @@
 #include "cc_pal.h"
 
 /*
+The following are the pins as defined in the LORA system.  Will likely migrate
+to these or similar on the prototype hardware.
 #define WIFI_SPI_SCK_PIN               33 // P1.01
 #define WIFI_SPI_MOSI_PIN              34 // P1.02
 #define WIFI_SPI_MISO_PIN              36 // P1.04
@@ -82,7 +55,7 @@
 
 #define WIFI_RADIO_NHIB_GPIO_PIN       35 // P1.03
 
-
+// define the NRF52840 SPI interface to use.
 #define SPI_INSTANCE                    0
 static const nrf_drv_spi_t spi = NRF_DRV_SPI_INSTANCE(SPI_INSTANCE);
 
@@ -126,7 +99,7 @@ const WiFi_Config WiFi_config[1] =
 ****************************************************************************/
 void WiFi_init()
 {
-    /* We need to have at least one WiFi module. */
+    // Verify we have at least one WiFi module.
     if(WiFi_count == 0)
     {
         return;
@@ -134,24 +107,29 @@ void WiFi_init()
 
     curDeviceConfiguration = (SIMPLELINKWIFI_HWAttrsV1*) WiFi_config[0].hwAttrs;
     
-    // initialize the IO
+    // initialize the GPIO IO used for wifi interrupt generation
     if (!nrf_drv_gpiote_is_init())
     {
        nrf_drv_gpiote_init();
     }
     
+    // interrupt line from the wifi chip back to the NRF52840
     nrf_drv_gpiote_in_config_t in_config = GPIOTE_CONFIG_IN_SENSE_LOTOHI(true);
     in_config.pull = NRF_GPIO_PIN_PULLUP;
     nrf_drv_gpiote_in_init(curDeviceConfiguration->hostIRQPin, &in_config, HostIrqGPIO_callback);
     nrf_drv_gpiote_in_event_enable(curDeviceConfiguration->hostIRQPin, true);
     
+    // output lines to the chip select and the inhibit pins.
     nrf_drv_gpiote_out_config_t out_config = GPIOTE_CONFIG_OUT_SIMPLE(false);
     nrf_drv_gpiote_out_init(curDeviceConfiguration->nHIBPin, &out_config);
     nrf_drv_gpiote_out_init(curDeviceConfiguration->csPin, &out_config);
     
+    // output line to the reset pin
     nrf_drv_gpiote_out_init(WIFI_RADIO_NRESET_GPIO_PIN, &out_config);
     
     // pull the chip out of reset?
+    // NOTE: CC3135 dev kit does not route the reset pin on the socket to the
+    //       micro.
     nrf_gpio_pin_write(WIFI_RADIO_NRESET_GPIO_PIN, 1);
     usleep(1000000 - 1);
     nrf_gpio_pin_write(WIFI_RADIO_NRESET_GPIO_PIN, 0);
@@ -299,9 +277,6 @@ int NwpRegisterInterruptHandler(P_EVENT_HANDLER InterruptHdl, void* pValue)
     // Check for unregister condition
     if(NULL == InterruptHdl)
     {
-        /*GPIO_disableInt(curDeviceConfiguration->hostIRQPin);
-        GPIO_clearInt(curDeviceConfiguration->hostIRQPin);*/
-       
         nrf_drv_gpiote_in_event_disable(curDeviceConfiguration->hostIRQPin);
         nrf_gpiote_event_clear((nrf_gpiote_events_t)curDeviceConfiguration->hostIRQPin);
        
@@ -311,10 +286,6 @@ int NwpRegisterInterruptHandler(P_EVENT_HANDLER InterruptHdl, void* pValue)
     else if(NULL == g_Host_irq_Hndlr)
     {
         g_Host_irq_Hndlr = InterruptHdl;
-        /*GPIO_setCallback(curDeviceConfiguration->hostIRQPin,
-                         HostIrqGPIO_callback);
-        GPIO_clearInt(curDeviceConfiguration->hostIRQPin);
-        GPIO_enableInt(curDeviceConfiguration->hostIRQPin);*/
         
         nrf_drv_gpiote_in_config_t in_config = GPIOTE_CONFIG_IN_SENSE_TOGGLE(true); //GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
         in_config.pull = NRF_GPIO_PIN_PULLUP;
@@ -344,10 +315,12 @@ void HostIrqGPIO_callback(nrf_drv_gpiote_pin_t pin, nrf_gpiote_polarity_t polari
 
 void NwpMaskInterrupt()
 {
+   // TODO: decide if this is needed
 }
 
 void NwpUnMaskInterrupt()
 {
+   // TODO: decide if this is needed
 }
 
 void NwpPowerOnPreamble(void)
