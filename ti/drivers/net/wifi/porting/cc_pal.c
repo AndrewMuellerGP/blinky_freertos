@@ -287,7 +287,7 @@ int NwpRegisterInterruptHandler(P_EVENT_HANDLER InterruptHdl, void* pValue)
     {
         g_Host_irq_Hndlr = InterruptHdl;
         
-        nrf_drv_gpiote_in_config_t in_config = GPIOTE_CONFIG_IN_SENSE_TOGGLE(true); //GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
+        nrf_drv_gpiote_in_config_t in_config = GPIOTE_CONFIG_IN_SENSE_HITOLO(true); //GPIOTE_CONFIG_IN_SENSE_TOGGLE(true); //GPIOTE_CONFIG_IN_SENSE_HITOLO(true);
         in_config.pull = NRF_GPIO_PIN_PULLUP;
         nrf_drv_gpiote_in_init(curDeviceConfiguration->hostIRQPin, &in_config, HostIrqGPIO_callback);
         

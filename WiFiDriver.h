@@ -7,7 +7,13 @@
  * 
  */
 
-
+/**
+ * Start the SimpleLink library.
+ *
+ * @returns True if the SimpleLink library was started successfully.
+ *          False if an error occured.
+ */
+bool WiFiDriver_StartSimpleLink();
 
 /**
  * Initialize the WiFi driver.

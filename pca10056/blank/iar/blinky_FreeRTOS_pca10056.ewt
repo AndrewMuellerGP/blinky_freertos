@@ -1402,6 +1402,12 @@
             <name>$PROJ_DIR$\..\..\..\main.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\..\MQTTDriver.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\MQTTDriver.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\config\sdk_config.h</name>
         </file>
         <file>
@@ -1780,6 +1786,78 @@
                         <name>$PROJ_DIR$\..\..\..\ti\drivers\net\wifi\wlanconfig.h</name>
                     </file>
                 </group>
+            </group>
+            <group>
+                <name>net</name>
+                <group>
+                    <name>mqtt</name>
+                    <group>
+                        <name>client</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.c</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.h</name>
+                        </file>
+                    </group>
+                    <group>
+                        <name>common</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\common\mqtt_common.c</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\common\mqtt_common.h</name>
+                        </file>
+                    </group>
+                    <group>
+                        <name>interface</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttclient.c</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttserver.c</name>
+                        </file>
+                    </group>
+                    <group>
+                        <name>platform</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\platform\mqtt_net_func.c</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\platform\mqtt_net_func.h</name>
+                        </file>
+                    </group>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\mqttclient.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\mqttserver.h</name>
+                    </file>
+                </group>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnet.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slneterr.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetif.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetif.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetsock.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetsock.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetutils.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetutils.h</name>
+                </file>
             </group>
         </group>
         <group>

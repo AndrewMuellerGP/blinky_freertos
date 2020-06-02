@@ -13,6 +13,8 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
+#include "MQTTDriver.h"
+
 #define TASK_STACK_SIZE             (2048)
 #define SPAWN_TASK_PRIORITY         (9)
 #define WLAN_EVENT_TOUT             (6000)
@@ -26,6 +28,8 @@ TaskHandle_t gSpawn_thread = NULL;
 
 static int32_t WiFiDriver_SimpleLink_Init()
 {
+   WiFi_init();
+   
    app_CB.Status = 0;
    app_CB.Role = ROLE_RESERVED;
    app_CB.Exit = FALSE;
@@ -117,6 +121,7 @@ static bool WiFiDriver_SpawnThread()
       asynchronous events sent from the NWP.
     * Every event is classified and later handled
       by the Host driver event handlers. */
+   
    if(pthread_create(&gSpawn_thread, &pAttrs_spawn, sl_Task, NULL) < 0)
    {
       UART_PRINT("Network Terminal - Unable to create spawn thread \n");
@@ -130,10 +135,8 @@ static bool WiFiDriver_SpawnThread()
    return success;
 }
 
-bool WiFiDriver_Init()
+bool WiFiDriver_StartSimpleLink()
 {
-   // TODO: start timer to catch if init hangs so we can retry
-   
    if (WiFiDriver_SimpleLink_Init() < 0)
    {
       return false;
@@ -144,8 +147,15 @@ bool WiFiDriver_Init()
       return false;
    }
    
+   return true;
+}
+
+bool WiFiDriver_Init()
+{
+   // TODO: start timer to catch if init hangs so we can retry
+   
    // ensure the CC3135 is stopped before re-initializing.
-   sl_Stop(0);
+   //sl_Stop(0);
    
    // Simple Link Library Documentation:
    // http://software-dl.ti.com/ecs/SIMPLELINK_CC3220_SDK/1_50_00_06/exports/docs/wifi_host_driver_api/html/group___wlan.html#gab8ba00f95398b5dccd80550ab3fc17e5
@@ -273,6 +283,19 @@ bool WiFiDriver_Init()
    
    sl_WlanGet(SL_WLAN_CFG_GENERAL_PARAM_ID, &option, &optionLen, (uint8_t*)&enabled5Ghz);
    
+   
+   /*uint8_t macAddressVal[SL_MAC_ADDR_LEN];
+   uint8_t macAddressLen = SL_MAC_ADDR_LEN;
+   sl_NetCfgGet(SL_MAC_ADDRESS_GET, NULL,&macAddressLen,(_u8 *)macAddressVal);
+   */
+   uint8_t macAddressVal[SL_MAC_ADDR_LEN];
+   uint16_t macAddressLen = SL_MAC_ADDR_LEN;
+   uint16_t ConfigOpt = 0;
+   sl_NetCfgGet(SL_NETCFG_MAC_ADDRESS_GET,&ConfigOpt,&macAddressLen,(_u8 *)macAddressVal);
+   
+   // initialize the message queue telemetry transport pub/sub system.
+   MQTT_Init(macAddressVal, macAddressLen);
+          
    return true;
 }
 

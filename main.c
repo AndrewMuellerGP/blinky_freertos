@@ -49,6 +49,7 @@
 #include "json_test.h"
 
 #include "WiFiDriver.h"
+#include "MQTTDriver.h"
 
 #if LEDS_NUMBER <= 2
 #error "Board is not equipped with enough amount of LEDs"
@@ -72,6 +73,8 @@ appControlBlock app_CB;
 extern void UART_PRINT(char* label, ...);
 
 void* mainThread(void* arg);
+
+
 
 int main(void)
 {
@@ -147,11 +150,13 @@ void* mainThread(void* arg)
    /* Initializes the SPI interface to the Network
       Processor and peripheral SPI (if defined in the board file) */
    //WiFi_init();
-
-   while(false == WiFiDriver_Init())
-   {
-      // if the initialization fails, just wait for a beat and then try again.
-      usleep(1000000 - 1);
+   if (WiFiDriver_StartSimpleLink())
+   {   
+      while(false == WiFiDriver_Init())
+      {
+         // if the initialization fails, just wait for a beat and then try again.
+         usleep(1000000 - 1);
+      }
    }
    
    // scan and attempt to connect until the desired AP is found and connected to.
@@ -171,6 +176,8 @@ void* mainThread(void* arg)
             while(1)
             {
                // TODO: ping Polka Palace every 10ish seconds
+               //WiFiDriver_Send(TEST_MQTT);
+               MQTT_Publish();
             
                // flash LED 1 indicating the ping went out.
                bsp_board_led_invert(BSP_BOARD_LED_1);

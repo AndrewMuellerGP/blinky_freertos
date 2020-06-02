@@ -16,7 +16,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </JLinkDriver>
     <DebugChecksum>
-        <Checksum>511215627</Checksum>
+        <Checksum>2603953991</Checksum>
     </DebugChecksum>
     <Trace1>
         <Enabled>0</Enabled>
@@ -126,8 +126,11 @@
         <Bp6>_ 0 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.0.1" 0 0 1 "" 0 "" 0</Bp6>
         <Bp7>_ 0 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.0.1" 0 0 1 "" 0 "" 0</Bp7>
         <Bp8>_ 0 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.0.1" 0 0 1 "" 0 "" 0</Bp8>
-        <Bp9>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.151.19" 0 0 1 "" 0 "" 0</Bp9>
-        <Count>10</Count>
+        <Bp9>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\MQTTDriver.c}.205.4" 0 0 1 "" 0 "" 0</Bp9>
+        <Bp10>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\MQTTDriver.c}.228.12" 0 0 1 "" 0 "" 0</Bp10>
+        <Bp11>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttclient.c}.982.5" 0 0 1 "" 0 "" 0</Bp11>
+        <Bp12>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.c}.795.13" 0 0 1 "" 0 "" 0</Bp12>
+        <Count>13</Count>
     </Breakpoints2>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>
