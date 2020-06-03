@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
-    <fileChecksum>4022896450</fileChecksum>
+    <fileChecksum>1841429151</fileChecksum>
     <configuration>
         <name>nrf52840_xxaa</name>
         <outputs>
@@ -524,6 +524,10 @@
             <file>$PROJ_DIR$\_build\nrfx_atomic.__cstat.et</file>
             <file>$PROJ_DIR$\_build\nrfx_spi.__cstat.et</file>
             <file>$PROJ_DIR$\_build\nrf_log_frontend.__cstat.et</file>
+            <file>$PROJ_DIR$\..\..\..\ti\net\bsd\errnoutil.c</file>
+            <file>$PROJ_DIR$\..\..\..\ti\net\bsd\netdb.c</file>
+            <file>$PROJ_DIR$\..\..\..\ti\net\bsd\socket.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client.c</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\mqtt\mqttserver.h</file>
             <file>$PROJ_DIR$\_build\mqttclient.__cstat.et</file>
             <file>$PROJ_DIR$\_build\mqttserver.__cstat.et</file>
@@ -536,6 +540,18 @@
             <file>$PROJ_DIR$\_build\mqtt_common.__cstat.et</file>
             <file>$PROJ_DIR$\_build\client_core.__cstat.et</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\mqtt\common\mqtt_common.c</file>
+            <file>$PROJ_DIR$\_build\AWSDriver.o</file>
+            <file>$PROJ_DIR$\_build\AWSDriver.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\AWSDriver.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\network_interface.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_error.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\timer_platform.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_version.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\network_platform.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_mqtt_client.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_mqtt_client_common_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_mqtt_client_interface.h</file>
             <file>$PROJ_DIR$\..\..\..\MQTTDriver.h</file>
             <file>$PROJ_DIR$\..\..\..\MQTTDriver.c</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.h</file>
@@ -552,20 +568,81 @@
             <file>$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttclient.c</file>
             <file>$PROJ_DIR$\_build\mqttserver.o</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\mqtt\server\server_pkts.h</file>
+            <file>$PROJ_DIR$\..\..\..\ti\net\bsd\arpa\inet.h</file>
+            <file>$PROJ_DIR$\..\..\..\ti\net\bsd\sys\socket.h</file>
+            <file>$PROJ_DIR$\..\..\..\ti\net\bsd\sys\select.h</file>
+            <file>$PROJ_DIR$\..\..\..\ti\net\bsd\errnoutil.h</file>
+            <file>$PROJ_DIR$\..\..\..\ti\net\bsd\netdb.h</file>
+            <file>$PROJ_DIR$\..\..\..\ti\net\bsd\netinet\in.h</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\mqtt\mqttclient.h</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\mqtt\common\mqtt_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_yield.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_unsubscribe.c</file>
+            <file>$PROJ_DIR$\..\..\..\AWSDriver.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_log.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_subscribe.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_connect.c</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_publish.o</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_publish.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\aws_iot_config.h</file>
+            <file>$PROJ_DIR$\_build\titimer.xcl</file>
+            <file>$PROJ_DIR$\_build\titimer.o</file>
+            <file>$PROJ_DIR$\_build\lseek.o</file>
+            <file>$PROJ_DIR$\_build\lseek.xcl</file>
+            <file>$PROJ_DIR$\_build\close.o</file>
+            <file>$PROJ_DIR$\_build\rename.xcl</file>
+            <file>$PROJ_DIR$\_build\write.o</file>
+            <file>$PROJ_DIR$\_build\open.xcl</file>
+            <file>$PROJ_DIR$\_build\read.o</file>
+            <file>$PROJ_DIR$\_build\open.o</file>
+            <file>$PROJ_DIR$\_build\rename.o</file>
+            <file>$PROJ_DIR$\_build\close.xcl</file>
+            <file>$PROJ_DIR$\_build\read.xcl</file>
+            <file>$PROJ_DIR$\_build\write.xcl</file>
+            <file>$PROJ_DIR$\_build\remove.xcl</file>
+            <file>$PROJ_DIR$\_build\remove.o</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_common_internal.c</file>
+            <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
+            <file>$PROJ_DIR$\_build\netdb.o</file>
+            <file>$PROJ_DIR$\_build\socket.o</file>
+            <file>$PROJ_DIR$\_build\netdb.xcl</file>
+            <file>$PROJ_DIR$\_build\socket.xcl</file>
+            <file>$PROJ_DIR$\_build\errnoutil.o</file>
+            <file>$PROJ_DIR$\_build\errnoutil.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\network_sl.c</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_yield.o</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_connect.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_publish.c</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_yield.xcl</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client.xcl</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_unsubscribe.xcl</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_unsubscribe.o</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client.o</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_connect.o</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_subscribe.xcl</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_subscribe.o</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\linux\common\timer.c</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\timer_interface.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\linux\common\timer_platform.h</file>
+            <file>$PROJ_DIR$\_build\network_sl.o</file>
+            <file>$PROJ_DIR$\_build\network_sl.xcl</file>
             <file>$PROJ_DIR$\_build\mqtt_common.xcl</file>
             <file>$PROJ_DIR$\_build\mqtt_common.o</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.c</file>
             <file>$PROJ_DIR$\_build\client_core.o</file>
             <file>$PROJ_DIR$\_build\client_core.xcl</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\slnetsock.h</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\titimer.c</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_common_internal.xcl</file>
+            <file>$PROJ_DIR$\_build\aws_iot_mqtt_client_common_internal.o</file>
+            <file>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\timer.c</file>
             <file>$PROJ_DIR$\_build\slnetif.xcl</file>
             <file>$PROJ_DIR$\_build\slnetif.o</file>
             <file>$PROJ_DIR$\_build\slnetsock.o</file>
             <file>$PROJ_DIR$\_build\slnetutils.o</file>
             <file>$PROJ_DIR$\_build\slnetutils.xcl</file>
             <file>$PROJ_DIR$\_build\slnetsock.xcl</file>
+            <file>$TOOLKIT_DIR$\inc\c\LowLevelIOInterface.h</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\slnet.h</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\slnetutils.c</file>
             <file>$PROJ_DIR$\..\..\..\ti\net\slnetutils.h</file>
@@ -576,6 +653,13 @@
             <file>$PROJ_DIR$\..\..\..\ti\net\slneterr.h</file>
             <file>$PROJ_DIR$\_build\MQTTDriver.o</file>
             <file>$PROJ_DIR$\_build\MQTTDriver.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\file\remove.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\file\lseek.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\file\rename.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\file\write.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\file\open.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\file\close.c</file>
+            <file>$PROJ_DIR$\..\..\..\components\libraries\file\read.c</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
@@ -1396,7 +1480,7 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 109 96 125 89 76 80 102 225 244 120 130 251 401 147 266 277 95 105 271 388 421 422 224 223 154 470 475 482 473 33 459 97 124 87 116 77 66 98 94 114 151 122 110 88 104 384 474 462 479 123 463 134 99 57 117 68 100 74 137 71 464 480 468 390 477 118 268 342 269 323 276 317 254 267 260 265 253 333 263 220 221 236 222 35 152 115 111 93 47 84 61 86 73 65 483 157 485 460 138 140 385 417 415 32 36 531</file>
+                    <file> 109 96 125 89 76 80 102 225 244 120 130 251 401 147 266 277 95 105 271 388 421 422 224 223 154 470 475 482 473 33 459 97 124 87 116 77 66 98 94 114 151 122 110 88 104 384 474 462 479 123 463 134 99 57 117 68 100 74 137 71 464 480 468 390 477 118 268 342 269 323 276 317 254 267 260 265 253 333 263 220 221 236 222 35 152 115 111 93 47 84 61 86 73 65 483 157 485 460 138 140 385 417 415 32 36 573</file>
                 </tool>
             </inputs>
         </file>
@@ -1409,7 +1493,7 @@
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 526</file>
+                    <file> 530</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
@@ -1419,7 +1503,7 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 109 96 125 89 76 80 102 225 244 120 130 251 401 147 266 277 95 105 271 388 421 422 224 223 154 470 475 482 473 33 459 97 124 87 116 77 66 98 94 114 151 122 110 88 104 384 474 462 479 123 463 134 99 57 117 68 100 74 137 71 464 480 468 390 477 118 268 342 269 323 276 317 254 267 260 265 253 333 263 220 221 236 222 35 152 115 111 93 47 84 61 86 73 65 531</file>
+                    <file> 109 96 125 89 76 80 102 225 244 120 130 251 401 147 266 277 95 105 271 388 421 422 224 223 154 470 475 482 473 33 459 97 124 87 116 77 66 98 94 114 151 122 110 88 104 384 474 462 479 123 463 134 99 57 117 68 100 74 137 71 464 480 468 390 477 118 268 342 269 323 276 317 254 267 260 265 253 333 263 220 221 236 222 35 152 115 111 93 47 84 61 86 73 65 547</file>
                 </tool>
             </inputs>
         </file>
@@ -1438,7 +1522,7 @@
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 149 368 197 187 363 82 178 360 49 314 176 552 297 160 359 161 190 166 60 186 357 296 410 308 213 199 173 208 361 202 319 550 535 541 569 545 285 295 189 196 366 369 163 195 358 52 373 300 44 193 175 64 85 72 215 90 46 164 63 210 177 354 337 53 313 165 167 356 289 310 162 293 50 284 332 169 192 326 346 324 556 557 558 351 349 353 180 204 292 69 216 433 367 79 153 397 155 136</file>
+                    <file> 149 368 197 187 363 82 178 612 629 613 577 615 611 605 535 360 49 314 176 624 297 160 584 359 161 190 166 602 60 186 357 296 410 308 213 199 173 208 361 582 202 319 622 551 557 646 561 285 295 189 196 366 598 369 619 163 195 358 52 373 300 44 193 175 64 85 72 215 90 46 164 63 210 177 354 589 337 53 313 165 167 356 289 310 162 293 50 588 284 595 590 332 169 192 326 346 324 632 633 634 599 351 349 353 180 204 292 69 581 216 433 367 79 586 153 397 155 136</file>
                 </tool>
             </inputs>
         </file>
@@ -2524,25 +2608,120 @@
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\common\mqtt_common.c</name>
+            <name>$PROJ_DIR$\..\..\..\ti\net\bsd\errnoutil.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 550</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 528</file>
+                    <file> 602</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 549</file>
+                    <file> 603</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 548 554 96 125 89 76 80 102 230 120 130 401 147 244 251 471 387 95 105 109</file>
+                    <file> 245 135 125 89 76 80 102 566 96 645</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\ti\net\bsd\netdb.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 598</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 600</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 96 125 89 76 80 102 95 130 105 471 387 564 120 244 251 401 147 566 626 230 641 109 640 567 645</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\ti\net\bsd\socket.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 599</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 601</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 245 135 125 89 76 80 102 564 120 130 244 96 251 401 147 566 626 230 645</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 612</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 609</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 95 125 89 76 80 102 130 105 574 100 471 387 546 109 96 120 539 579 544 538 617 540 543 626 230 401 147 244 251 541</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\common\mqtt_common.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 622</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 532</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 621</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 570 626 96 125 89 76 80 102 230 120 130 401 147 244 251 471 387 95 105 109</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\AWSDriver.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 535</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 536</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 225 244 120 125 89 76 80 102 130 96 251 401 147 95 105 220 224 223 154 221 152 115 117 104 97 124 87 116 77 66 98 94 114 151 122 110 88 134 68 100 109 74 137 57 71 111 93 47 84 61 99 86 73 65 544 539 579 538 617 540 543 626 230 546 541 573</file>
                 </tool>
             </inputs>
         </file>
@@ -2551,21 +2730,21 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 569</file>
+                    <file> 646</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 527</file>
+                    <file> 531</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 570</file>
+                    <file> 647</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 220 96 125 89 76 80 102 244 120 130 251 401 147 224 223 154 221 236 266 277 95 105 271 388 109 421 422 470 475 482 473 33 459 97 124 87 116 77 66 98 94 114 151 122 110 88 104 384 474 462 479 123 463 134 99 57 117 68 100 74 137 71 464 480 468 390 477 118 268 342 269 323 276 317 254 267 260 265 253 333 263 547 548 554 230 471 387 531</file>
+                    <file> 220 96 125 89 76 80 102 244 120 130 251 401 147 224 223 154 221 236 266 277 95 105 271 388 109 421 422 470 475 482 473 33 459 97 124 87 116 77 66 98 94 114 151 122 110 88 104 384 474 462 479 123 463 134 99 57 117 68 100 74 137 71 464 480 468 390 477 118 268 342 269 323 276 317 254 267 260 265 253 333 263 569 570 626 230 471 387 547</file>
                 </tool>
             </inputs>
         </file>
@@ -2574,76 +2753,7 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 545</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 521</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 543</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 548 554 96 125 89 76 80 102 230 120 130 401 147 244 251 471 387 95 105 109 519 542 546 220 224 223 154 221 534 539 540 533</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttclient.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 541</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 520</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 538</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 547 95 125 89 76 80 102 130 105 109 548 554 96 230 120 401 147 244 251 471 387 540 533 220 224 223 154 221 222</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 552</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 529</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 553</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 533 548 554 96 125 89 76 80 102 230 120 130 401 147 244 251 471 387 95 105 109 220 224 223 154 221</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\ti\net\slnetutils.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 558</file>
+                    <file> 561</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
@@ -2657,7 +2767,254 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 225 244 120 125 89 76 80 102 130 96 251 401 147 95 105 471 387 563 554 230 564 109 568</file>
+                    <file> 570 626 96 125 89 76 80 102 230 120 130 401 147 244 251 471 387 95 105 109 523 558 562 220 224 223 154 221 550 555 556 549</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttclient.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 557</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 524</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 554</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 569 95 125 89 76 80 102 130 105 109 570 626 96 230 120 401 147 244 251 471 387 556 549 220 224 223 154 221 222</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_yield.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 605</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 608</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 545 96 125 89 76 80 102 120 130 95 105 574 100 471 387 546 109 539 579 544 538 617 540 543 626 230 401 147 244 251</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_unsubscribe.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 611</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 610</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 545 96 125 89 76 80 102 120 130 95 105 574 100 471 387 546 109 539 579 544 538 617 540 543 626 230 401 147 244 251</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_subscribe.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 615</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 614</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 545 96 125 89 76 80 102 120 130 95 105 574 100 471 387 546 109 539 579 544 538 617 540 543 626 230 401 147 244 251</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_connect.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 613</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 606</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 100 125 89 76 80 102 130 544 109 96 120 539 579 538 617 540 543 626 230 401 147 244 251 546 545 95 105 574 471 387</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_common_internal.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 629</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 628</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 544 100 125 89 76 80 102 130 109 96 120 539 579 538 617 540 543 626 230 401 147 244 251 545 95 105 574 471 387 546</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\network_sl.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 619</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 620</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 471 125 89 76 80 102 130 387 95 105 563 640 120 626 96 230 401 147 244 251 567 645 568 564 566 565 245 135 641 109 538 539 617 540 543 574 100</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_publish.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 577</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 578</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 545 96 125 89 76 80 102 120 130 95 105 574 100 471 387 546 109 539 579 544 538 617 540 543 626 230 401 147 244 251</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\linux\common\timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 292</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 301</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 624</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 533</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 625</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 549 570 626 96 125 89 76 80 102 230 120 130 401 147 244 251 471 387 95 105 109 220 224 223 154 221</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\titimer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 581</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 580</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 597 125 89 76 80 102 224 120 130 96 401 147 223 244 251 154 617 540 109</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 292</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 301</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\ti\net\slnetutils.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 634</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 529</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 635</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 225 244 120 125 89 76 80 102 130 96 251 401 147 95 105 471 387 640 626 230 641 109 645</file>
                 </tool>
             </inputs>
         </file>
@@ -2666,21 +3023,21 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 556</file>
+                    <file> 632</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 524</file>
+                    <file> 528</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 555</file>
+                    <file> 631</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 225 244 120 125 89 76 80 102 130 96 251 401 147 95 105 471 387 109 564 554 230 568</file>
+                    <file> 225 244 120 125 89 76 80 102 130 96 251 401 147 95 105 471 387 109 641 626 230 645</file>
                 </tool>
             </inputs>
         </file>
@@ -2689,21 +3046,21 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 535</file>
+                    <file> 551</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 522</file>
+                    <file> 526</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 537</file>
+                    <file> 553</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 225 244 120 125 89 76 80 102 130 96 251 401 147 568 563 554 230 540 533 548 471 387 95 105 109 220 224 223 154 221</file>
+                    <file> 225 244 120 125 89 76 80 102 130 96 251 401 147 645 640 626 230 556 549 570 471 387 95 105 109 220 224 223 154 221</file>
                 </tool>
             </inputs>
         </file>
@@ -2712,21 +3069,154 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 557</file>
+                    <file> 633</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 523</file>
+                    <file> 527</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 560</file>
+                    <file> 636</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 96 125 89 76 80 102 120 130 109 95 105 471 387 554 230 401 147 244 251 563 564 568 222 224 223 154</file>
+                    <file> 96 125 89 76 80 102 120 130 109 95 105 471 387 626 230 401 147 244 251 640 641 645 222 224 223 154</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\file\remove.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 595</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 594</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 100 125 89 76 80 102 130</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\file\lseek.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 582</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 583</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 100 125 89 76 80 102 130 637</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\file\rename.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 590</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 585</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 100 125 89 76 80 102 130</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\file\write.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 586</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 593</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 637 130 125 89 76 80 102</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\file\open.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 589</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 587</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 637 130 125 89 76 80 102</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\file\close.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 584</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 591</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 637 130 125 89 76 80 102</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\components\libraries\file\read.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 588</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 592</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 637 130 125 89 76 80 102</file>
                 </tool>
             </inputs>
         </file>

@@ -294,7 +294,7 @@ bool WiFiDriver_Init()
    sl_NetCfgGet(SL_NETCFG_MAC_ADDRESS_GET,&ConfigOpt,&macAddressLen,(_u8 *)macAddressVal);
    
    // initialize the message queue telemetry transport pub/sub system.
-   MQTT_Init(macAddressVal, macAddressLen);
+   //MQTT_Init(macAddressVal, macAddressLen);
           
    return true;
 }

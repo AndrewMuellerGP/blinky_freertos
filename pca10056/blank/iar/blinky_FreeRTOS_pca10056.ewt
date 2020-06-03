@@ -1393,6 +1393,15 @@
             <name>SLHelper</name>
         </group>
         <file>
+            <name>$PROJ_DIR$\..\..\..\aws_iot_config.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\AWSDriver.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\AWSDriver.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\json_test.c</name>
         </file>
         <file>
@@ -1434,6 +1443,36 @@
         <file>
             <name>$PROJ_DIR$\..\..\..\components\libraries\bsp\bsp.c</name>
         </file>
+    </group>
+    <group>
+        <name>components</name>
+        <group>
+            <name>libraries</name>
+            <group>
+                <name>file</name>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\close.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\lseek.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\open.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\read.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\remove.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\rename.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\write.c</name>
+                </file>
+            </group>
+        </group>
     </group>
     <group>
         <name>None</name>
@@ -1533,6 +1572,72 @@
     </group>
     <group>
         <name>Third Parties</name>
+        <group>
+            <name>AWSIoT</name>
+            <group>
+                <name>certs</name>
+            </group>
+            <group>
+                <name>include</name>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_mqtt_client.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_mqtt_client_common_internal.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_mqtt_client_interface.h</name>
+                </file>
+            </group>
+            <group>
+                <name>platform</name>
+                <group>
+                    <name>linux</name>
+                    <group>
+                        <name>common</name>
+                    </group>
+                </group>
+                <group>
+                    <name>tirtos</name>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\network_platform.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\network_sl.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\timer_platform.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\titimer.c</name>
+                    </file>
+                </group>
+            </group>
+            <group>
+                <name>src</name>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_common_internal.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_connect.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_publish.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_subscribe.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_unsubscribe.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_yield.c</name>
+                </file>
+            </group>
+        </group>
         <group>
             <name>cJSON</name>
             <file>
@@ -1789,6 +1894,18 @@
             </group>
             <group>
                 <name>net</name>
+                <group>
+                    <name>bsd</name>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\bsd\errnoutil.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\bsd\netdb.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\bsd\socket.c</name>
+                    </file>
+                </group>
                 <group>
                     <name>mqtt</name>
                     <group>

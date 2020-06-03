@@ -16,7 +16,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </JLinkDriver>
     <DebugChecksum>
-        <Checksum>2603953991</Checksum>
+        <Checksum>1883354307</Checksum>
     </DebugChecksum>
     <Trace1>
         <Enabled>0</Enabled>
@@ -126,11 +126,17 @@
         <Bp6>_ 0 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.0.1" 0 0 1 "" 0 "" 0</Bp6>
         <Bp7>_ 0 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.0.1" 0 0 1 "" 0 "" 0</Bp7>
         <Bp8>_ 0 "EMUL_CODE" "{C:\work\blinky_freertos\main.c}.0.1" 0 0 1 "" 0 "" 0</Bp8>
-        <Bp9>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\MQTTDriver.c}.205.4" 0 0 1 "" 0 "" 0</Bp9>
-        <Bp10>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\MQTTDriver.c}.228.12" 0 0 1 "" 0 "" 0</Bp10>
-        <Bp11>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttclient.c}.982.5" 0 0 1 "" 0 "" 0</Bp11>
-        <Bp12>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.c}.795.13" 0 0 1 "" 0 "" 0</Bp12>
-        <Count>13</Count>
+        <Bp9>_ 0 "EMUL_CODE" "{C:\work\blinky_freertos\MQTTDriver.c}.205.4" 0 0 1 "" 0 "" 0</Bp9>
+        <Bp10>_ 0 "EMUL_CODE" "{C:\work\blinky_freertos\MQTTDriver.c}.228.12" 0 0 1 "" 0 "" 0</Bp10>
+        <Bp11>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttclient.c}.982.5" 0 0 1 "" 0 "" 0</Bp11>
+        <Bp12>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.c}.795.13" 0 0 1 "" 0 "" 0</Bp12>
+        <Bp13>_ 1 "EMUL_CODE" "{C:\work\blinky_freertos\AWSDriver.c}.138.4" 0 0 1 "" 0 "" 0</Bp13>
+        <Bp14>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_connect.c}.401.2" 0 0 1 "" 0 "" 0</Bp14>
+        <Bp15>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\network_sl.c}.136.5" 0 0 1 "" 0 "" 0</Bp15>
+        <Bp16>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\ti\net\slnetutils.c}.409.21" 0 0 1 "" 0 "" 0</Bp16>
+        <Bp17>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\ti\net\slnetutils.c}.167.5" 0 0 1 "" 0 "" 0</Bp17>
+        <Bp18>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\ti\net\slnetutils.c}.188.9" 0 0 1 "" 0 "" 0</Bp18>
+        <Count>19</Count>
     </Breakpoints2>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>

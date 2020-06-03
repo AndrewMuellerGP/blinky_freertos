@@ -49,7 +49,7 @@
 #include "json_test.h"
 
 #include "WiFiDriver.h"
-#include "MQTTDriver.h"
+#include "AWSDriver.h"
 
 #if LEDS_NUMBER <= 2
 #error "Board is not equipped with enough amount of LEDs"
@@ -60,8 +60,11 @@
 
 #define MAIN_STACK_SIZE         (4096)
 
-#define TARGET_SSID             "Galios"
-#define SEC_KEY                 "Gen2WiFiPW"
+//#define TARGET_SSID             "Galios"
+//#define SEC_KEY                 "Gen2WiFiPW"
+
+#define TARGET_SSID             "ATTmRnycwa"
+#define SEC_KEY                 "vfgvbxv=eu9q"
 
 TaskHandle_t  led_toggle_task_handle;   /**< Reference to LED0 toggling FreeRTOS task. */
 TimerHandle_t led_toggle_timer_handle;  /**< Reference to LED1 toggling FreeRTOS timer. */
@@ -177,7 +180,7 @@ void* mainThread(void* arg)
             {
                // TODO: ping Polka Palace every 10ish seconds
                //WiFiDriver_Send(TEST_MQTT);
-               MQTT_Publish();
+               AWSDriver_Run(NULL);
             
                // flash LED 1 indicating the ping went out.
                bsp_board_led_invert(BSP_BOARD_LED_1);
