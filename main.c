@@ -58,13 +58,10 @@
 #define TASK_DELAY        200           /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
-#define MAIN_STACK_SIZE         (4096)
+#define MAIN_STACK_SIZE           (8192)
 
-//#define TARGET_SSID             "Galios"
-//#define SEC_KEY                 "Gen2WiFiPW"
-
-#define TARGET_SSID             "ATTmRnycwa"
-#define SEC_KEY                 "vfgvbxv=eu9q"
+#define TARGET_SSID             "Galios"
+#define SEC_KEY                 "Gen2WiFiPW"
 
 TaskHandle_t  led_toggle_task_handle;   /**< Reference to LED0 toggling FreeRTOS task. */
 TimerHandle_t led_toggle_timer_handle;  /**< Reference to LED1 toggling FreeRTOS timer. */
@@ -157,6 +154,8 @@ void* mainThread(void* arg)
    {   
       while(false == WiFiDriver_Init())
       {
+         NwpPowerOff();
+         
          // if the initialization fails, just wait for a beat and then try again.
          usleep(1000000 - 1);
       }

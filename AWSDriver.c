@@ -120,6 +120,7 @@ void* AWSDriver_Run(void* arg)
    mqttInitParams.isSSLHostnameVerify = true;
    mqttInitParams.disconnectHandler = disconnectCallbackHandler;
    mqttInitParams.disconnectHandlerData = NULL;
+   
 
    rc = aws_iot_mqtt_init(&client, &mqttInitParams);
    if (SUCCESS != rc)

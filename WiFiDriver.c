@@ -3,6 +3,9 @@
 #include <unistd.h>
 
 #include <ti/drivers/net/wifi/simplelink.h>
+#include <ti/net/slnetsock.h>
+#include <ti/net/slnetif.h>
+#include <ti/drivers/net/wifi/slnetifwifi.h>
 
 #include <pthread.h>
 #include <mqueue.h>
@@ -15,10 +18,11 @@
 
 #include "MQTTDriver.h"
 
-#define TASK_STACK_SIZE             (2048)
+#define TASK_STACK_SIZE             (4096)
 #define SPAWN_TASK_PRIORITY         (9)
 #define WLAN_EVENT_TOUT             (6000)
 #define TIMEOUT_SEM                 (-1)
+#define SLNET_IF_WIFI_PRIO          (5)
 
 
 
@@ -95,7 +99,26 @@ static int32_t WiFiDriver_SimpleLink_Init()
         SHOW_WARNING(ret, OS_ERROR);
         return(-1);
     }
-
+    
+    ret = SlNetIf_init(0);
+    if(ret != 0)
+    {
+       SHOW_WARNING(ret, OS_ERROR);
+       //Display_printf(display, 0, 0, "SlNetIf_init fail (%d)\n", status);
+       return(-1);
+    }
+    SlNetIf_add(SLNETIF_ID_1, "CC32xx", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
+    
+    ret = SlNetSock_init(0);
+    if(ret != 0)
+    {
+       SHOW_WARNING(ret, OS_ERROR);
+       //Display_printf(display, 0, 0, "SlNetSock_init fail (%d)\n", status);
+       return(-1);
+    }
+    
+    
+    
     return(ret);
 }
 
@@ -295,6 +318,8 @@ bool WiFiDriver_Init()
    
    // initialize the message queue telemetry transport pub/sub system.
    //MQTT_Init(macAddressVal, macAddressLen);
+   
+   //SlNetIf_add(SLNETIF_ID_1, "CC32xx", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
           
    return true;
 }

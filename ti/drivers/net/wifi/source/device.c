@@ -138,7 +138,10 @@ _i16 sl_Start(const void* pIfHdl, _i8*  pDevName, const P_INIT_CALLBACK pInitCal
 #endif
 
     /* ControlBlock init */
-    (void)_SlDrvDriverCBInit();
+    if (SL_OS_RET_CODE_OK != _SlDrvDriverCBInit())
+    {
+       return -1;
+    }
 
     /* open the interface: usually SPI or UART */
     if (NULL == pIfHdl)

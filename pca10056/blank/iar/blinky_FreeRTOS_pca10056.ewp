@@ -1533,6 +1533,12 @@
                         </file>
                     </group>
                     <group>
+                        <name>slnetif</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\drivers\net\wifi\slnetif\slnetifwifi.c</name>
+                        </file>
+                    </group>
+                    <group>
                         <name>source</name>
                         <file>
                             <name>$PROJ_DIR$\..\..\..\ti\drivers\net\wifi\source\device.c</name>

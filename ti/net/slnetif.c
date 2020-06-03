@@ -173,6 +173,11 @@ int32_t SlNetIf_add(uint16_t ifID, char *ifName, const SlNetIf_Config_t *ifConf,
     int16_t         strLen;
     int32_t         retVal;
 
+    if (NULL != ifNode)
+    {
+      return SLNETERR_RET_CODE_MALLOC_ERROR;
+    }
+    
     /* Check if ifID is a valid input - Only one bit is set (Pow of 2) or if
        the priority isn't a valid input                                      */
     if ( (false == ONLY_ONE_BIT_IS_SET(ifID)) || (priority > SLNETIF_MAX_PRIORITY) )
