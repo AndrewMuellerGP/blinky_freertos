@@ -49,6 +49,7 @@
 #include "json_test.h"
 
 #include "WiFiDriver.h"
+#include "AWSDriver.h"
 
 #if LEDS_NUMBER <= 2
 #error "Board is not equipped with enough amount of LEDs"
@@ -57,7 +58,7 @@
 #define TASK_DELAY        200           /**< Task delay. Delays a LED0 task for 200 ms */
 #define TIMER_PERIOD      1000          /**< Timer period. LED1 timer will expire after 1000 ms */
 
-#define MAIN_STACK_SIZE         (4096)
+#define MAIN_STACK_SIZE           (8192)
 
 #define TARGET_SSID             "Galios"
 #define SEC_KEY                 "Gen2WiFiPW"
@@ -147,21 +148,31 @@ void* mainThread(void* arg)
    /* Initializes the SPI interface to the Network
       Processor and peripheral SPI (if defined in the board file) */
    //WiFi_init();
-
-   while(false == WiFiDriver_Init())
-   {
-      // if the initialization fails, just wait for a beat and then try again.
-      usleep(1000000 - 1);
+   bsp_board_led_on(BSP_BOARD_LED_3);
+   if (WiFiDriver_StartSimpleLink())
+   { 
+      while(false == WiFiDriver_Init())
+      {
+         NwpPowerOff();
+         
+         // if the initialization fails, just wait for a beat and then try again.
+         usleep(1000000 - 1);
+      }
    }
    
+  
+    bsp_board_led_on(BSP_BOARD_LED_2);
    // scan and attempt to connect until the desired AP is found and connected to.
    WiFiDriver_ScanStart(10, true);
+    bsp_board_led_off(BSP_BOARD_LED_2);
    
    while(1)
    {
       if (WiFiDriver_CollectScanResults(10) > 0)
       {
          WiFiDriver_ScanStop();
+         
+         //bsp_board_led_off(BSP_BOARD_LED_2);
          
          if (WiFiDriver_Connect(TARGET_SSID, SEC_KEY))
          {
@@ -171,6 +182,8 @@ void* mainThread(void* arg)
             while(1)
             {
                // TODO: ping Polka Palace every 10ish seconds
+               //WiFiDriver_Send(TEST_MQTT);
+               //AWSDriver_Run(NULL);
             
                // flash LED 1 indicating the ping went out.
                bsp_board_led_invert(BSP_BOARD_LED_1);
@@ -179,6 +192,10 @@ void* mainThread(void* arg)
             }
          }
       }
+      
+      bsp_board_led_on(BSP_BOARD_LED_2);
+      WiFiDriver_ScanStart(10, true);
+      bsp_board_led_off(BSP_BOARD_LED_2);
           
       // setup, scanning, or connection failed ..
       // pause for a beat, then try again.

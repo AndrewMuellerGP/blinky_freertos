@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "C:\work\blinky_freertos\pca10056\blank\iar\settings\blinky_FreeRTOS_pca10056.nrf52840_xxaa.general.xcl" --backend -f "C:\work\blinky_freertos\pca10056\blank\iar\settings\blinky_FreeRTOS_pca10056.nrf52840_xxaa.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "C:\work\test\blinky_freertos\pca10056\blank\iar\settings\blinky_FreeRTOS_pca10056.nrf52840_xxaa.general.xcl" --backend -f "C:\work\test\blinky_freertos\pca10056\blank\iar\settings\blinky_FreeRTOS_pca10056.nrf52840_xxaa.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "C:\work\blinky_freertos\pca10056\blank\iar\settings\blinky_FreeRTOS_pca10056.nrf52840_xxaa.general.xcl" "--debug_file=%~1" --backend -f "C:\work\blinky_freertos\pca10056\blank\iar\settings\blinky_FreeRTOS_pca10056.nrf52840_xxaa.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "C:\work\test\blinky_freertos\pca10056\blank\iar\settings\blinky_FreeRTOS_pca10056.nrf52840_xxaa.general.xcl" "--debug_file=%~1" --backend -f "C:\work\test\blinky_freertos\pca10056\blank\iar\settings\blinky_FreeRTOS_pca10056.nrf52840_xxaa.driver.xcl" 
 
 @echo off 
 :end

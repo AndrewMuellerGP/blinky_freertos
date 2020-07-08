@@ -3,6 +3,9 @@
 #include <unistd.h>
 
 #include <ti/drivers/net/wifi/simplelink.h>
+#include <ti/net/slnetsock.h>
+#include <ti/net/slnetif.h>
+#include <ti/drivers/net/wifi/slnetifwifi.h>
 
 #include <pthread.h>
 #include <mqueue.h>
@@ -13,10 +16,13 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-#define TASK_STACK_SIZE             (2048)
+#include "MQTTDriver.h"
+
+#define TASK_STACK_SIZE             (4096)
 #define SPAWN_TASK_PRIORITY         (9)
 #define WLAN_EVENT_TOUT             (6000)
 #define TIMEOUT_SEM                 (-1)
+#define SLNET_IF_WIFI_PRIO          (5)
 
 
 
@@ -26,6 +32,8 @@ TaskHandle_t gSpawn_thread = NULL;
 
 static int32_t WiFiDriver_SimpleLink_Init()
 {
+   WiFi_init();
+   
    app_CB.Status = 0;
    app_CB.Role = ROLE_RESERVED;
    app_CB.Exit = FALSE;
@@ -92,6 +100,26 @@ static int32_t WiFiDriver_SimpleLink_Init()
         return(-1);
     }
 
+/*
+    ret = SlNetIf_init(0);
+    if(ret != 0)
+    {
+       SHOW_WARNING(ret, OS_ERROR);
+       //Display_printf(display, 0, 0, "SlNetIf_init fail (%d)\n", status);
+       return(-1);
+    }
+    SlNetIf_add(SLNETIF_ID_1, "CC32xx", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
+    
+    ret = SlNetSock_init(0);
+    if(ret != 0)
+    {
+       SHOW_WARNING(ret, OS_ERROR);
+       //Display_printf(display, 0, 0, "SlNetSock_init fail (%d)\n", status);
+       return(-1);
+    }
+    */
+    
+    
     return(ret);
 }
 
@@ -117,6 +145,7 @@ static bool WiFiDriver_SpawnThread()
       asynchronous events sent from the NWP.
     * Every event is classified and later handled
       by the Host driver event handlers. */
+   
    if(pthread_create(&gSpawn_thread, &pAttrs_spawn, sl_Task, NULL) < 0)
    {
       UART_PRINT("Network Terminal - Unable to create spawn thread \n");
@@ -130,7 +159,7 @@ static bool WiFiDriver_SpawnThread()
    return success;
 }
 
-bool WiFiDriver_Init()
+bool WiFiDriver_StartSimpleLink()
 {
    // TODO: start timer to catch if init hangs so we can retry
    
@@ -143,6 +172,15 @@ bool WiFiDriver_Init()
    {
       return false;
    }
+   
+   sl_Stop(0);
+   
+   return true;
+}
+
+bool WiFiDriver_Init()
+{
+   // TODO: start timer to catch if init hangs so we can retry
    
    // ensure the CC3135 is stopped before re-initializing.
    sl_Stop(0);
@@ -273,6 +311,21 @@ bool WiFiDriver_Init()
    
    sl_WlanGet(SL_WLAN_CFG_GENERAL_PARAM_ID, &option, &optionLen, (uint8_t*)&enabled5Ghz);
    
+   
+   /*uint8_t macAddressVal[SL_MAC_ADDR_LEN];
+   uint8_t macAddressLen = SL_MAC_ADDR_LEN;
+   sl_NetCfgGet(SL_MAC_ADDRESS_GET, NULL,&macAddressLen,(_u8 *)macAddressVal);
+   */
+   uint8_t macAddressVal[SL_MAC_ADDR_LEN];
+   uint16_t macAddressLen = SL_MAC_ADDR_LEN;
+   uint16_t ConfigOpt = 0;
+   sl_NetCfgGet(SL_NETCFG_MAC_ADDRESS_GET,&ConfigOpt,&macAddressLen,(_u8 *)macAddressVal);
+   
+   // initialize the message queue telemetry transport pub/sub system.
+   //MQTT_Init(macAddressVal, macAddressLen);
+   
+   //SlNetIf_add(SLNETIF_ID_1, "CC32xx", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
+          
    return true;
 }
 

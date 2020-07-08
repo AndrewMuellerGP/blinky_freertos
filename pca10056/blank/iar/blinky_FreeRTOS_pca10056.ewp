@@ -393,6 +393,9 @@
                     <state>$PROJ_DIR$\..\..\..\</state>
                     <state>C:\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\utils\json</state>
                     <state>C:\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\iar</state>
+                    <state>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include</state>
+                    <state>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos</state>
+                    <state>$PROJ_DIR$\..\..\..\ti\net\bsd</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -1171,6 +1174,36 @@
         </file>
     </group>
     <group>
+        <name>components</name>
+        <group>
+            <name>libraries</name>
+            <group>
+                <name>file</name>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\close.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\lseek.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\open.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\read.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\remove.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\rename.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\components\libraries\file\write.c</name>
+                </file>
+            </group>
+        </group>
+    </group>
+    <group>
         <name>None</name>
         <file>
             <name>$PROJ_DIR$\..\..\..\modules\nrfx\mdk\iar_startup_nrf52840.s</name>
@@ -1269,6 +1302,123 @@
     <group>
         <name>Third Parties</name>
         <group>
+            <name>AWSIoT</name>
+            <group>
+                <name>certs</name>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\certs\certs.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\certs\certs.h</name>
+                </file>
+            </group>
+            <group>
+                <name>include</name>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_error.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_jobs_interface.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_jobs_json.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_jobs_topics.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_jobs_types.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_json_utils.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_log.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_mqtt_client.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_mqtt_client_common_internal.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_mqtt_client_interface.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_shadow_actions.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_shadow_interface.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_shadow_json.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_shadow_json_data.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_shadow_key.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_shadow_records.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\aws_iot_version.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\network_interface.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\threads_interface.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\include\timer_interface.h</name>
+                </file>
+            </group>
+            <group>
+                <name>platform</name>
+                <group>
+                    <name>tirtos</name>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\network_platform.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\network_sl.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\timer_platform.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\platform\tirtos\titimer.c</name>
+                    </file>
+                </group>
+            </group>
+            <group>
+                <name>src</name>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_common_internal.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_connect.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_publish.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_subscribe.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_unsubscribe.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\external\aws-iot-device-sdk-embedded-C\src\aws_iot_mqtt_client_yield.c</name>
+                </file>
+            </group>
+        </group>
+        <group>
             <name>cJSON</name>
             <file>
                 <name>$PROJ_DIR$\..\..\..\external\cJSON\cJSON.c</name>
@@ -1309,52 +1459,49 @@
             <group>
                 <name>freertos</name>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\clock.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\clock.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\memory.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\memory.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\mqueue.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\mqueue.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\posix\freertos\Mtx.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\Mtx.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\Mtx.h</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\DispenserLoRaBle\thirdParty\posix\freertos\pthread.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\DispenserLoRaBle\thirdParty\posix\freertos\pthread_barrier.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_barrier.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\DispenserLoRaBle\thirdParty\posix\freertos\pthread_cond.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_cond.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\DispenserLoRaBle\thirdParty\posix\freertos\pthread_mutex.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_mutex.c</name>
-                </file>
-                <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\pthread_rwlock.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\DispenserLoRaBle\thirdParty\posix\freertos\pthread_rwlock.c</name>
                 </file>
                 <file>
                     <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\PTLS.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\reent.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\reent.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sched.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sched.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\semaphore.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\semaphore.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sleep.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\sleep.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\timer.c</name>
+                    <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\posix\freertos\timer.c</name>
                 </file>
             </group>
             <group>
@@ -1522,20 +1669,110 @@
                     </file>
                 </group>
             </group>
+            <group>
+                <name>net</name>
+                <group>
+                    <name>bsd</name>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\bsd\errnoutil.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\bsd\errnoutil.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\bsd\netdb.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\bsd\netdb.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\bsd\socket.c</name>
+                    </file>
+                </group>
+                <group>
+                    <name>mqtt</name>
+                    <group>
+                        <name>client</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.c</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\client\client_core.h</name>
+                        </file>
+                    </group>
+                    <group>
+                        <name>common</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\common\mqtt_common.c</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\common\mqtt_common.h</name>
+                        </file>
+                    </group>
+                    <group>
+                        <name>interface</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttclient.c</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\interface\mqttserver.c</name>
+                        </file>
+                    </group>
+                    <group>
+                        <name>platform</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\platform\mqtt_net_func.c</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\platform\mqtt_net_func.h</name>
+                        </file>
+                    </group>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\mqttclient.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\..\..\ti\net\mqtt\mqttserver.h</name>
+                    </file>
+                </group>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnet.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slneterr.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetif.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetif.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetsock.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetsock.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetutils.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\..\..\ti\net\slnetutils.h</name>
+                </file>
+            </group>
         </group>
         <group>
             <name>TI_JSON</name>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json.c</name>
+                <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\utils\json\source\json.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\json_engine.c</name>
+                <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\utils\json\source\json_engine.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\parse_common.c</name>
+                <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\utils\json\source\parse_common.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\..\..\TI\simplelink_msp432p4_sdk_3_40_01_02\source\ti\utils\json\source\utils.c</name>
+                <name>$PROJ_DIR$\..\..\..\..\..\..\TI\simplelink_cc32xx_sdk_4_10_00_07\source\ti\utils\json\source\utils.c</name>
             </file>
         </group>
         <file>

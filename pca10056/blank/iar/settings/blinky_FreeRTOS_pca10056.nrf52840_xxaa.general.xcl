@@ -2,7 +2,7 @@
 
 "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\bin\armjlink2.dll" 
 
-"C:\work\blinky_freertos\pca10056\blank\iar\_build\blinky_FreeRTOS_pca10056.out" 
+"C:\work\test\blinky_freertos\pca10056\blank\iar\_build\blinky_FreeRTOS_pca10056.out" 
 
 --plugin="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\bin\armbat.dll" 
 
