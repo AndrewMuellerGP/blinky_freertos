@@ -21,8 +21,9 @@
  *  
  *  SL STOP might need additional SPI_read after reading the header
  *  http://e2e.ti.com/support/wireless-connectivity/wifi/f/968/p/858459/3176981#3176981?jktype=e2e
-
- * https://e2e.ti.com/support/wireless-connectivity/wifi/f/968/t/877877?tisearch=e2e-sitesearch&keymatch=cc3135
+ * * https://e2e.ti.com/support/wireless-connectivity/wifi/f/968/t/877877?tisearch=e2e-sitesearch&keymatch=cc3135
+ * * sl_WifiConfig behaves better when allowed a 5s delay?
+ * https://e2e.ti.com/support/wireless-connectivity/wifi/f/968/t/874487
  */
 
 #include <stdbool.h>
@@ -127,8 +128,8 @@ int main(void)
       // failed to create the simple link thread.
       return(NULL);
    }
-
-    
+   
+   pthread_attr_destroy(&pAttrs);
       
    // Activate deep sleep mode
    SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
@@ -148,7 +149,7 @@ void* mainThread(void* arg)
    /* Initializes the SPI interface to the Network
       Processor and peripheral SPI (if defined in the board file) */
    //WiFi_init();
-   bsp_board_led_on(BSP_BOARD_LED_3);
+   bsp_board_led_on(BSP_BOARD_LED_0);
    if (WiFiDriver_StartSimpleLink())
    { 
       while(false == WiFiDriver_Init())
@@ -161,10 +162,14 @@ void* mainThread(void* arg)
    }
    
   
-    bsp_board_led_on(BSP_BOARD_LED_2);
+   bsp_board_led_on(BSP_BOARD_LED_1);
+   
+   AWSDriver_Init();
+   
    // scan and attempt to connect until the desired AP is found and connected to.
    WiFiDriver_ScanStart(10, true);
-    bsp_board_led_off(BSP_BOARD_LED_2);
+   usleep(1000000 - 1);
+   bsp_board_led_off(BSP_BOARD_LED_1);
    
    while(1)
    {
@@ -176,29 +181,31 @@ void* mainThread(void* arg)
          
          if (WiFiDriver_Connect(TARGET_SSID, SEC_KEY))
          {
-            // light up LED 0 to show connected
-            bsp_board_led_on(BSP_BOARD_LED_0);
+            // light up LED to show connected
+            bsp_board_led_on(BSP_BOARD_LED_2);
             
             while(1)
             {
                // TODO: ping Polka Palace every 10ish seconds
                //WiFiDriver_Send(TEST_MQTT);
-               //AWSDriver_Run(NULL);
+               AWSDriver_Run(NULL);
             
-               // flash LED 1 indicating the ping went out.
-               bsp_board_led_invert(BSP_BOARD_LED_1);
+               // flash LED indicating the ping went out.
+               bsp_board_led_invert(BSP_BOARD_LED_3);
                usleep(100000 - 1);
                taskYIELD();
             }
          }
       }
       
-      bsp_board_led_on(BSP_BOARD_LED_2);
+      bsp_board_led_on(BSP_BOARD_LED_1);
       WiFiDriver_ScanStart(10, true);
-      bsp_board_led_off(BSP_BOARD_LED_2);
+      
           
       // setup, scanning, or connection failed ..
       // pause for a beat, then try again.
       usleep(1000000 - 1);
+      
+      bsp_board_led_off(BSP_BOARD_LED_1);
    }
 }

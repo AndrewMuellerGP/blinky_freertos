@@ -100,25 +100,26 @@ static int32_t WiFiDriver_SimpleLink_Init()
         return(-1);
     }
 
-/*
+    
+    /*
     ret = SlNetIf_init(0);
     if(ret != 0)
     {
        SHOW_WARNING(ret, OS_ERROR);
        //Display_printf(display, 0, 0, "SlNetIf_init fail (%d)\n", status);
        return(-1);
-    }
-    SlNetIf_add(SLNETIF_ID_1, "CC32xx", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
+    }*/
     
+    //SlNetIf_add(SLNETIF_ID_1, "CC32xx", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
+    
+    /*
     ret = SlNetSock_init(0);
     if(ret != 0)
     {
        SHOW_WARNING(ret, OS_ERROR);
        //Display_printf(display, 0, 0, "SlNetSock_init fail (%d)\n", status);
        return(-1);
-    }
-    */
-    
+    }*/
     
     return(ret);
 }
@@ -145,12 +146,13 @@ static bool WiFiDriver_SpawnThread()
       asynchronous events sent from the NWP.
     * Every event is classified and later handled
       by the Host driver event handlers. */
-   
    if(pthread_create(&gSpawn_thread, &pAttrs_spawn, sl_Task, NULL) < 0)
    {
       UART_PRINT("Network Terminal - Unable to create spawn thread \n");
       success = false;
    }
+   
+   pthread_attr_destroy(&pAttrs_spawn);
    
    // Yield control of this tasks until the synchronization Task Control block 
    // is setup by the Spawn task.
@@ -193,6 +195,11 @@ bool WiFiDriver_Init()
    //
    //   IMPORTANT NOTE - This is an example reset function,
    //   user must update this function to match the application settings.
+   for (uint8_t i = 0; i < 10; i++)
+   {
+      usleep(1000000 - 1);
+   }
+   
    int isSuccess = sl_WifiConfig();
    if(isSuccess < 0)
    {
@@ -200,6 +207,11 @@ bool WiFiDriver_Init()
      UART_PRINT("Network Terminal - Couldn't configure Network Processor - %d\n",
                 isSuccess);
      return false;
+   }
+   
+   for (uint8_t i = 0; i < 10; i++)
+   {
+      usleep(1000000 - 1);
    }
 
    // Turn NWP on
@@ -309,8 +321,17 @@ bool WiFiDriver_Init()
    option = SL_WLAN_GENERAL_PARAM_OPT_ENABLE_5G;
    uint16_t optionLen = sizeof(SlWlanScanParamCommand_t);
    
-   sl_WlanGet(SL_WLAN_CFG_GENERAL_PARAM_ID, &option, &optionLen, (uint8_t*)&enabled5Ghz);
+   int32_t retVal = sl_WlanGet(SL_WLAN_CFG_GENERAL_PARAM_ID, &option, &optionLen, (uint8_t*)&enabled5Ghz);
    
+   
+   SlWlanConnStatusParam_t connectionParams;
+   uint16_t Opt = 0;
+   uint16_t size = 0;
+   retVal = sl_WlanGet(SL_WLAN_CONNECTION_INFO, &Opt, &size, (uint8_t *)&connectionParams);
+   
+   size = sizeof(SlWlanConnStatusParam_t);
+   SlWlanConnStatusParam_t WlanConnectInfo;
+   retVal = sl_WlanGet(SL_WLAN_CONNECTION_INFO, NULL , &size, (_u8*)&WlanConnectInfo);
    
    /*uint8_t macAddressVal[SL_MAC_ADDR_LEN];
    uint8_t macAddressLen = SL_MAC_ADDR_LEN;
@@ -319,12 +340,32 @@ bool WiFiDriver_Init()
    uint8_t macAddressVal[SL_MAC_ADDR_LEN];
    uint16_t macAddressLen = SL_MAC_ADDR_LEN;
    uint16_t ConfigOpt = 0;
-   sl_NetCfgGet(SL_NETCFG_MAC_ADDRESS_GET,&ConfigOpt,&macAddressLen,(_u8 *)macAddressVal);
+   sl_NetCfgGet(SL_NETCFG_MAC_ADDRESS_GET, &ConfigOpt, &macAddressLen, (_u8 *)macAddressVal);
    
    // initialize the message queue telemetry transport pub/sub system.
    //MQTT_Init(macAddressVal, macAddressLen);
    
-   //SlNetIf_add(SLNETIF_ID_1, "CC32xx", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
+   // TODO: handle  the following after the IP address has been assigned?
+   /*static sem_t ipAddySem;
+   if (sem_init(&ipAddySem, 0, 0) != 0) {
+   sem_wait(&ipAddySem);
+   
+   retVal = SlNetIf_init(0);
+   if(retVal != 0)
+   {
+      SHOW_WARNING(retVal, OS_ERROR);
+      //Display_printf(display, 0, 0, "SlNetIf_init fail (%d)\n", status);
+      return(-1);
+   }
+    
+   
+   
+   
+   retVal = SlNetIf_add(SLNETIF_ID_1, "CC3135Mod", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
+   if (retVal != 0)
+   {
+      return (-1);
+   }*/
           
    return true;
 }

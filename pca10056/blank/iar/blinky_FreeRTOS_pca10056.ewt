@@ -1393,6 +1393,12 @@
             <name>SLHelper</name>
         </group>
         <file>
+            <name>$PROJ_DIR$\..\..\..\AWSDriver.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\AWSDriver.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\json_test.c</name>
         </file>
         <file>
@@ -1819,6 +1825,12 @@
                         </file>
                         <file>
                             <name>$PROJ_DIR$\..\..\..\ti\drivers\net\wifi\porting\user.h</name>
+                        </file>
+                    </group>
+                    <group>
+                        <name>slnetif</name>
+                        <file>
+                            <name>$PROJ_DIR$\..\..\..\ti\drivers\net\wifi\slnetif\slnetifwifi.c</name>
                         </file>
                     </group>
                     <group>

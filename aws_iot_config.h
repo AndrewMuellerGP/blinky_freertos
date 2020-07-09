@@ -24,7 +24,7 @@
 // Get from console
 // =================================================
 //#define AWS_IOT_MQTT_HOST              "ap14lclokbtpv-ats.iot.us-east-1.amazonaws.com" ///< Customer specific MQTT HOST. The same will be used for Thing Shadow
-#define AWS_IOT_MQTT_HOST              "54.174.34.78"
+#define AWS_IOT_MQTT_HOST              "35.170.136.36"
 #define AWS_IOT_MQTT_PORT              8883 ///< default port for MQTT/S
 #define AWS_IOT_MQTT_CLIENT_ID         "3403de11d3ba" ///< MQTT client ID should be unique for every device
 #define AWS_IOT_MY_THING_NAME          "deviceId-3403de11d3ba" ///< Thing Name of the Shadow this device is associated with
