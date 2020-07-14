@@ -51,11 +51,10 @@ void SimpleLinkWlanEventHandler(SlWlanEvent_t *pWlanEvent)
     {
         SET_STATUS_BIT(app_CB.Status, STATUS_BIT_CONNECTION);
 
-        /* Copy new connection SSID and BSSID to global parameters */
-        memcpy(app_CB.CON_CB.ConnectionSSID, pWlanEvent->Data.Connect.SsidName,
-               pWlanEvent->Data.Connect.SsidLen);
-        memcpy(app_CB.CON_CB.ConnectionBSSID, pWlanEvent->Data.Connect.Bssid,
-               SL_WLAN_BSSID_LENGTH);
+        // Copy new connection SSID and BSSID to global parameters
+        memcpy(app_CB.CON_CB.ConnectionSSID, pWlanEvent->Data.Connect.SsidName, pWlanEvent->Data.Connect.SsidLen);
+        memcpy(app_CB.CON_CB.ConnectionBSSID, pWlanEvent->Data.Connect.Bssid, SL_WLAN_BSSID_LENGTH);
+        
         UART_PRINT(
             "\n\r[WLAN EVENT] STA Connected to the AP: %s , "
             "BSSID: %x:%x:%x:%x:%x:%x\n\r",
@@ -127,13 +126,40 @@ void SimpleLinkWlanEventHandler(SlWlanEvent_t *pWlanEvent)
     {
         /* Do nothing, this suppress provisioning event is because
             simplelink is configured to default state. */
+                
+        switch (pWlanEvent->Data.ProvisioningStatus.ProvisioningStatus)
+        {
+           case SL_WLAN_PROVISIONING_CONFIRMATION_WLAN_CONNECT:
+              //deviceConnected = true;
+              break;
+
+           case SL_WLAN_PROVISIONING_CONFIRMATION_IP_ACQUIRED:
+              //ipAcquired = true;
+              break;
+
+           case SL_WLAN_PROVISIONING_STOPPED:
+              if (pWlanEvent->Data.ProvisioningStatus.Role == ROLE_STA)
+              {
+                 if (pWlanEvent->Data.ProvisioningStatus.WlanStatus == SL_WLAN_STATUS_CONNECTED)
+                 {
+                    /* The WiFi stack is ready and has an IP address */
+                    //provisioning = false;
+                    sem_post(&ipAddySem);
+                 }
+              }
+
+              break;
+
+           default:
+              break;
+        }
     }
     break;
 
     case SL_WLAN_EVENT_STA_ADDED:
     {
-        memcpy(&(app_CB.CON_CB.ConnectionBSSID), pWlanEvent->Data.STAAdded.Mac,
-               SL_WLAN_BSSID_LENGTH);
+        memcpy(&(app_CB.CON_CB.ConnectionBSSID), pWlanEvent->Data.STAAdded.Mac, SL_WLAN_BSSID_LENGTH);
+        
         UART_PRINT(
             "\n\r[WLAN EVENT] STA was added to AP:"
             " BSSID: %x:%x:%x:%x:%x:%x\n\r",
@@ -148,8 +174,8 @@ void SimpleLinkWlanEventHandler(SlWlanEvent_t *pWlanEvent)
 
     case SL_WLAN_EVENT_STA_REMOVED:
     {
-        memcpy(&(app_CB.CON_CB.ConnectionBSSID), pWlanEvent->Data.STAAdded.Mac,
-               SL_WLAN_BSSID_LENGTH);
+        memcpy(&(app_CB.CON_CB.ConnectionBSSID), pWlanEvent->Data.STAAdded.Mac, SL_WLAN_BSSID_LENGTH);
+        
         UART_PRINT(
             "\n\r[WLAN EVENT] STA was removed "
             "from AP: BSSID: %x:%x:%x:%x:%x:%x\n\r",
@@ -160,8 +186,7 @@ void SimpleLinkWlanEventHandler(SlWlanEvent_t *pWlanEvent)
             app_CB.CON_CB.ConnectionBSSID[4],
             app_CB.CON_CB.ConnectionBSSID[5]);
 
-        memset(&(app_CB.CON_CB.ConnectionBSSID), 0x0,
-               sizeof(app_CB.CON_CB.ConnectionBSSID));
+        memset(&(app_CB.CON_CB.ConnectionBSSID), 0x0, sizeof(app_CB.CON_CB.ConnectionBSSID));
     }
     break;
 
@@ -643,7 +668,7 @@ const SlWifiCC32XXConfig_t SimpleLinkWifiCC32XX_config =
     .Mode = ROLE_STA,
     .Ipv4Mode = SL_NETCFG_IPV4_STA_ADDR_MODE,
     .ConnectionPolicy = SL_WLAN_CONNECTION_POLICY(1,0,0,0),
-    .PMPolicy = SL_WLAN_ALWAYS_ON_POLICY, //SL_WLAN_NORMAL_POLICY,
+    .PMPolicy = SL_WLAN_NORMAL_POLICY,
     .MaxSleepTimeMS = 0,
     .ScanPolicy = SL_WLAN_SCAN_POLICY(0,0),
     .ScanIntervalInSeconds = 0,
@@ -652,6 +677,6 @@ const SlWifiCC32XXConfig_t SimpleLinkWifiCC32XX_config =
     .IpMask = 0,
     .IpGateway = 0,
     .IpDnsServer = 0,
-    .ProvisioningStop = 0,      // 1
+    .ProvisioningStop = 1,
     .DeleteAllProfile = 0
 };

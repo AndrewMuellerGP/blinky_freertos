@@ -18,6 +18,7 @@
 
 #include "MQTTDriver.h"
 
+#define SL_TASK_STACK_SIZE          (2048)
 #define TASK_STACK_SIZE             (4096)
 #define SPAWN_TASK_PRIORITY         (9)
 #define WLAN_EVENT_TOUT             (6000)
@@ -25,10 +26,11 @@
 #define SLNET_IF_WIFI_PRIO          (5)
 
 
-
 extern void UART_PRINT(char* label, ...);
 
 TaskHandle_t gSpawn_thread = NULL;
+
+sem_t ipAddySem;
 
 static int32_t WiFiDriver_SimpleLink_Init()
 {
@@ -99,7 +101,14 @@ static int32_t WiFiDriver_SimpleLink_Init()
         SHOW_WARNING(ret, OS_ERROR);
         return(-1);
     }
-
+    
+    // create semaphore for signaling when the wifi stack is up      
+    ret = sem_init(&ipAddySem, 0, 0);
+    if (ret != 0)
+    {
+       SHOW_WARNING(ret, OS_ERROR);
+       return -1;
+    }
     
     /*
     ret = SlNetIf_init(0);
@@ -138,7 +147,7 @@ static bool WiFiDriver_SpawnThread()
    pthread_attr_init(&pAttrs_spawn);
    priParam.sched_priority = SPAWN_TASK_PRIORITY;
    uint32_t RetVal = pthread_attr_setschedparam(&pAttrs_spawn, &priParam);
-   RetVal |= pthread_attr_setstacksize(&pAttrs_spawn, TASK_STACK_SIZE);
+   RetVal |= pthread_attr_setstacksize(&pAttrs_spawn, SL_TASK_STACK_SIZE);
 
    /* The SimpleLink host driver architecture mandate spawn
       thread to be created prior to calling Sl_start (turning the NWP on). */
@@ -345,27 +354,32 @@ bool WiFiDriver_Init()
    // initialize the message queue telemetry transport pub/sub system.
    //MQTT_Init(macAddressVal, macAddressLen);
    
-   // TODO: handle  the following after the IP address has been assigned?
-   /*static sem_t ipAddySem;
-   if (sem_init(&ipAddySem, 0, 0) != 0) {
+   // wait until the wifi stack has finished being brought up and handle the 
+   // following after the IP address has been assigned
    sem_wait(&ipAddySem);
    
-   retVal = SlNetIf_init(0);
+   /*retVal = SlNetIf_init(0);
    if(retVal != 0)
    {
       SHOW_WARNING(retVal, OS_ERROR);
       //Display_printf(display, 0, 0, "SlNetIf_init fail (%d)\n", status);
       return(-1);
    }
+   
+   retVal = SlNetUtil_init(0);
+   if (retVal != 0)
+   {
+      SHOW_WARNING(retVal, OS_ERROR);
+      //Display_printf(display, 0, 0, "SlNetIf_init fail (%d)\n", status);
+      return (-1);
+   }
     
-   
-   
-   
-   retVal = SlNetIf_add(SLNETIF_ID_1, "CC3135Mod", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
+   retVal = SlNetIf_add(SLNETIF_ID_1, "wlan0", (const SlNetIf_Config_t *)&SlNetIfConfigWifi, SLNET_IF_WIFI_PRIO);
+*/
    if (retVal != 0)
    {
       return (-1);
-   }*/
+   }
           
    return true;
 }

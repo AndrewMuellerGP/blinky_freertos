@@ -76,6 +76,9 @@ typedef struct appControlBlock_t
 
 extern appControlBlock app_CB;
 
+extern sem_t ipAddySem;
+
+
 typedef enum
 {
 /* This bit is set: Network Processor is powered up */

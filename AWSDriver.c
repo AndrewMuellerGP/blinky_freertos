@@ -8,6 +8,8 @@
 #include <FreeRTOS.h>
 #include <task.h>
 
+#include <ti/drivers/net/wifi/fs.h>
+
 #include "aws_iot_mqtt_client.h"
 #include "aws_iot_mqtt_client_interface.h"
 #include "aws_iot_version.h"
@@ -24,6 +26,26 @@ static uint32_t publishCount = 0;
 
 pthread_t awsThread;
 pthread_attr_t pthreadAttrs;
+
+/**
+ * Utility function to check the given certificate file exists
+ *
+ * @param certName Filename of the certificate to check for existance.
+ * 
+ * @returns true if the certificate file exists, false if it does not.
+ */
+/*static bool isCertExists(char *certName)
+{
+   SlFsFileInfo_t fsFileInfo;
+   bool status = true;
+
+   if (sl_FsGetInfo((const unsigned char *)certName, 0, &fsFileInfo) == SL_ERROR_FS_FILE_NOT_EXISTS)
+   {
+      status = false;
+   }
+
+   return (status);
+}*/
 
 static void iot_subscribe_callback_handler(AWS_IoT_Client *pClient,
                                            char *topicName, 
